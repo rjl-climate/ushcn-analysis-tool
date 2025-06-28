@@ -6,6 +6,220 @@ import matplotlib.pyplot as plt
 import geopandas as gpd
 import contextily as ctx
 import numpy as np
+from scipy.interpolate import griddata
+
+
+def interpolate_to_grid(
+    lats: np.ndarray, 
+    lons: np.ndarray, 
+    values: np.ndarray,
+    grid_resolution: float = 0.1,
+    method: str = 'cubic'
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """
+    Interpolate scattered station data to a regular grid for contour plotting.
+    
+    Args:
+        lats: Array of station latitudes
+        lons: Array of station longitudes  
+        values: Array of values to interpolate (e.g., temperature anomalies)
+        grid_resolution: Grid spacing in degrees
+        method: Interpolation method ('linear', 'nearest', 'cubic')
+        
+    Returns:
+        Tuple of (grid_lats, grid_lons, interpolated_values)
+        - grid_lats: 2D array of grid latitudes
+        - grid_lons: 2D array of grid longitudes  
+        - interpolated_values: 2D array of interpolated values
+    """
+    # Define continental US bounds with some padding
+    lat_min, lat_max = 24.0, 50.0
+    lon_min, lon_max = -125.0, -66.0
+    
+    # Create regular grid
+    lat_grid = np.arange(lat_min, lat_max + grid_resolution, grid_resolution)
+    lon_grid = np.arange(lon_min, lon_max + grid_resolution, grid_resolution)
+    grid_lons, grid_lats = np.meshgrid(lon_grid, lat_grid)
+    
+    # Prepare station coordinates for interpolation
+    station_points = np.column_stack((lons, lats))
+    grid_points = np.column_stack((grid_lons.ravel(), grid_lats.ravel()))
+    
+    # Remove any NaN values from the input data
+    valid_mask = ~np.isnan(values)
+    if not np.any(valid_mask):
+        raise ValueError("No valid data points for interpolation")
+    
+    clean_points = station_points[valid_mask]
+    clean_values = values[valid_mask]
+    
+    # Perform interpolation
+    try:
+        interpolated_flat = griddata(
+            clean_points, 
+            clean_values, 
+            grid_points, 
+            method=method,
+            fill_value=np.nan
+        )
+        interpolated_values = interpolated_flat.reshape(grid_lats.shape)
+    except Exception as e:
+        raise ValueError(f"Interpolation failed: {str(e)}")
+    
+    return grid_lats, grid_lons, interpolated_values
+
+
+def plot_contour_map(
+    results_gdf: gpd.GeoDataFrame,
+    title: str,
+    output_path: Optional[Path] = None,
+    figsize: Tuple[int, int] = (12, 8),
+    colormap: str = "RdBu_r",
+    vmin: Optional[float] = None,
+    vmax: Optional[float] = None,
+    temp_metric: str = "Temperature",
+    grid_resolution: float = 0.1,
+    interpolation_method: str = 'cubic',
+    show_stations: bool = False,
+    contour_levels: Optional[int] = None
+) -> plt.Figure:
+    """
+    Create an isothermal heat contour map from temperature anomaly data.
+
+    Args:
+        results_gdf: GeoDataFrame with anomaly results
+        title: Title for the plot
+        output_path: Optional path to save the plot
+        figsize: Figure size as (width, height)
+        colormap: Matplotlib colormap name
+        vmin: Minimum value for color scale
+        vmax: Maximum value for color scale
+        temp_metric: Temperature metric name for labeling
+        grid_resolution: Grid spacing in degrees for interpolation
+        interpolation_method: Interpolation method ('linear', 'nearest', 'cubic')
+        show_stations: Whether to overlay station points
+        contour_levels: Number of contour levels (auto if None)
+
+    Returns:
+        Matplotlib Figure object
+    """
+    # Determine the value column to plot
+    value_col = None
+    if "anomaly_celsius" in results_gdf.columns:
+        value_col = "anomaly_celsius"
+    elif "adjustment_impact" in results_gdf.columns:
+        value_col = "adjustment_impact"
+    else:
+        raise ValueError("No suitable anomaly column found in results")
+
+    # Remove stations with missing data
+    clean_gdf = results_gdf.dropna(subset=[value_col]).copy()
+    if len(clean_gdf) == 0:
+        raise ValueError(f"No valid data found in column {value_col}")
+
+    # Extract coordinates and values
+    lats = clean_gdf.geometry.y.values
+    lons = clean_gdf.geometry.x.values
+    values = clean_gdf[value_col].values
+
+    # Set color scale limits if not provided
+    if vmin is None or vmax is None:
+        abs_max = max(abs(values.min()), abs(values.max()))
+        if vmin is None:
+            vmin = -abs_max
+        if vmax is None:
+            vmax = abs_max
+
+    # Interpolate to grid
+    try:
+        grid_lats, grid_lons, interpolated_values = interpolate_to_grid(
+            lats, lons, values, 
+            grid_resolution=grid_resolution, 
+            method=interpolation_method
+        )
+    except ValueError as e:
+        raise ValueError(f"Interpolation failed: {str(e)}")
+
+    # Create figure and axis
+    fig, ax = plt.subplots(1, 1, figsize=figsize)
+
+    # Convert grid to Web Mercator for basemap compatibility
+    from pyproj import Transformer
+    transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
+    grid_lons_web, grid_lats_web = transformer.transform(grid_lons, grid_lats)
+
+    # Set contour levels
+    if contour_levels is None:
+        contour_levels = 15
+    
+    levels = np.linspace(vmin, vmax, contour_levels)
+
+    # Create filled contours
+    contourf_plot = ax.contourf(
+        grid_lons_web, grid_lats_web, interpolated_values,
+        levels=levels,
+        cmap=colormap,
+        vmin=vmin,
+        vmax=vmax,
+        alpha=0.8
+    )
+
+    # Add contour lines for clarity
+    ax.contour(
+        grid_lons_web, grid_lats_web, interpolated_values,
+        levels=levels,
+        colors='black',
+        linewidths=0.3,
+        alpha=0.4
+    )
+
+    # Overlay station points if requested
+    if show_stations:
+        # Convert station coordinates to Web Mercator
+        clean_gdf_web = clean_gdf.to_crs("EPSG:3857")
+        clean_gdf_web.plot(
+            ax=ax,
+            markersize=8,
+            color='white',
+            edgecolors='black',
+            linewidth=0.5,
+            alpha=0.7
+        )
+
+    # Add basemap
+    try:
+        ctx.add_basemap(
+            ax,
+            crs="EPSG:3857",
+            source=ctx.providers.CartoDB.Positron,
+            alpha=0.7,
+        )
+    except Exception:
+        # Fallback if basemap fails
+        ax.set_facecolor("lightgray")
+
+    # Set title and labels
+    ax.set_title(title, fontsize=16, fontweight="bold", pad=20)
+    ax.set_xlabel("Longitude", fontsize=12)
+    ax.set_ylabel("Latitude", fontsize=12)
+
+    # Add colorbar
+    cbar = plt.colorbar(contourf_plot, ax=ax, shrink=0.8, pad=0.02)
+    cbar.set_label(f"{temp_metric} Temperature Anomaly (°C)", rotation=270, labelpad=20, fontsize=12)
+
+    # Remove axis ticks for cleaner look
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    # Adjust layout
+    plt.tight_layout()
+
+    # Save if output path provided
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches="tight")
+        print(f"Contour plot saved to: {output_path}")
+
+    return fig
 
 
 def plot_anomaly_map(

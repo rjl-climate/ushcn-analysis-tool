@@ -7,7 +7,7 @@ import json
 
 from .data_loader import load_ushcn_data
 from .anomaly_algorithms import get_algorithm, list_algorithms
-from .plotting import plot_anomaly_map, plot_comparison_maps, create_summary_statistics
+from .plotting import plot_anomaly_map, plot_contour_map, plot_comparison_maps, create_summary_statistics
 
 app = typer.Typer(help="US Long-Term Temperature Change Analyzer")
 
@@ -32,6 +32,21 @@ def analyze(
     temp_metric: str = typer.Option(
         "min", help="Temperature metric to analyze: min, max, or avg"
     ),
+    visualization_type: str = typer.Option(
+        "points", help="Visualization type: points or contours"
+    ),
+    grid_resolution: float = typer.Option(
+        0.1, help="Grid resolution in degrees for contour maps"
+    ),
+    interpolation_method: str = typer.Option(
+        "cubic", help="Interpolation method: linear, cubic, or nearest"
+    ),
+    show_stations: bool = typer.Option(
+        False, help="Show station points on contour maps"
+    ),
+    contour_levels: Optional[int] = typer.Option(
+        None, help="Number of contour levels (auto if not specified)"
+    ),
 ) -> None:
     """Run temperature anomaly analysis with specified algorithm."""
 
@@ -48,6 +63,20 @@ def analyze(
         typer.echo(f"Error: Unknown temperature metric '{temp_metric}'")
         typer.echo(f"Valid metrics: {', '.join(valid_metrics)}")
         raise typer.Exit(1)
+    
+    # Validate visualization type
+    valid_viz_types = ["points", "contours"]
+    if visualization_type not in valid_viz_types:
+        typer.echo(f"Error: Unknown visualization type '{visualization_type}'")
+        typer.echo(f"Valid types: {', '.join(valid_viz_types)}")
+        raise typer.Exit(1)
+    
+    # Validate interpolation method
+    valid_interp_methods = ["linear", "cubic", "nearest"]
+    if interpolation_method not in valid_interp_methods:
+        typer.echo(f"Error: Unknown interpolation method '{interpolation_method}'")
+        typer.echo(f"Valid methods: {', '.join(valid_interp_methods)}")
+        raise typer.Exit(1)
 
     # Set default output directory
     if output_dir is None:
@@ -57,6 +86,7 @@ def analyze(
     typer.echo(f"Running {algorithm} analysis...")
     typer.echo(f"Data directory: {data_dir}")
     typer.echo(f"Temperature metric: {temp_metric}")
+    typer.echo(f"Visualization type: {visualization_type}")
     baseline_end = baseline_start_year + period_length - 1
     current_end = current_start_year + period_length - 1
     typer.echo(f"Baseline period: {baseline_start_year}-{baseline_end}")
@@ -115,10 +145,22 @@ def analyze(
             plot_comparison_maps(results, title, output_dir, temp_metric=temp_metric.title())
 
         else:
-            # Create single anomaly map
+            # Create visualization based on type
             title = f"{algorithm.title()} Algorithm: {temp_metric.title()} Temperature Anomalies ({baseline_start_year}-{baseline_end} vs {current_start_year}-{current_end})"
-            output_path = output_dir / f"{algorithm}_{temp_metric}_anomaly_map.png"
-            plot_anomaly_map(results, title, output_path, temp_metric=temp_metric.title())
+            
+            if visualization_type == "contours":
+                output_path = output_dir / f"{algorithm}_{temp_metric}_contour_map.png"
+                plot_contour_map(
+                    results, title, output_path, 
+                    temp_metric=temp_metric.title(),
+                    grid_resolution=grid_resolution,
+                    interpolation_method=interpolation_method,
+                    show_stations=show_stations,
+                    contour_levels=contour_levels
+                )
+            else:
+                output_path = output_dir / f"{algorithm}_{temp_metric}_anomaly_map.png"
+                plot_anomaly_map(results, title, output_path, temp_metric=temp_metric.title())
 
         typer.echo("Visualization complete!")
 
