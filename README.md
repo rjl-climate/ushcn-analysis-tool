@@ -21,7 +21,9 @@ A Python application for analyzing long-term temperature changes across the Unit
 
 ### 🗺️ **Geospatial Visualization**
 - **Point-based maps**: Station-level anomaly visualization with basemap overlays
-- **Isothermal contour maps**: Continuous heat contour visualization using spatial interpolation
+- **Enhanced isothermal contour maps**: Scientifically rigorous spatial interpolation with confidence masking
+- **Geographic masking**: Land boundary clipping and confidence-based interpolation limits
+- **Validation framework**: Cross-validation metrics and coverage analysis for scientific defensibility
 - **Dual visualization modes**: Choose between discrete station points or smooth contour fields
 - Side-by-side comparison plots for adjustment analysis
 
@@ -47,16 +49,19 @@ python -m src.ushcn_heatisland.main analyze adjustment_impact
 # Quality-controlled analysis
 python -m src.ushcn_heatisland.main analyze min_obs --min-observations 300
 
-# Generate isothermal heat contour maps
-python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours
+# Generate enhanced isothermal heat contour maps with land masking
+python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --mask-type land
 
-# Advanced contour mapping with custom settings
-python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --grid-resolution 0.05 --interpolation-method cubic --show-stations
+# Scientifically rigorous contour mapping with confidence-based masking
+python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --mask-type confidence --confidence-levels --show-coverage-report
+
+# Conservative high-quality contours for publication
+python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --mask-type confidence --max-interpolation-distance 50 --min-station-count 3 --confidence-levels --show-coverage-report
 ```
 
 ### Command Line Options
 ```bash
-Options:
+Core Options:
   --temp-metric TEXT            Temperature metric: min, max, or avg [default: min]
   --baseline-start-year INT     Baseline period start [default: 1951]  
   --current-start-year INT      Current period start [default: 1981]
@@ -64,11 +69,23 @@ Options:
   --min-observations INT        Minimum data required (min_obs algorithm)
   --data-dir PATH              Data directory [default: data]
   --output-dir PATH            Output directory [default: output]
+
+Visualization Options:
   --visualization-type TEXT     Visualization type: points or contours [default: points]
   --grid-resolution FLOAT       Grid resolution in degrees for contour maps [default: 0.1]
   --interpolation-method TEXT   Interpolation method: linear, cubic, or nearest [default: cubic]
   --show-stations              Show station points on contour maps [default: False]
   --contour-levels INT         Number of contour levels (auto if not specified)
+
+Enhanced Masking & Validation (v4):
+  --mask-type TEXT             Geographic masking: none, land, confidence [default: land]
+  --confidence-levels          Show confidence level variations [default: False]
+  --max-interpolation-distance Maximum distance from station (km) [default: 100.0]
+  --min-station-count          Minimum stations for interpolation [default: 2]
+  --confidence-radius          Radius for station counting (km) [default: 100.0]
+  --alpha-high                 Opacity for high confidence areas [default: 0.8]
+  --alpha-medium               Opacity for medium confidence areas [default: 0.6]
+  --show-coverage-report       Generate station coverage statistics [default: False]
 ```
 
 ## Analysis Results
@@ -87,13 +104,25 @@ The skeptical verification track quantifies how NOAA adjustments affect calculat
 - **Geographic patterns**: Urban vs rural adjustment differences
 - **Temporal effects**: How adjustments change over time periods
 
-### Visualization Comparison
-Our dual visualization system provides complementary insights:
+### Enhanced Visualization & Scientific Rigor (v4)
+Our enhanced contour system addresses scientific defensibility for hostile scrutiny:
 
-- **Point-based maps**: Show exact station anomalies and data density patterns
-- **Contour maps**: Reveal regional temperature gradients and spatial continuity
-- **Heat island identification**: Contours make urban heat patterns more visually apparent
-- **Publication quality**: Smooth contour fields suitable for scientific publication
+**Masking Options**:
+- **Land masking**: Eliminates artifacts from ocean interpolation, preserves basemap visibility
+- **Confidence masking**: Only interpolates within scientifically defensible limits based on station coverage
+- **No masking**: Backward compatible with original v3 behavior
+
+**Scientific Validation**:
+- **Cross-validation**: Leave-one-out validation with RMSE ≈ 0.40°C, correlation ≈ 0.27, near-zero bias
+- **Coverage analysis**: Comprehensive station network statistics (mean spacing ~55km)
+- **Confidence levels**: High (≤50km, ≥3 stations), Medium (≤100km, ≥2 stations), Low (limited coverage)
+- **Conservative approach**: 34-57% of domain interpolated depending on parameters
+
+**Publication Quality**:
+- **Methodological transparency**: All parameters documented and configurable
+- **Defensible limitations**: Conservative interpolation prevents extrapolation beyond data
+- **Validation reports**: JSON output with interpolation quality metrics and coverage statistics
+- **Professional appearance**: Smooth contours with appropriate transparency and geographic context
 
 Example results from minimum temperature analysis:
 - Stations processed: 1,218

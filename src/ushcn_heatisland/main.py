@@ -7,7 +7,7 @@ import json
 
 from .data_loader import load_ushcn_data
 from .anomaly_algorithms import get_algorithm, list_algorithms
-from .plotting import plot_anomaly_map, plot_contour_map, plot_comparison_maps, create_summary_statistics
+from .plotting import plot_anomaly_map, plot_enhanced_contour_map, plot_comparison_maps, create_summary_statistics
 
 app = typer.Typer(help="US Long-Term Temperature Change Analyzer")
 
@@ -47,6 +47,30 @@ def analyze(
     contour_levels: Optional[int] = typer.Option(
         None, help="Number of contour levels (auto if not specified)"
     ),
+    mask_type: str = typer.Option(
+        "land", help="Geographic masking: none, land, confidence"
+    ),
+    confidence_levels: bool = typer.Option(
+        False, help="Show confidence level variations"
+    ),
+    max_interpolation_distance: float = typer.Option(
+        100.0, help="Maximum distance from station (km)"
+    ),
+    min_station_count: int = typer.Option(
+        2, help="Minimum stations for interpolation"
+    ),
+    confidence_radius: float = typer.Option(
+        100.0, help="Radius for station counting (km)"
+    ),
+    alpha_high: float = typer.Option(
+        0.8, help="Opacity for high confidence areas"
+    ),
+    alpha_medium: float = typer.Option(
+        0.6, help="Opacity for medium confidence areas"
+    ),
+    show_coverage_report: bool = typer.Option(
+        False, help="Generate station coverage statistics"
+    ),
 ) -> None:
     """Run temperature anomaly analysis with specified algorithm."""
 
@@ -76,6 +100,13 @@ def analyze(
     if interpolation_method not in valid_interp_methods:
         typer.echo(f"Error: Unknown interpolation method '{interpolation_method}'")
         typer.echo(f"Valid methods: {', '.join(valid_interp_methods)}")
+        raise typer.Exit(1)
+    
+    # Validate mask type
+    valid_mask_types = ["none", "land", "confidence"]
+    if mask_type not in valid_mask_types:
+        typer.echo(f"Error: Unknown mask type '{mask_type}'")
+        typer.echo(f"Valid types: {', '.join(valid_mask_types)}")
         raise typer.Exit(1)
 
     # Set default output directory
@@ -150,14 +181,30 @@ def analyze(
             
             if visualization_type == "contours":
                 output_path = output_dir / f"{algorithm}_{temp_metric}_contour_map.png"
-                plot_contour_map(
+                fig, coverage_report = plot_enhanced_contour_map(
                     results, title, output_path, 
                     temp_metric=temp_metric.title(),
                     grid_resolution=grid_resolution,
                     interpolation_method=interpolation_method,
                     show_stations=show_stations,
-                    contour_levels=contour_levels
+                    contour_levels=contour_levels,
+                    mask_type=mask_type,
+                    confidence_levels=confidence_levels,
+                    max_interpolation_distance=max_interpolation_distance,
+                    min_station_count=min_station_count,
+                    confidence_radius=confidence_radius,
+                    alpha_high=alpha_high,
+                    alpha_medium=alpha_medium,
+                    show_coverage_report=show_coverage_report
                 )
+                
+                # Save coverage report if generated
+                if coverage_report and show_coverage_report:
+                    coverage_file = output_dir / f"{algorithm}_{temp_metric}_coverage_report.json"
+                    with open(coverage_file, "w") as f:
+                        json.dump(coverage_report, f, indent=2)
+                    typer.echo(f"Coverage report saved to: {coverage_file}")
+                    
             else:
                 output_path = output_dir / f"{algorithm}_{temp_metric}_anomaly_map.png"
                 plot_anomaly_map(results, title, output_path, temp_metric=temp_metric.title())
