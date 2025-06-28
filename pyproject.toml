@@ -1,0 +1,28 @@
+[project]
+name = "ushcn-heatisland"
+version = "0.1.0"
+description = "US Long-Term Temperature Change Analyzer with Urban Heat Island Investigation"
+readme = "README.md"
+authors = [
+    { name = "Richard Lyon", email = "6917342+richardjlyon@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.0.0",
+    "geopandas>=0.14.0",
+    "pyarrow>=12.0.0",
+    "matplotlib>=3.7.0",
+    "contextily>=1.4.0",
+    "shapely>=2.0.0",
+    "typer>=0.9.0",
+    "pydantic>=2.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.1",
+]
