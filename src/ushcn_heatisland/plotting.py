@@ -698,6 +698,346 @@ def plot_enhanced_contour_map(
     return fig, coverage_report
 
 
+def plot_heat_island_map(
+    results_gdf: gpd.GeoDataFrame,
+    title: str,
+    output_path: Optional[Path] = None,
+    figsize: Tuple[int, int] = (12, 8),
+    colormap: str = "RdBu_r",
+    vmin: Optional[float] = None,
+    vmax: Optional[float] = None,
+    temp_metric: str = "Temperature",
+    grid_resolution: float = 0.1,
+    interpolation_method: str = 'cubic',
+    show_stations: bool = False,
+    contour_levels: Optional[int] = None,
+    mask_type: str = "land",
+    confidence_levels: bool = False,
+    max_interpolation_distance: float = 100.0,
+    min_station_count: int = 2,
+    confidence_radius: float = 100.0,
+    alpha_high: float = 0.8,
+    alpha_medium: float = 0.6,
+    show_coverage_report: bool = False,
+    # Urban heat island specific options
+    show_cities: bool = True,
+    city_population_threshold: int = 100000,
+    show_urban_areas: bool = False,
+    classify_stations: bool = True,
+    urban_analysis: bool = True,
+    cities_gdf: Optional[gpd.GeoDataFrame] = None,
+    urban_areas_gdf: Optional[gpd.GeoDataFrame] = None
+) -> Tuple[plt.Figure, Dict[str, Any]]:
+    """
+    Create heat island investigation map with urban context overlays.
+
+    Args:
+        results_gdf: GeoDataFrame with anomaly results and urban classification
+        title: Title for the plot
+        output_path: Optional path to save the plot
+        figsize: Figure size as (width, height)
+        colormap: Matplotlib colormap name
+        vmin: Minimum value for color scale
+        vmax: Maximum value for color scale
+        temp_metric: Temperature metric name for labeling
+        grid_resolution: Grid spacing in degrees for interpolation
+        interpolation_method: Interpolation method ('linear', 'nearest', 'cubic')
+        show_stations: Whether to overlay station points
+        contour_levels: Number of contour levels (auto if None)
+        mask_type: Masking approach ('none', 'land', 'confidence')
+        confidence_levels: Show confidence level variations
+        max_interpolation_distance: Maximum distance from station (km)
+        min_station_count: Minimum stations for interpolation
+        confidence_radius: Radius for station counting (km)
+        alpha_high: Opacity for high confidence areas
+        alpha_medium: Opacity for medium confidence areas  
+        show_coverage_report: Generate station coverage statistics
+        show_cities: Show major cities overlay
+        city_population_threshold: Minimum city population to display
+        show_urban_areas: Show urban area boundaries
+        classify_stations: Color-code stations by urban/rural classification
+        urban_analysis: Generate urban heat island statistics
+        cities_gdf: GeoDataFrame with city locations (optional)
+        urban_areas_gdf: GeoDataFrame with urban areas (optional)
+
+    Returns:
+        Tuple of (Matplotlib Figure, enhanced coverage report with urban analysis)
+    """
+    # Start with enhanced contour map
+    fig, coverage_report = plot_enhanced_contour_map(
+        results_gdf, title, None,  # Don't save yet, we'll add urban overlays first
+        figsize, colormap, vmin, vmax, temp_metric,
+        grid_resolution, interpolation_method, False,  # Don't show stations yet
+        contour_levels, mask_type, confidence_levels,
+        max_interpolation_distance, min_station_count, confidence_radius,
+        alpha_high, alpha_medium, show_coverage_report
+    )
+    
+    ax = fig.gca()
+    
+    # Urban context overlays
+    urban_analysis_results = {}
+    
+    # Show urban areas if requested
+    if show_urban_areas and urban_areas_gdf is not None and len(urban_areas_gdf) > 0:
+        try:
+            urban_areas_web = urban_areas_gdf.to_crs("EPSG:3857")
+            urban_areas_web.plot(
+                ax=ax,
+                facecolor='none',
+                edgecolor='gray',
+                linewidth=1.0,
+                alpha=0.6,
+                linestyle='--'
+            )
+        except Exception as e:
+            print(f"Warning: Could not display urban areas: {e}")
+    
+    # Show cities if requested
+    if show_cities and cities_gdf is not None and len(cities_gdf) > 0:
+        try:
+            # Filter cities by population threshold
+            large_cities = cities_gdf[cities_gdf['population'] >= city_population_threshold].copy()
+            
+            if len(large_cities) > 0:
+                cities_web = large_cities.to_crs("EPSG:3857")
+                
+                # Scale marker size by population
+                max_pop = large_cities['population'].max()
+                min_pop = large_cities['population'].min()
+                
+                # Normalize to marker size range (20-200)
+                if max_pop > min_pop:
+                    normalized_pop = (large_cities['population'] - min_pop) / (max_pop - min_pop)
+                    marker_sizes = 20 + normalized_pop * 180
+                else:
+                    marker_sizes = [50] * len(large_cities)
+                
+                # Plot cities
+                cities_web.plot(
+                    ax=ax,
+                    markersize=marker_sizes,
+                    color='red',
+                    edgecolors='darkred',
+                    linewidth=1.0,
+                    alpha=0.8,
+                    marker='o'
+                )
+                
+                # Add city labels for largest cities (top 10)
+                if len(large_cities) <= 20:  # Only label if not too many cities
+                    for _, city in large_cities.iterrows():
+                        city_web = cities_web[cities_web.index == city.name]
+                        if len(city_web) > 0:
+                            point = city_web.geometry.iloc[0]
+                            ax.annotate(
+                                city['city_name'],
+                                xy=(point.x, point.y),
+                                xytext=(5, 5),
+                                textcoords='offset points',
+                                fontsize=8,
+                                color='darkred',
+                                weight='bold',
+                                bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7)
+                            )
+        except Exception as e:
+            print(f"Warning: Could not display cities: {e}")
+    
+    # Show stations with urban classification if requested
+    if show_stations or classify_stations:
+        try:
+            clean_gdf = results_gdf.dropna(subset=['geometry']).copy()
+            
+            if classify_stations and 'urban_classification' in clean_gdf.columns:
+                # Color-code stations by classification
+                classification_colors = {
+                    'urban_core': 'red',
+                    'urban': 'orange', 
+                    'suburban': 'yellow',
+                    'rural': 'blue'
+                }
+                
+                clean_gdf_web = clean_gdf.to_crs("EPSG:3857")
+                
+                for classification, color in classification_colors.items():
+                    class_stations = clean_gdf_web[clean_gdf_web['urban_classification'] == classification]
+                    if len(class_stations) > 0:
+                        class_stations.plot(
+                            ax=ax,
+                            markersize=15,
+                            color=color,
+                            edgecolors='black',
+                            linewidth=0.5,
+                            alpha=0.8,
+                            label=f'{classification.replace("_", " ").title()} ({len(class_stations)})'
+                        )
+                
+                # Add legend for station classification
+                ax.legend(loc='upper right', bbox_to_anchor=(1.0, 1.0), fontsize=9)
+                
+            elif show_stations:
+                # Standard station display
+                clean_gdf_web = clean_gdf.to_crs("EPSG:3857")
+                clean_gdf_web.plot(
+                    ax=ax,
+                    markersize=8,
+                    color='white',
+                    edgecolors='black',
+                    linewidth=0.4,
+                    alpha=0.8
+                )
+        except Exception as e:
+            print(f"Warning: Could not display stations: {e}")
+    
+    # Perform urban heat island analysis if requested
+    if urban_analysis and 'urban_classification' in results_gdf.columns:
+        try:
+            from .heat_island_analysis import calculate_urban_rural_statistics
+            urban_stats = calculate_urban_rural_statistics(results_gdf)
+            urban_analysis_results = urban_stats
+            
+            # Add UHII annotation to plot if significant
+            if 'urban_vs_rural_comparison' in urban_stats:
+                comparison = urban_stats['urban_vs_rural_comparison']
+                if 'urban_heat_island_intensity' in comparison:
+                    uhii = comparison['urban_heat_island_intensity']
+                    significance = comparison.get('statistical_significance', 'unknown')
+                    
+                    # Add text box with UHII information
+                    uhii_text = f"Urban Heat Island Intensity: {uhii:.2f}°C\n({significance})"
+                    ax.text(
+                        0.02, 0.98, uhii_text,
+                        transform=ax.transAxes,
+                        verticalalignment='top',
+                        bbox=dict(boxstyle='round,pad=0.5', facecolor='white', alpha=0.8),
+                        fontsize=10,
+                        weight='bold'
+                    )
+        except Exception as e:
+            print(f"Warning: Could not perform urban analysis: {e}")
+            urban_analysis_results = {'error': str(e)}
+    
+    # Enhanced coverage report with urban analysis
+    if urban_analysis_results:
+        coverage_report['urban_heat_island_analysis'] = urban_analysis_results
+    
+    # Save if output path provided
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches="tight")
+        print(f"Heat island map saved to: {output_path}")
+    
+    return fig, coverage_report
+
+
+def plot_urban_rural_comparison(
+    results_gdf: gpd.GeoDataFrame,
+    heat_island_stats: Dict[str, Any],
+    output_path: Optional[Path] = None,
+    figsize: Tuple[int, int] = (10, 6)
+) -> plt.Figure:
+    """
+    Create urban vs rural temperature comparison plots.
+    
+    Args:
+        results_gdf: GeoDataFrame with anomaly results and urban classification
+        heat_island_stats: Results from calculate_urban_rural_statistics
+        output_path: Optional path to save the plot
+        figsize: Figure size as (width, height)
+        
+    Returns:
+        Matplotlib Figure object
+    """
+    # Determine anomaly column
+    anomaly_col = None
+    if 'anomaly_celsius' in results_gdf.columns:
+        anomaly_col = 'anomaly_celsius'
+    elif 'adjustment_impact' in results_gdf.columns:
+        anomaly_col = 'adjustment_impact'
+    else:
+        raise ValueError("No suitable anomaly column found")
+    
+    # Clean data
+    clean_data = results_gdf.dropna(subset=[anomaly_col, 'urban_classification']).copy()
+    
+    # Create figure with subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=figsize)
+    
+    # Box plot comparison
+    urban_categories = ['urban_core', 'urban', 'suburban', 'rural']
+    plot_data = []
+    plot_labels = []
+    
+    for category in urban_categories:
+        category_data = clean_data[clean_data['urban_classification'] == category][anomaly_col]
+        if len(category_data) > 0:
+            plot_data.append(category_data.values)
+            plot_labels.append(f'{category.replace("_", " ").title()}\n(n={len(category_data)})')
+    
+    if plot_data:
+        bp = ax1.boxplot(plot_data, labels=plot_labels, patch_artist=True)
+        
+        # Color the boxes
+        colors = ['red', 'orange', 'yellow', 'blue']
+        for patch, color in zip(bp['boxes'], colors[:len(bp['boxes'])]):
+            patch.set_facecolor(color)
+            patch.set_alpha(0.7)
+    
+    ax1.set_title('Temperature Anomalies by Urban Classification')
+    ax1.set_ylabel('Temperature Anomaly (°C)')
+    ax1.grid(True, alpha=0.3)
+    
+    # Histogram comparison (urban vs rural)
+    urban_data = clean_data[clean_data['urban_classification'].isin(['urban_core', 'urban'])][anomaly_col]
+    rural_data = clean_data[clean_data['urban_classification'] == 'rural'][anomaly_col]
+    
+    if len(urban_data) > 0 and len(rural_data) > 0:
+        bins = np.linspace(
+            min(urban_data.min(), rural_data.min()),
+            max(urban_data.max(), rural_data.max()),
+            20
+        )
+        
+        ax2.hist(urban_data, bins=bins, alpha=0.7, label=f'Urban (n={len(urban_data)})', 
+                color='red', density=True)
+        ax2.hist(rural_data, bins=bins, alpha=0.7, label=f'Rural (n={len(rural_data)})', 
+                color='blue', density=True)
+        
+        # Add vertical lines for means
+        ax2.axvline(urban_data.mean(), color='red', linestyle='--', linewidth=2, 
+                   label=f'Urban mean: {urban_data.mean():.2f}°C')
+        ax2.axvline(rural_data.mean(), color='blue', linestyle='--', linewidth=2,
+                   label=f'Rural mean: {rural_data.mean():.2f}°C')
+    
+    ax2.set_title('Urban vs Rural Temperature Distribution')
+    ax2.set_xlabel('Temperature Anomaly (°C)')
+    ax2.set_ylabel('Density')
+    ax2.legend()
+    ax2.grid(True, alpha=0.3)
+    
+    # Add statistics text
+    if 'urban_vs_rural_comparison' in heat_island_stats:
+        comparison = heat_island_stats['urban_vs_rural_comparison']
+        if 'urban_heat_island_intensity' in comparison:
+            uhii = comparison['urban_heat_island_intensity']
+            significance = comparison.get('statistical_significance', 'unknown')
+            p_value = comparison.get('t_test_p_value', np.nan)
+            
+            stats_text = f"UHII: {uhii:.2f}°C\np-value: {p_value:.3f}\n{significance}"
+            fig.text(0.02, 0.98, stats_text, 
+                    verticalalignment='top',
+                    bbox=dict(boxstyle='round,pad=0.5', facecolor='white', alpha=0.8),
+                    fontsize=10)
+    
+    plt.tight_layout()
+    
+    # Save if output path provided
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches="tight")
+        print(f"Urban/rural comparison plot saved to: {output_path}")
+    
+    return fig
+
+
 def plot_anomaly_map(
     results_gdf: gpd.GeoDataFrame,
     title: str,

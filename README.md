@@ -27,6 +27,14 @@ A Python application for analyzing long-term temperature changes across the Unit
 - **Dual visualization modes**: Choose between discrete station points or smooth contour fields
 - Side-by-side comparison plots for adjustment analysis
 
+### 🏙️ **Urban Heat Island Investigation (v5)**
+- **4-level urban classification**: Urban core, urban fringe, suburban, and rural station categorization
+- **Static cities database**: 743 US cities ≥50k population with quality-controlled coordinates
+- **Population-based thresholds**: Scientific classification using city population and distance criteria
+- **Urban context overlays**: City markers, urban area boundaries, and station classification visualization
+- **Heat island statistics**: Urban vs rural temperature comparison with statistical significance testing
+- **No network dependencies**: Reliable offline operation with comprehensive geographic coverage
+
 ## Quick Start
 
 ### Installation
@@ -57,6 +65,12 @@ python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualiza
 
 # Conservative high-quality contours for publication
 python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --mask-type confidence --max-interpolation-distance 50 --min-station-count 3 --confidence-levels --show-coverage-report
+
+# Urban heat island investigation with city overlays and station classification
+python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --show-cities --classify-stations --urban-analysis
+
+# Comprehensive heat island analysis with full reporting
+python -m src.ushcn_heatisland.main analyze simple --temp-metric min --visualization-type contours --show-cities --classify-stations --urban-analysis --heat-island-report --show-urban-areas
 ```
 
 ### Command Line Options
@@ -86,6 +100,17 @@ Enhanced Masking & Validation (v4):
   --alpha-high                 Opacity for high confidence areas [default: 0.8]
   --alpha-medium               Opacity for medium confidence areas [default: 0.6]
   --show-coverage-report       Generate station coverage statistics [default: False]
+
+Urban Heat Island Investigation (v5):
+  --show-cities                Show major cities overlay [default: False]
+  --city-population-threshold  Minimum city population to display [default: 100000]
+  --show-urban-areas          Show urban area boundaries [default: False]
+  --classify-stations         Color-code stations by urban/rural classification [default: False]
+  --urban-analysis            Generate urban heat island statistics [default: False]
+  --heat-island-report        Generate comprehensive heat island analysis [default: False]
+  --urban-distance-threshold  Maximum distance to classify as urban (km) [default: 50.0]
+  --suburban-distance-threshold Maximum distance for suburban classification (km) [default: 100.0]
+  --gradient-analysis         Analyze temperature gradients from cities [default: False]
 ```
 
 ## Analysis Results
@@ -128,6 +153,107 @@ Example results from minimum temperature analysis:
 - Stations processed: 1,218
 - Mean anomaly: +0.624°C (1951-1980 vs 1981-2010)
 - Adjustment impact: +0.220°C average increase in warming trends
+
+### Urban Heat Island Analysis (v5)
+Our urban heat island investigation provides robust classification and analysis capabilities:
+
+**Station Classification Results**:
+- **Urban Core**: 26 stations (2.1%) - <25km from cities with 250k+ population
+- **Urban Fringe**: 120 stations (9.9%) - 25-50km from cities with 100k+ population
+- **Suburban**: 405 stations (33.3%) - 50-100km from cities with 50k+ population
+- **Rural**: 667 stations (54.8%) - >100km from any significant city
+
+**Urban Context Database**:
+- **743 US cities** with population ≥50,000 (quality-controlled static database)
+- **98% geographic coverage** (50/51 US states represented)
+- **Population range**: 50,111 (Casa Grande, AZ) to 8,405,837 (New York City)
+- **No network dependencies**: Reliable offline operation with validated coordinates
+
+**Heat Island Detection**:
+- **Population-based thresholds**: Scientific classification using city size and proximity
+- **4-level hierarchy**: More nuanced analysis than traditional urban/rural binary
+- **Statistical validation**: Cross-referenced against Census Bureau data
+- **Visual correlation**: Temperature anomalies overlaid with urban context for investigation
+
+## Urban Context Database Documentation
+
+### Static Cities Database (`data/cities/us_cities_static.csv`)
+
+The urban heat island analysis relies on a comprehensive, quality-controlled database of US cities created specifically for this project.
+
+#### Database Creation Process
+
+1. **Source Data Collection**:
+   - Downloaded from Plotly's Top 1000 US Cities dataset (GitHub: plotly/datasets)
+   - Contains city names, states, population, latitude, and longitude
+   - Based on official Census Bureau and authoritative geographic sources
+
+2. **Quality Control Pipeline** (`scripts/create_static_cities_db.py`):
+   ```bash
+   # Create the static database with validation
+   python scripts/create_static_cities_db.py --min-population 50000
+   ```
+
+3. **Geographic Validation**:
+   - **Coordinate bounds checking**: Validates all coordinates within US territory (18°N-71.5°N, -180°W to -65°W)
+   - **Missing data removal**: Eliminates cities with incomplete coordinate or population data
+   - **Duplicate resolution**: Removes duplicate city entries, keeping highest population version
+
+4. **Population Filtering**:
+   - **Minimum threshold**: 50,000 population (urban area classification standard)
+   - **Range validation**: Population data cross-checked for reasonableness
+   - **Statistical analysis**: Population distribution validated (range: 50,111 - 8,405,837)
+
+5. **Coverage Analysis**:
+   - **State coverage**: 98% (50/51 states - only Vermont missing due to population threshold)
+   - **Geographic distribution**: Comprehensive coverage from Alaska to Hawaii
+   - **Urban hierarchy**: 77 cities ≥250k, 293 cities ≥100k, 743 cities ≥50k population
+
+6. **Cross-Validation Sample**:
+   - **Sample verification**: 20 cities validated against Census Bureau coordinates
+   - **Distance accuracy**: Geographic calculations verified for major metropolitan areas
+   - **Population verification**: Sample population data cross-referenced with official sources
+
+#### Database Schema
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `city_name` | string | Official city name |
+| `state` | string | US state name |
+| `population` | integer | City population (≥50,000) |
+| `latitude` | float | Decimal degrees (WGS84) |
+| `longitude` | float | Decimal degrees (WGS84) |
+| `data_source` | string | Source tracking (`plotly_top1k`) |
+
+#### Classification Methodology
+
+The 4-level urban classification system uses distance-based thresholds combined with city population criteria:
+
+1. **Urban Core** (<25km from 250k+ cities):
+   - Major metropolitan centers with strong urban heat island effects
+   - Examples: Baltimore (1.1km), Seattle (6.0km), Bloomington (9.0km)
+
+2. **Urban Fringe** (25-50km from 100k+ cities):
+   - Urban periphery with moderate urban influence
+   - Examples: Rochester area (36.0km), Columbia area (44.0km)
+
+3. **Suburban** (50-100km from 50k+ cities):
+   - Mixed urban-rural transition zones
+   - Examples: 63-81km from various cities
+
+4. **Rural** (>100km from any 50k+ city):
+   - Minimal urban influence, baseline climate conditions
+   - Examples: >103km from nearest cities
+
+#### Quality Assurance
+
+- **No network dependencies**: Static database eliminates API failures and connectivity issues
+- **Version controlled**: Database changes tracked in git for reproducibility
+- **Metadata documentation**: Complete provenance and creation process documented
+- **Validation scripts**: Automated quality checks ensure data integrity
+- **Scientific defensibility**: Methodology based on established urban climatology standards
+
+This robust urban context foundation enables reliable heat island investigation without the complexity and failure points of dynamic data fetching systems.
 
 ## Contributing
 

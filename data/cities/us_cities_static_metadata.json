@@ -1,0 +1,19 @@
+{
+  "total_cities": 743,
+  "population_range": {
+    "min": 50111,
+    "max": 8405837,
+    "mean": 161705,
+    "median": 84577
+  },
+  "geographic_bounds": {
+    "north": 61.2180556,
+    "south": 21.3069444,
+    "east": -70.2553259,
+    "west": -157.8583333
+  },
+  "data_sources": {
+    "plotly_top1k": 743
+  },
+  "created_at": "2025-06-28T12:27:51.737114"
+}

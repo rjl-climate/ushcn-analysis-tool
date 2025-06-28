@@ -7,7 +7,9 @@ import json
 
 from .data_loader import load_ushcn_data
 from .anomaly_algorithms import get_algorithm, list_algorithms
-from .plotting import plot_anomaly_map, plot_enhanced_contour_map, plot_comparison_maps, create_summary_statistics
+from .plotting import plot_anomaly_map, plot_enhanced_contour_map, plot_comparison_maps, create_summary_statistics, plot_heat_island_map
+from .urban_context import UrbanContextManager
+from .heat_island_analysis import generate_heat_island_report
 
 app = typer.Typer(help="US Long-Term Temperature Change Analyzer")
 
@@ -70,6 +72,34 @@ def analyze(
     ),
     show_coverage_report: bool = typer.Option(
         False, help="Generate station coverage statistics"
+    ),
+    # Urban Heat Island Analysis Options
+    show_cities: bool = typer.Option(
+        False, help="Show major cities overlay"
+    ),
+    city_population_threshold: int = typer.Option(
+        100000, help="Minimum city population to display"
+    ),
+    show_urban_areas: bool = typer.Option(
+        False, help="Show urban area boundaries"
+    ),
+    classify_stations: bool = typer.Option(
+        False, help="Color-code stations by urban/rural classification"
+    ),
+    urban_analysis: bool = typer.Option(
+        False, help="Generate urban heat island statistics"
+    ),
+    heat_island_report: bool = typer.Option(
+        False, help="Generate comprehensive heat island analysis"
+    ),
+    urban_distance_threshold: float = typer.Option(
+        50.0, help="Maximum distance to classify as urban (km)"
+    ),
+    suburban_distance_threshold: float = typer.Option(
+        100.0, help="Maximum distance for suburban classification (km)"
+    ),
+    gradient_analysis: bool = typer.Option(
+        False, help="Analyze temperature gradients from cities"
     ),
 ) -> None:
     """Run temperature anomaly analysis with specified algorithm."""
@@ -136,6 +166,19 @@ def analyze(
             load_raw=load_raw,
             temp_metric=temp_metric,
         )
+        
+        # Initialize urban context if needed
+        urban_context_manager = None
+        cities_gdf = None
+        urban_areas_gdf = None
+        urban_context_summary = None
+        
+        if any([show_cities, show_urban_areas, classify_stations, urban_analysis, heat_island_report, gradient_analysis]):
+            typer.echo("Loading urban context data...")
+            urban_context_manager = UrbanContextManager()
+            cities_gdf = urban_context_manager.load_cities_data(min_population=city_population_threshold)
+            urban_areas_gdf = urban_context_manager.load_urban_areas()
+            typer.echo(f"Loaded {len(cities_gdf)} cities and {len(urban_areas_gdf)} urban areas")
 
         typer.echo(f"Loaded {len(adjusted_data)} adjusted data records")
         if raw_data is not None:
@@ -157,6 +200,22 @@ def analyze(
             gdf_raw=raw_data,
             config=config if config else None,
         )
+        
+        # Add urban classification if requested
+        if urban_context_manager is not None and (classify_stations or urban_analysis or heat_island_report):
+            typer.echo("Classifying stations by urban/rural context...")
+            results = urban_context_manager.classify_stations_urban_rural(
+                results,
+                cities_gdf=cities_gdf,
+                urban_areas_gdf=urban_areas_gdf,
+                use_4_level_hierarchy=True
+            )
+            
+            # Generate urban context summary
+            urban_context_summary = urban_context_manager.get_urban_context_summary(
+                results, cities_gdf, urban_areas_gdf
+            )
+            typer.echo(f"Station classification: {urban_context_summary['urban_core_stations']} urban_core, {urban_context_summary['urban_stations']} urban, {urban_context_summary['suburban_stations']} suburban, {urban_context_summary['rural_stations']} rural")
 
         typer.echo(f"Analysis complete! Found results for {len(results)} stations")
 
@@ -180,23 +239,50 @@ def analyze(
             title = f"{algorithm.title()} Algorithm: {temp_metric.title()} Temperature Anomalies ({baseline_start_year}-{baseline_end} vs {current_start_year}-{current_end})"
             
             if visualization_type == "contours":
-                output_path = output_dir / f"{algorithm}_{temp_metric}_contour_map.png"
-                fig, coverage_report = plot_enhanced_contour_map(
-                    results, title, output_path, 
-                    temp_metric=temp_metric.title(),
-                    grid_resolution=grid_resolution,
-                    interpolation_method=interpolation_method,
-                    show_stations=show_stations,
-                    contour_levels=contour_levels,
-                    mask_type=mask_type,
-                    confidence_levels=confidence_levels,
-                    max_interpolation_distance=max_interpolation_distance,
-                    min_station_count=min_station_count,
-                    confidence_radius=confidence_radius,
-                    alpha_high=alpha_high,
-                    alpha_medium=alpha_medium,
-                    show_coverage_report=show_coverage_report
-                )
+                # Check if we should use heat island visualization
+                if any([show_cities, show_urban_areas, classify_stations]):
+                    output_path = output_dir / f"{algorithm}_{temp_metric}_heat_island_map.png"
+                    fig, coverage_report = plot_heat_island_map(
+                        results, title, output_path,
+                        temp_metric=temp_metric.title(),
+                        grid_resolution=grid_resolution,
+                        interpolation_method=interpolation_method,
+                        show_stations=show_stations,
+                        contour_levels=contour_levels,
+                        mask_type=mask_type,
+                        confidence_levels=confidence_levels,
+                        max_interpolation_distance=max_interpolation_distance,
+                        min_station_count=min_station_count,
+                        confidence_radius=confidence_radius,
+                        alpha_high=alpha_high,
+                        alpha_medium=alpha_medium,
+                        show_coverage_report=show_coverage_report,
+                        show_cities=show_cities,
+                        city_population_threshold=city_population_threshold,
+                        show_urban_areas=show_urban_areas,
+                        classify_stations=classify_stations,
+                        urban_analysis=urban_analysis,
+                        cities_gdf=cities_gdf,
+                        urban_areas_gdf=urban_areas_gdf
+                    )
+                else:
+                    output_path = output_dir / f"{algorithm}_{temp_metric}_contour_map.png"
+                    fig, coverage_report = plot_enhanced_contour_map(
+                        results, title, output_path, 
+                        temp_metric=temp_metric.title(),
+                        grid_resolution=grid_resolution,
+                        interpolation_method=interpolation_method,
+                        show_stations=show_stations,
+                        contour_levels=contour_levels,
+                        mask_type=mask_type,
+                        confidence_levels=confidence_levels,
+                        max_interpolation_distance=max_interpolation_distance,
+                        min_station_count=min_station_count,
+                        confidence_radius=confidence_radius,
+                        alpha_high=alpha_high,
+                        alpha_medium=alpha_medium,
+                        show_coverage_report=show_coverage_report
+                    )
                 
                 # Save coverage report if generated
                 if coverage_report and show_coverage_report:
@@ -204,6 +290,29 @@ def analyze(
                     with open(coverage_file, "w") as f:
                         json.dump(coverage_report, f, indent=2)
                     typer.echo(f"Coverage report saved to: {coverage_file}")
+                    
+        # Generate heat island analysis report if requested
+        if heat_island_report and urban_context_summary is not None:
+            typer.echo("Generating heat island analysis report...")
+            heat_island_analysis = generate_heat_island_report(
+                results, urban_context_summary, cities_gdf
+            )
+            
+            report_file = output_dir / f"{algorithm}_{temp_metric}_heat_island_report.json"
+            with open(report_file, "w") as f:
+                json.dump(heat_island_analysis, f, indent=2)
+            typer.echo(f"Heat island report saved to: {report_file}")
+            
+            # Print heat island summary
+            if 'heat_island_summary' in heat_island_analysis:
+                summary = heat_island_analysis['heat_island_summary']
+                typer.echo("\n=== Urban Heat Island Analysis ===")
+                if summary.get('heat_island_detected', False):
+                    intensity = summary.get('intensity_celsius', 0)
+                    significance = summary.get('statistical_significance', 'unknown')
+                    typer.echo(f"Heat island intensity: {intensity:.3f}°C ({significance})")
+                else:
+                    typer.echo("No significant heat island effect detected")
                     
             else:
                 output_path = output_dir / f"{algorithm}_{temp_metric}_anomaly_map.png"
@@ -216,6 +325,10 @@ def analyze(
         typer.echo(f"Algorithm: {algorithm}")
         typer.echo(f"Stations processed: {stats['total_stations']}")
         typer.echo(f"Stations with valid data: {stats['stations_with_data']}")
+        
+        # Print urban context summary if available
+        if urban_context_summary is not None:
+            typer.echo(f"Urban context: {urban_context_summary['total_cities']} cities, {urban_context_summary['urban_core_stations']} urban_core, {urban_context_summary['urban_stations']} urban, {urban_context_summary['suburban_stations']} suburban, {urban_context_summary['rural_stations']} rural stations")
 
         if "anomaly_celsius_mean" in stats:
             typer.echo(f"Mean anomaly: {stats['anomaly_celsius_mean']:.3f}°C")
@@ -230,6 +343,10 @@ def analyze(
             typer.echo(
                 f"Impact range: {stats['adjustment_impact_min']:.3f}°C to {stats['adjustment_impact_max']:.3f}°C"
             )
+        
+        # Urban heat island summary in main stats
+        if urban_context_summary and 'mean_distance_to_city_km' in urban_context_summary:
+            typer.echo(f"Mean distance to nearest city: {urban_context_summary['mean_distance_to_city_km']:.1f} km")
 
     except Exception as e:
         typer.echo(f"Error during analysis: {str(e)}", err=True)
