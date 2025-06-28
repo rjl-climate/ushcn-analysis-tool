@@ -16,6 +16,7 @@ def plot_anomaly_map(
     colormap: str = "RdBu_r",
     vmin: Optional[float] = None,
     vmax: Optional[float] = None,
+    temp_metric: str = "Temperature",
 ) -> plt.Figure:
     """
     Create a map visualization of temperature anomalies.
@@ -93,7 +94,7 @@ def plot_anomaly_map(
     sm = plt.cm.ScalarMappable(cmap=colormap, norm=plt.Normalize(vmin=vmin, vmax=vmax))
     sm.set_array([])
     cbar = plt.colorbar(sm, ax=ax, shrink=0.8, pad=0.02)
-    cbar.set_label("Temperature Anomaly (°C)", rotation=270, labelpad=20, fontsize=12)
+    cbar.set_label(f"{temp_metric} Temperature Anomaly (°C)", rotation=270, labelpad=20, fontsize=12)
 
     # Remove axis ticks for cleaner look
     ax.set_xticks([])
@@ -115,6 +116,7 @@ def plot_comparison_maps(
     title_prefix: str,
     output_dir: Optional[Path] = None,
     figsize: Tuple[int, int] = (18, 6),
+    temp_metric: str = "Temperature",
 ) -> plt.Figure:
     """
     Create side-by-side comparison maps for adjustment impact analysis.

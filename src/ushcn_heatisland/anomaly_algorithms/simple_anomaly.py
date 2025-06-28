@@ -15,10 +15,11 @@ def calculate(
     Calculate simple temperature anomalies using adjusted data.
 
     This algorithm calculates the mean temperature difference between a current period
-    and a baseline period for each station.
+    and a baseline period for each station. The temperature metric (min/max/avg) is
+    determined by the data loaded via the data_loader module.
 
     Args:
-        gdf_adjusted: Adjusted USHCN temperature data
+        gdf_adjusted: Adjusted USHCN temperature data (metric determined at load time)
         baseline_period: Tuple of (start_year, end_year) for baseline
         current_period: Tuple of (start_year, end_year) for current period
         gdf_raw: Optional raw USHCN temperature data (not used in this algorithm)

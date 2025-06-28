@@ -40,9 +40,10 @@ The application will be modular, allowing us to easily implement and compare dif
 /
 ├── CLAUDE.md
 ├── data/
-│   ├── ushcn_adjusted.parquet      # Adjusted USHCN temperature data
-│   ├── ushcn_raw.parquet           # Raw USHCN temperature data
-│   └── us_cities.csv             # Urban center locations
+|   |── parquet-schema.md                            # Data schema for the data .parquet files
+│   ├── ushcn-daily-{YYYY-MM-DD}.parquet             # Daily temperature data Files
+│   ├── ushcn-monthly-{dataset}-{YYYY-MM-DD}.parquet # Monthly temperature data files
+│   └── us_cities.csv                                # Urban center locations
 ├── output/
 │   └── (will be populated with plots)
 ├── src/
@@ -59,12 +60,7 @@ The application will be modular, allowing us to easily implement and compare dif
 
 # 5. Assumed Data Schema
 
-Both `ushcn_adjusted.parquet` and `ushcn_raw.parquet` are expected to share this schema:
-
-- `station_id`: Unique string identifier for the station.
-- `timestamp`: Pandas-readable datetime object for the measurement.
-- `temperature_celsius`: Float for the monthly temperature value (either raw or adjusted).
-- `geometry`: GeoPandas-readable point geometry.
+Read `/data/parquet-schema.md`
 
 # 6. Pluggable Algorithm Design
 

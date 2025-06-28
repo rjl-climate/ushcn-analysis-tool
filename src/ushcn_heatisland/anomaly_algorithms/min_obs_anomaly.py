@@ -16,9 +16,11 @@ def calculate(
 
     This algorithm is similar to simple_anomaly but requires a minimum number
     of observations in both baseline and current periods to include a station.
+    The temperature metric (min/max/avg) is determined by the data loaded via 
+    the data_loader module.
 
     Args:
-        gdf_adjusted: Adjusted USHCN temperature data
+        gdf_adjusted: Adjusted USHCN temperature data (metric determined at load time)
         baseline_period: Tuple of (start_year, end_year) for baseline
         current_period: Tuple of (start_year, end_year) for current period
         gdf_raw: Optional raw USHCN temperature data (not used in this algorithm)

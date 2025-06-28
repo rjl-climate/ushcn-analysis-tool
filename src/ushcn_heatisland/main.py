@@ -29,6 +29,9 @@ def analyze(
         Path("data"), help="Directory containing USHCN data files"
     ),
     output_dir: Optional[Path] = typer.Option(None, help="Output directory for plots"),
+    temp_metric: str = typer.Option(
+        "min", help="Temperature metric to analyze: min, max, or avg"
+    ),
 ) -> None:
     """Run temperature anomaly analysis with specified algorithm."""
 
@@ -38,6 +41,13 @@ def analyze(
         typer.echo(f"Error: Unknown algorithm '{algorithm}'")
         typer.echo(f"Available algorithms: {', '.join(available_algorithms)}")
         raise typer.Exit(1)
+    
+    # Validate temperature metric
+    valid_metrics = ["min", "max", "avg"]
+    if temp_metric not in valid_metrics:
+        typer.echo(f"Error: Unknown temperature metric '{temp_metric}'")
+        typer.echo(f"Valid metrics: {', '.join(valid_metrics)}")
+        raise typer.Exit(1)
 
     # Set default output directory
     if output_dir is None:
@@ -46,6 +56,7 @@ def analyze(
 
     typer.echo(f"Running {algorithm} analysis...")
     typer.echo(f"Data directory: {data_dir}")
+    typer.echo(f"Temperature metric: {temp_metric}")
     baseline_end = baseline_start_year + period_length - 1
     current_end = current_start_year + period_length - 1
     typer.echo(f"Baseline period: {baseline_start_year}-{baseline_end}")
@@ -62,6 +73,7 @@ def analyze(
             adjusted_type="fls52",  # Use fully adjusted data as "adjusted"
             raw_type="raw",
             load_raw=load_raw,
+            temp_metric=temp_metric,
         )
 
         typer.echo(f"Loaded {len(adjusted_data)} adjusted data records")
@@ -89,7 +101,7 @@ def analyze(
 
         # Generate statistics
         stats = create_summary_statistics(results)
-        stats_file = output_dir / f"{algorithm}_statistics.json"
+        stats_file = output_dir / f"{algorithm}_{temp_metric}_statistics.json"
         with open(stats_file, "w") as f:
             json.dump(stats, f, indent=2)
         typer.echo(f"Statistics saved to: {stats_file}")
@@ -99,14 +111,14 @@ def analyze(
 
         if algorithm == "adjustment_impact":
             # Create comparison maps for adjustment impact
-            title = f"Temperature Anomaly Analysis ({baseline_start_year}-{baseline_end} vs {current_start_year}-{current_end})"
-            plot_comparison_maps(results, title, output_dir)
+            title = f"{temp_metric.title()} Temperature Anomaly Analysis ({baseline_start_year}-{baseline_end} vs {current_start_year}-{current_end})"
+            plot_comparison_maps(results, title, output_dir, temp_metric=temp_metric.title())
 
         else:
             # Create single anomaly map
-            title = f"{algorithm.title()} Algorithm: Temperature Anomalies ({baseline_start_year}-{baseline_end} vs {current_start_year}-{current_end})"
-            output_path = output_dir / f"{algorithm}_anomaly_map.png"
-            plot_anomaly_map(results, title, output_path)
+            title = f"{algorithm.title()} Algorithm: {temp_metric.title()} Temperature Anomalies ({baseline_start_year}-{baseline_end} vs {current_start_year}-{current_end})"
+            output_path = output_dir / f"{algorithm}_{temp_metric}_anomaly_map.png"
+            plot_anomaly_map(results, title, output_path, temp_metric=temp_metric.title())
 
         typer.echo("Visualization complete!")
 

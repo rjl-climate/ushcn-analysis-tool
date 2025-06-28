@@ -29,7 +29,9 @@ def load_station_locations(daily_data_path: Path) -> gpd.GeoDataFrame:
 
 
 def load_ushcn_monthly_data(
-    file_path: Path, data_type: Literal["raw", "tob", "fls52"] = "fls52"
+    file_path: Path, 
+    data_type: Literal["raw", "tob", "fls52"] = "fls52",
+    temp_metric: Literal["min", "max", "avg"] = "min"
 ) -> gpd.GeoDataFrame:
     """
     Load USHCN monthly data from parquet file and convert to GeoDataFrame.
@@ -37,6 +39,7 @@ def load_ushcn_monthly_data(
     Args:
         file_path: Path to the parquet file
         data_type: Type of data to extract ("raw", "tob", or "fls52")
+        temp_metric: Temperature metric to use ("min", "max", or "avg")
 
     Returns:
         GeoDataFrame with USHCN temperature data
@@ -54,8 +57,8 @@ def load_ushcn_monthly_data(
     # Convert date column to datetime
     df["date"] = pd.to_datetime(df["date"])
 
-    # Select temperature column based on data_type
-    temp_col = f"avg_{data_type}"
+    # Select temperature column based on metric and data_type
+    temp_col = f"{temp_metric}_{data_type}"
     if temp_col not in df.columns:
         raise ValueError(f"Temperature column '{temp_col}' not found in data")
 
@@ -87,6 +90,7 @@ def load_ushcn_data(
     adjusted_type: Literal["raw", "tob", "fls52"] = "fls52",
     raw_type: Literal["raw", "tob", "fls52"] = "raw",
     load_raw: bool = False,
+    temp_metric: Literal["min", "max", "avg"] = "min",
 ) -> tuple[gpd.GeoDataFrame, Optional[gpd.GeoDataFrame]]:
     """
     Load USHCN data for analysis.
@@ -96,6 +100,7 @@ def load_ushcn_data(
         adjusted_type: Type of adjusted data to load
         raw_type: Type of raw data to load (if load_raw=True)
         load_raw: Whether to also load raw data
+        temp_metric: Temperature metric to use ("min", "max", or "avg")
 
     Returns:
         Tuple of (adjusted_data, raw_data) where raw_data is None if load_raw=False
@@ -116,7 +121,7 @@ def load_ushcn_data(
     if adjusted_type not in monthly_files:
         raise FileNotFoundError(f"Monthly data file for {adjusted_type} not found")
 
-    adjusted_data = load_ushcn_monthly_data(monthly_files[adjusted_type], adjusted_type)
+    adjusted_data = load_ushcn_monthly_data(monthly_files[adjusted_type], adjusted_type, temp_metric)
 
     # Load raw data if requested
     raw_data = None
@@ -124,6 +129,6 @@ def load_ushcn_data(
         if raw_type not in monthly_files:
             raise FileNotFoundError(f"Monthly data file for {raw_type} not found")
 
-        raw_data = load_ushcn_monthly_data(monthly_files[raw_type], raw_type)
+        raw_data = load_ushcn_monthly_data(monthly_files[raw_type], raw_type, temp_metric)
 
     return adjusted_data, raw_data

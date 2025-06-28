@@ -16,12 +16,14 @@ def calculate(
 
     This algorithm computes anomalies using both raw and adjusted data,
     then calculates the difference to isolate the effect of adjustments.
+    The temperature metric (min/max/avg) is determined by the data loaded via 
+    the data_loader module and applies to both raw and adjusted datasets.
 
     Args:
-        gdf_adjusted: Adjusted USHCN temperature data
+        gdf_adjusted: Adjusted USHCN temperature data (metric determined at load time)
         baseline_period: Tuple of (start_year, end_year) for baseline
         current_period: Tuple of (start_year, end_year) for current period
-        gdf_raw: Raw USHCN temperature data (REQUIRED for this algorithm)
+        gdf_raw: Raw USHCN temperature data (REQUIRED, same metric as adjusted)
         config: Optional configuration parameters
 
     Returns:

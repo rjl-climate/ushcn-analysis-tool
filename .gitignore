@@ -149,5 +149,5 @@ output/
 *.svg
 
 # Data files - exclude all content but keep folder
-data/*
+data/*.parquet
 !data/.gitkeep
