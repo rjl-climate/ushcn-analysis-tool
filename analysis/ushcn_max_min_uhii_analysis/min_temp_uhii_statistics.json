@@ -1,0 +1,41 @@
+{
+  "analysis_metadata": {
+    "analysis_type": "Minimum Temperature UHII (Year-Round)",
+    "temporal_focus": "All 12 months included",
+    "timestamp": "2025-06-29T08:27:05.137698",
+    "total_stations": 1218,
+    "urban_stations": 146,
+    "rural_stations": 667,
+    "data_source": "USHCN FLS52 (fully adjusted)",
+    "time_period": "1865-2025",
+    "years_analyzed": 161
+  },
+  "uhii_results": {
+    "overall_uhii_celsius": 2.8849639892578125,
+    "recent_uhii_celsius_2000_2023": 3.068099021911621,
+    "urban_mean_min_celsius": 6.182315349578857,
+    "rural_mean_min_celsius": 3.297351598739624,
+    "temperature_difference_celsius": 2.8849639892578125
+  },
+  "scientific_significance": {
+    "analysis_rationale": "Minimum temperatures show strongest urban heat island effects due to nighttime heat retention by urban thermal mass",
+    "physical_mechanisms": [
+      "Thermal mass heat release (stored daytime energy released at night)",
+      "Reduced sky view factor (buildings block radiative cooling to space)",
+      "Anthropogenic heat sources (heating, vehicles, industrial activity)",
+      "Surface material properties (concrete/asphalt vs. soil/vegetation)",
+      "Reduced wind flow for heat dissipation"
+    ],
+    "temporal_validity": [
+      "Year-round analysis valid since thermal mass effects operate continuously",
+      "Nighttime cooling systematically reduced in urban environments",
+      "Effects persist across all seasons due to fundamental thermal properties"
+    ],
+    "policy_relevance": [
+      "Nighttime heat stress and health impacts",
+      "Heating energy efficiency in winter",
+      "Urban thermal comfort year-round",
+      "Building and infrastructure thermal design"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "analysis_metadata": {
+    "analysis_type": "Summer Maximum Temperature UHII",
+    "temporal_focus": "June-August only",
+    "timestamp": "2025-06-29T08:26:57.637307",
+    "total_stations": 1218,
+    "urban_stations": 146,
+    "rural_stations": 667,
+    "data_source": "USHCN FLS52 (fully adjusted)",
+    "time_period": "1865-2025",
+    "years_analyzed": 161
+  },
+  "uhii_results": {
+    "overall_uhii_celsius": 0.6402980089187622,
+    "recent_uhii_celsius_2000_2023": 0.5221606492996216,
+    "urban_mean_summer_max_celsius": 28.825122833251953,
+    "rural_mean_summer_max_celsius": 28.184825897216797,
+    "temperature_difference_celsius": 0.6402980089187622
+  },
+  "scientific_significance": {
+    "analysis_rationale": "Summer maximum temperatures show strongest urban heating effects during peak solar radiation periods",
+    "physical_mechanisms": [
+      "Reduced albedo in urban areas (dark surfaces absorb more solar radiation)",
+      "Decreased evapotranspiration (less vegetation for cooling)",
+      "Increased thermal mass (buildings and pavement store heat)",
+      "Reduced wind flow (urban canyon effects)"
+    ],
+    "policy_relevance": [
+      "Heat wave intensity and frequency",
+      "Cooling energy demand",
+      "Urban heat mitigation planning",
+      "Public health impact assessment"
+    ]
+  }
+}

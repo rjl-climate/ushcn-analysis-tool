@@ -142,12 +142,48 @@ cython_debug/
 # VS Code
 .vscode/
 
+# Ruff
+.ruff_cache/
+
 # Project specific
 output/
-*.png
-*.jpg
-*.svg
 
 # Data files - exclude all content but keep folder
 data/*.parquet
 !data/.gitkeep
+
+# LaTeX compilation artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.glsdefs
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*.figlist
+*.makefile
+*.fignums
+*.figsize
+*.figname
+*.figformat
+*.figdir

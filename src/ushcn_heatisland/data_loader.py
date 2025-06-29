@@ -28,6 +28,40 @@ def load_station_locations(daily_data_path: Path) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(result, crs=gdf_stations.crs)
 
 
+def load_all_ushcn_stations(data_dir: Path) -> gpd.GeoDataFrame:
+    """
+    Load all USHCN station locations from monthly data files.
+    
+    The monthly data files contain all 1,218 USHCN stations, whereas the daily
+    data files only contain a subset (typically around 318 stations).
+
+    Args:
+        data_dir: Directory containing USHCN data files
+
+    Returns:
+        GeoDataFrame with all USHCN station locations
+    """
+    # Find any monthly data file (they all have the same station list)
+    monthly_files = list(data_dir.glob("ushcn-monthly-*.parquet"))
+    
+    if not monthly_files:
+        raise FileNotFoundError("No monthly data files found in data directory")
+    
+    # Use the first monthly file (any will work since they have the same stations)
+    df_monthly = pd.read_parquet(monthly_files[0])
+    
+    # Get unique stations with their locations
+    stations = df_monthly[["id", "lat", "lon"]].drop_duplicates()
+    
+    # Create GeoDataFrame
+    geometry = [Point(xy) for xy in zip(stations["lon"], stations["lat"])]
+    gdf_stations = gpd.GeoDataFrame(stations, geometry=geometry, crs="EPSG:4326")
+    
+    # Set station ID as index
+    result = gdf_stations.set_index("id")
+    return gpd.GeoDataFrame(result, crs=gdf_stations.crs)
+
+
 def load_ushcn_monthly_data(
     file_path: Path, 
     data_type: Literal["raw", "tob", "fls52"] = "fls52",

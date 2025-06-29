@@ -1,0 +1,34 @@
+Minimum_Temperature_UHII Validation Log
+Start Time: 2025-06-29T08:27:03.712280
+============================================================
+
+[2025-06-29 08:27:03] [ANALYSIS] [START] Beginning minimum temperature UHII analysis
+[2025-06-29 08:27:03] [DATA_LOADING] [START] Loading USHCN station locations
+[2025-06-29 08:27:04] [STATION_COUNT] [PASS] Total stations: 1218
+[2025-06-29 08:27:04] [GEOGRAPHIC] [PASS] All stations within CONUS bounds with valid coordinates
+[2025-06-29 08:27:04] [CLASSIFICATION] [START] Applying urban context classification
+[2025-06-29 08:27:04] [CITIES_DATA] [PASS] Loaded 743 cities ≥50k population
+[2025-06-29 08:27:04] [CLASSIFICATION] [PASS] urban_core: 26 stations
+[2025-06-29 08:27:04] [CLASSIFICATION] [PASS] urban_fringe: 120 stations
+[2025-06-29 08:27:04] [CLASSIFICATION] [PASS] suburban: 405 stations
+[2025-06-29 08:27:04] [CLASSIFICATION] [PASS] rural: 667 stations
+[2025-06-29 08:27:04] [TEMP_DATA] [START] Loading year-round minimum temperature data
+[2025-06-29 08:27:04] [TEMP_DATA] [PASS] Loaded 1947946 year-round min temperature records from 1218 stations
+[2025-06-29 08:27:04] [TEMPERATURE] [PASS] min_fls52: all 1947946 values within bounds
+[2025-06-29 08:27:04] [ANALYSIS_SUBSET] [PASS] Urban analysis set: 146 stations
+[2025-06-29 08:27:04] [ANALYSIS_SUBSET] [PASS] Rural analysis set: 667 stations
+[2025-06-29 08:27:04] [ANNUAL_MEANS] [PASS] min_yearround: 161 urban years, 161 rural years
+[2025-06-29 08:27:04] [PLOTTING] [START] Creating minimum temperature UHII visualization
+[2025-06-29 08:27:04] [UHII_MAGNITUDE] [PASS] min UHII: 2.885°C (within expected range)
+[2025-06-29 08:27:05] [PLOTTING] [PASS] Plot saved to /Users/richardlyon/dev/mine/python/ushcn-heatisland/output/ushcn_max_min_uhii_analysis/min_temp_uhii_plot.png
+[2025-06-29 08:27:05] [EXPORT] [PASS] Station classification saved to /Users/richardlyon/dev/mine/python/ushcn-heatisland/output/ushcn_max_min_uhii_analysis/min_temp_station_classification.csv
+[2025-06-29 08:27:05] [EXPORT] [PASS] UHII statistics saved to /Users/richardlyon/dev/mine/python/ushcn-heatisland/output/ushcn_max_min_uhii_analysis/min_temp_uhii_statistics.json
+[2025-06-29 08:27:05] [COMPLETION] [PASS] Minimum temperature analysis completed successfully
+
+Validation Summary:
+- Checks Passed: 17
+- Warnings Issued: 0
+- Errors Encountered: 0
+- Analysis Status: COMPLETED_SUCCESSFULLY
+- Duration: 1.4 seconds
+- End Time: 2025-06-29T08:27:05.138423

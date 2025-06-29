@@ -1,0 +1,127 @@
+{
+  "investigation_summary": {
+    "analysis_date": "2025-06-28",
+    "datasets_analyzed": 3,
+    "time_period": "1895-1924 vs 1991-2020 (126 years)",
+    "temperature_metric": "minimum",
+    "urban_definition": "cities 250k+ population"
+  },
+  "key_findings": {
+    "raw_uhii": "0.662\u00b0C",
+    "tobs_uhii": "0.522\u00b0C",
+    "fls52_uhii": "0.725\u00b0C",
+    "net_uhii_change": "+0.062\u00b0C",
+    "net_percent_change": "+9.4%"
+  },
+  "adjustment_breakdown": {
+    "tobs_impact": {
+      "uhii_change": -0.13998335599899292,
+      "percent_change": -21.140384704015116,
+      "direction": "reduces"
+    },
+    "additional_adjustments": {
+      "uhii_change": 0.20247995853424072,
+      "percent_change": 38.776077441432946,
+      "direction": "increases"
+    },
+    "net_impact": {
+      "uhii_change": 0.0624966025352478,
+      "percent_change": 9.438280793172083,
+      "direction": "increases"
+    }
+  },
+  "statistical_validation": {
+    "raw_significant": true,
+    "tobs_significant": true,
+    "fls52_significant": true
+  },
+  "data_quality_impact": {
+    "raw_stations": 1194,
+    "tobs_stations": 1194,
+    "fls52_stations": 1218,
+    "net_station_gain": 24
+  },
+  "comparative_statistics": [
+    {
+      "dataset": "Raw",
+      "total_stations": 1194,
+      "urban_core_stations": 25,
+      "suburban_stations": 181,
+      "rural_stations": 924,
+      "uhii_celsius": 0.6621608734130859,
+      "urban_mean": 1.3500550985336304,
+      "rural_mean": 0.6878942251205444,
+      "urban_count": 25,
+      "rural_count": 924,
+      "t_test_p_value": 0.004185368801595841,
+      "statistical_significance": "significant",
+      "cohens_d": 0.5818783372173918,
+      "rural_std": 1.1354398727416992,
+      "suburban_mean": 0.37136372923851013,
+      "suburban_count": 181,
+      "suburban_std": 1.3595167398452759,
+      "urban_core_mean": 1.3500550985336304,
+      "urban_core_count": 25,
+      "urban_core_std": 1.1849390268325806,
+      "urban_fringe_mean": 0.9300354719161987,
+      "urban_fringe_count": 64,
+      "urban_fringe_std": 1.121989130973816,
+      "uhii_change_from_raw": 0.0,
+      "uhii_percent_change": 0.0
+    },
+    {
+      "dataset": "TOBs Adjusted",
+      "total_stations": 1194,
+      "urban_core_stations": 25,
+      "suburban_stations": 181,
+      "rural_stations": 924,
+      "uhii_celsius": 0.522177517414093,
+      "urban_mean": 1.4897271394729614,
+      "rural_mean": 0.9675496220588684,
+      "urban_count": 25,
+      "rural_count": 924,
+      "t_test_p_value": 0.02235179679608209,
+      "statistical_significance": "significant",
+      "cohens_d": 0.46376775646215007,
+      "rural_std": 1.1215076446533203,
+      "suburban_mean": 0.643852710723877,
+      "suburban_count": 181,
+      "suburban_std": 1.3204501867294312,
+      "urban_core_mean": 1.4897271394729614,
+      "urban_core_count": 25,
+      "urban_core_std": 1.2389601469039917,
+      "urban_fringe_mean": 1.142387866973877,
+      "urban_fringe_count": 64,
+      "urban_fringe_std": 1.0816526412963867,
+      "uhii_change_from_raw": -0.13998335599899292,
+      "uhii_percent_change": -21.140384704015116
+    },
+    {
+      "dataset": "Fully Adjusted",
+      "total_stations": 1218,
+      "urban_core_stations": 26,
+      "suburban_stations": 186,
+      "rural_stations": 941,
+      "uhii_celsius": 0.7246574759483337,
+      "urban_mean": 1.703437328338623,
+      "rural_mean": 0.9787798523902893,
+      "urban_count": 26,
+      "rural_count": 941,
+      "t_test_p_value": 1.249118731027102e-06,
+      "statistical_significance": "significant",
+      "cohens_d": 0.9699044663973115,
+      "rural_std": 0.7494938969612122,
+      "suburban_mean": 1.002159595489502,
+      "suburban_count": 186,
+      "suburban_std": 0.6897247433662415,
+      "urban_core_mean": 1.703437328338623,
+      "urban_core_count": 26,
+      "urban_core_std": 0.6228532195091248,
+      "urban_fringe_mean": 1.268300175666809,
+      "urban_fringe_count": 65,
+      "urban_fringe_std": 0.7319592237472534,
+      "uhii_change_from_raw": 0.0624966025352478,
+      "uhii_percent_change": 9.438280793172083
+    }
+  ]
+}

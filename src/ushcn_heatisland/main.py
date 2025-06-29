@@ -101,6 +101,9 @@ def analyze(
     gradient_analysis: bool = typer.Option(
         False, help="Analyze temperature gradients from cities"
     ),
+    data_type: str = typer.Option(
+        "fls52", help="Data type to analyze: raw, tob, or fls52"
+    ),
 ) -> None:
     """Run temperature anomaly analysis with specified algorithm."""
 
@@ -138,6 +141,13 @@ def analyze(
         typer.echo(f"Error: Unknown mask type '{mask_type}'")
         typer.echo(f"Valid types: {', '.join(valid_mask_types)}")
         raise typer.Exit(1)
+    
+    # Validate data type
+    valid_data_types = ["raw", "tob", "fls52"]
+    if data_type not in valid_data_types:
+        typer.echo(f"Error: Unknown data type '{data_type}'")
+        typer.echo(f"Valid types: {', '.join(valid_data_types)}")
+        raise typer.Exit(1)
 
     # Set default output directory
     if output_dir is None:
@@ -161,7 +171,7 @@ def analyze(
 
         adjusted_data, raw_data = load_ushcn_data(
             data_dir,
-            adjusted_type="fls52",  # Use fully adjusted data as "adjusted"
+            adjusted_type=data_type,  # Use specified data type
             raw_type="raw",
             load_raw=load_raw,
             temp_metric=temp_metric,

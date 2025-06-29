@@ -817,8 +817,8 @@ def plot_heat_island_map(
                 cities_web.plot(
                     ax=ax,
                     markersize=marker_sizes,
-                    color='red',
-                    edgecolors='darkred',
+                    color='green',
+                    edgecolors='darkgreen',
                     linewidth=1.0,
                     alpha=0.8,
                     marker='o'
@@ -836,7 +836,7 @@ def plot_heat_island_map(
                                 xytext=(5, 5),
                                 textcoords='offset points',
                                 fontsize=8,
-                                color='darkred',
+                                color='darkgreen',
                                 weight='bold',
                                 bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7)
                             )
@@ -927,6 +927,247 @@ def plot_heat_island_map(
         print(f"Heat island map saved to: {output_path}")
     
     return fig, coverage_report
+
+
+def plot_clean_ushcn_network(
+    stations_gdf: gpd.GeoDataFrame,
+    cities_gdf: Optional[gpd.GeoDataFrame] = None,
+    title: str = "USHCN Station Network and Urban Context",
+    output_path: Optional[Path] = None,
+    figsize: Tuple[int, int] = (14, 9),
+    city_population_threshold: int = 100000,
+    attribution: str = "Richard Lyon richlyon@fastmail.com"
+) -> plt.Figure:
+    """
+    Create a clean academic visualization of the USHCN station network.
+    
+    Following Tufte quantitative display principles:
+    - Maximize data-ink ratio
+    - Remove chartjunk
+    - Clear, informative visualization
+    - Appropriate use of color and symbols
+    
+    Args:
+        stations_gdf: GeoDataFrame with USHCN stations and urban classification
+        cities_gdf: Optional GeoDataFrame with major US cities
+        title: Plot title
+        output_path: Optional path to save the plot
+        figsize: Figure size as (width, height)
+        city_population_threshold: Minimum city population to display
+        attribution: Attribution text for the plot
+        
+    Returns:
+        Matplotlib Figure object
+    """
+    # Create figure with clean aesthetics
+    fig, ax = plt.subplots(1, 1, figsize=figsize, facecolor='white')
+    ax.set_facecolor('white')
+    
+    # Remove stations with missing data
+    clean_stations = stations_gdf.dropna(subset=['geometry']).copy()
+    
+    # Convert to Web Mercator for display
+    stations_web = clean_stations.to_crs("EPSG:3857")
+    
+    # Define station colors and labels
+    station_colors = {
+        'urban_core': {'color': 'red', 'label': 'Urban Core', 'size': 20},
+        'urban': {'color': 'red', 'label': 'Urban Core', 'size': 20},  # Combine with urban_core
+        'urban_fringe': {'color': 'red', 'label': 'Urban Core', 'size': 20},  # Combine with urban_core
+        'suburban': {'color': 'gold', 'label': 'Suburban', 'size': 15},
+        'rural': {'color': 'blue', 'label': 'Rural', 'size': 12}
+    }
+    
+    # Plot stations by classification
+    legend_handles = []
+    station_counts = {}
+    total_plotted = 0
+    
+    if 'urban_classification' in clean_stations.columns:
+        for classification, style in station_colors.items():
+            class_stations = stations_web[stations_web['urban_classification'] == classification]
+            if len(class_stations) > 0:
+                # Combine urban, urban_core, and urban_fringe into one category
+                if classification in ['urban', 'urban_core', 'urban_fringe']:
+                    if 'Urban Core' not in station_counts:
+                        station_counts['Urban Core'] = 0
+                    station_counts['Urban Core'] += len(class_stations)
+                    label_name = 'Urban Core'
+                else:
+                    station_counts[style['label']] = len(class_stations)
+                    label_name = style['label']
+                
+                scatter = class_stations.plot(
+                    ax=ax,
+                    markersize=style['size'],
+                    color=style['color'],
+                    edgecolors='white',
+                    linewidth=0.5,
+                    alpha=0.8,
+                    zorder=3
+                )
+                total_plotted += len(class_stations)
+    else:
+        # Plot all stations uniformly if no classification
+        stations_web.plot(
+            ax=ax,
+            markersize=12,
+            color='darkblue',
+            edgecolors='white',
+            linewidth=0.5,
+            alpha=0.8,
+            zorder=3
+        )
+        station_counts['USHCN Stations'] = len(stations_web)
+        total_plotted = len(stations_web)
+    
+    # Plot cities if provided
+    if cities_gdf is not None and len(cities_gdf) > 0:
+        try:
+            # Filter cities by population threshold
+            large_cities = cities_gdf[cities_gdf['population'] >= city_population_threshold].copy()
+            
+            if len(large_cities) > 0:
+                cities_web = large_cities.to_crs("EPSG:3857")
+                
+                # Scale marker size by population (subtle scaling)
+                max_pop = large_cities['population'].max()
+                min_pop = large_cities['population'].min()
+                
+                if max_pop > min_pop:
+                    normalized_pop = (large_cities['population'] - min_pop) / (max_pop - min_pop)
+                    marker_sizes = 30 + normalized_pop * 50  # Size range 30-80
+                else:
+                    marker_sizes = [40] * len(large_cities)
+                
+                # Plot cities
+                cities_web.plot(
+                    ax=ax,
+                    markersize=marker_sizes,
+                    color='green',
+                    edgecolors='darkgreen',
+                    linewidth=0.8,
+                    alpha=0.7,
+                    marker='o',
+                    zorder=2
+                )
+                
+                station_counts[f'Major Cities (≥{city_population_threshold//1000}k)'] = len(large_cities)
+        except Exception as e:
+            print(f"Warning: Could not display cities: {e}")
+    
+    # Add subtle basemap (state boundaries)
+    try:
+        ctx.add_basemap(
+            ax,
+            crs="EPSG:3857",
+            source=ctx.providers.CartoDB.PositronNoLabels,
+            alpha=0.5,
+            zorder=1
+        )
+    except Exception:
+        # Fallback: simple background
+        ax.set_facecolor("#f8f8f8")
+    
+    # Set geographic extent to continental US
+    # Convert bounds to Web Mercator
+    from pyproj import Transformer
+    transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
+    
+    # Use actual data bounds with some padding
+    station_bounds = stations_web.total_bounds  # [minx, miny, maxx, maxy]
+    padding = 200000  # 200km padding in meters
+    
+    ax.set_xlim(station_bounds[0] - padding, station_bounds[2] + padding)
+    ax.set_ylim(station_bounds[1] - padding, station_bounds[3] + padding)
+    
+    # Clean title
+    ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
+    
+    # Create legend with counts
+    legend_labels = []
+    legend_colors = []
+    legend_sizes = []
+    
+    if 'urban_classification' in clean_stations.columns:
+        # Add station classifications
+        for classification in ['Urban Core', 'Suburban', 'Rural']:
+            if classification in station_counts:
+                count = station_counts[classification]
+                legend_labels.append(f'{classification} ({count})')
+                if classification == 'Urban Core':
+                    legend_colors.append('red')
+                    legend_sizes.append(20)
+                elif classification == 'Suburban':
+                    legend_colors.append('gold')
+                    legend_sizes.append(15)
+                else:  # Rural
+                    legend_colors.append('blue')
+                    legend_sizes.append(12)
+    
+    # Add cities to legend
+    if cities_gdf is not None and f'Major Cities (≥{city_population_threshold//1000}k)' in station_counts:
+        count = station_counts[f'Major Cities (≥{city_population_threshold//1000}k)']
+        legend_labels.append(f'Major Cities (≥{city_population_threshold//1000}k) ({count})')
+        legend_colors.append('green')
+        legend_sizes.append(40)
+    
+    # Create custom legend
+    legend_elements = []
+    for label, color, size in zip(legend_labels, legend_colors, legend_sizes):
+        legend_elements.append(
+            plt.scatter([], [], s=size, c=color, edgecolors='white', 
+                       linewidth=0.5, alpha=0.8, label=label)
+        )
+    
+    if legend_elements:
+        legend = ax.legend(
+            handles=legend_elements,
+            loc='upper right',
+            bbox_to_anchor=(0.98, 0.98),
+            fontsize=11,
+            frameon=True,
+            fancybox=False,
+            shadow=False,
+            framealpha=0.9,
+            edgecolor='gray',
+            facecolor='white'
+        )
+        legend.get_frame().set_linewidth(0.5)
+    
+    # Remove axis ticks and labels for clean look
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_xlabel('')
+    ax.set_ylabel('')
+    
+    # Remove axis spines
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    
+    # Add attribution in light gray at bottom right
+    ax.text(
+        0.99, 0.01, attribution,
+        transform=ax.transAxes,
+        fontsize=9,
+        color='lightgray',
+        ha='right',
+        va='bottom',
+        style='italic'
+    )
+    
+    # Tight layout
+    plt.tight_layout()
+    
+    # Print debugging info
+    print(f"Debug: Total stations plotted: {total_plotted} out of {len(clean_stations)} loaded")
+    
+    # Save if output path provided
+    if output_path:
+        fig.savefig(output_path, dpi=300, bbox_inches="tight", facecolor='white')
+        print(f"Clean USHCN network plot saved to: {output_path}")
+    
+    return fig
 
 
 def plot_urban_rural_comparison(

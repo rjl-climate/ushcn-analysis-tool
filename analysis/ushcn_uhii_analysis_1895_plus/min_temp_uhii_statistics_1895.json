@@ -1,0 +1,52 @@
+{
+  "enhanced_analysis_metadata": {
+    "analysis_type": "Enhanced Minimum Temperature UHII (1895+ Year-Round)",
+    "network_quality_approach": "Adequate coverage throughout analysis period",
+    "temporal_enhancement": "1895+ start date eliminates sparse coverage artifacts",
+    "seasonal_scope": "Year-round analysis (all 12 months included)",
+    "timestamp": "2025-06-29T10:00:39.582821",
+    "total_stations": 1218,
+    "urban_stations": 146,
+    "rural_stations": 667,
+    "data_source": "USHCN FLS52 (fully adjusted)",
+    "enhanced_time_period": "1895-2025",
+    "enhanced_years_analyzed": 131
+  },
+  "enhanced_uhii_results": {
+    "enhanced_overall_uhii_celsius": 2.9750843048095703,
+    "enhanced_recent_uhii_celsius_2000_2025": 3.068099021911621,
+    "enhanced_urban_mean_min_celsius": 6.75159215927124,
+    "enhanced_rural_mean_min_celsius": 3.776507616043091,
+    "enhanced_temperature_difference_celsius": 2.9750843048095703
+  },
+  "network_quality_enhancements": {
+    "temporal_filtering": "Pre-1895 sparse coverage period eliminated",
+    "coverage_adequacy": "Consistent \u22651,000 stations throughout analysis",
+    "artifact_elimination": "Network expansion effects removed",
+    "reliability_improvement": "Enhanced credibility and defensibility",
+    "seasonal_validity": "Year-round analysis valid due to consistent thermal mass effects"
+  },
+  "enhanced_scientific_significance": {
+    "analysis_rationale": "Minimum temperatures show strongest urban heat island effects due to nighttime heat retention with adequate network coverage",
+    "network_quality_integration": "Methodology informed by comprehensive coverage assessment",
+    "reliability_enhancement": "Eliminates problematic early period with inadequate spatial sampling",
+    "physical_mechanisms": [
+      "Thermal mass heat release (stored daytime energy released at night)",
+      "Reduced sky view factor (buildings block radiative cooling to space)",
+      "Anthropogenic heat sources (heating, vehicles, industrial activity)",
+      "Surface material properties (concrete/asphalt vs. soil/vegetation)",
+      "Reduced wind flow for heat dissipation"
+    ],
+    "temporal_validity": [
+      "Year-round analysis valid since thermal mass effects operate continuously",
+      "Nighttime cooling systematically reduced in urban environments",
+      "Effects persist across all seasons due to fundamental thermal properties"
+    ],
+    "policy_relevance": [
+      "Nighttime heat stress and health impacts with enhanced reliability",
+      "Heating energy efficiency in winter with improved estimates",
+      "Urban thermal comfort year-round with credible baselines",
+      "Building and infrastructure thermal design with robust data"
+    ]
+  }
+}

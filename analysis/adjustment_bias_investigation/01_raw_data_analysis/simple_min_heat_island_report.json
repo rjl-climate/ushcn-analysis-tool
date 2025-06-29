@@ -1,0 +1,247 @@
+{
+  "analysis_metadata": {
+    "total_stations": 1194,
+    "analysis_type": "urban_heat_island_investigation",
+    "urban_context_summary": {
+      "total_stations": 1194,
+      "total_cities": 77,
+      "total_urban_areas": 293,
+      "urban_core_stations": 25,
+      "urban_fringe_stations": 64,
+      "urban_stations": 0,
+      "suburban_stations": 181,
+      "rural_stations": 924,
+      "mean_distance_to_city_km": 261.9551265085203,
+      "median_distance_to_city_km": 196.7703266118219,
+      "min_distance_to_city_km": 0.17822196484361472,
+      "max_distance_to_city_km": 1125.8102575988057,
+      "city_population_range": {
+        "min": 255483,
+        "max": 8405837,
+        "mean": 735340
+      },
+      "classification_distribution": {
+        "rural": 77.38693467336684,
+        "suburban": 15.159128978224457,
+        "urban_fringe": 5.360134003350084,
+        "urban_core": 2.0938023450586267
+      }
+    }
+  },
+  "urban_rural_analysis": {
+    "statistics_by_classification": {
+      "rural": {
+        "count": 924,
+        "mean": 0.6878942251205444,
+        "median": 0.6358221173286438,
+        "std": 1.1354398727416992,
+        "min": -3.153765916824341,
+        "max": 7.490593433380127,
+        "q25": -0.05423736572265625,
+        "q75": 1.357144832611084
+      },
+      "suburban": {
+        "count": 181,
+        "mean": 0.37136372923851013,
+        "median": 0.5563143491744995,
+        "std": 1.3595167398452759,
+        "min": -11.870617866516113,
+        "max": 3.332012176513672,
+        "q25": -0.07019972801208496,
+        "q75": 1.0586795806884766
+      },
+      "urban_core": {
+        "count": 25,
+        "mean": 1.3500550985336304,
+        "median": 1.2304449081420898,
+        "std": 1.1849390268325806,
+        "min": -0.7803878784179688,
+        "max": 4.607673645019531,
+        "q25": 0.6119604110717773,
+        "q75": 1.9913482666015625
+      },
+      "urban_fringe": {
+        "count": 64,
+        "mean": 0.9300354719161987,
+        "median": 0.9360709190368652,
+        "std": 1.121989130973816,
+        "min": -1.6168575286865234,
+        "max": 4.242474555969238,
+        "q25": 0.289634108543396,
+        "q75": 1.696021556854248
+      }
+    },
+    "urban_vs_rural_comparison": {
+      "urban_heat_island_intensity": 0.6621608734130859,
+      "uhii_confidence_interval_lower": 0.1824605589172359,
+      "uhii_confidence_interval_upper": 1.141861187908936,
+      "urban_mean": 1.3500550985336304,
+      "rural_mean": 0.6878942251205444,
+      "urban_std": 1.2093734741210938,
+      "rural_std": 1.1360548734664917,
+      "urban_count": 25,
+      "rural_count": 924,
+      "t_test_statistic": 2.8708142394802496,
+      "t_test_p_value": 0.004185368801595841,
+      "mannwhitney_u_statistic": 15128.0,
+      "mannwhitney_p_value": 0.00815780609339785,
+      "cohens_d_effect_size": 0.5818783372173918,
+      "statistical_significance": "significant",
+      "effect_size_interpretation": "medium"
+    },
+    "total_stations_analyzed": 1194,
+    "anomaly_column_analyzed": "anomaly_celsius"
+  },
+  "distance_gradient_analysis": {
+    "binned_analysis": [
+      {
+        "distance_bin_center": 10.0,
+        "distance_bin_min": 0.0,
+        "distance_bin_max": 20.0,
+        "count": 22,
+        "mean": 1.3310790061950684,
+        "median": 1.1984729766845703,
+        "std": 1.2495397329330444,
+        "std_error": 0.2664027661761232
+      },
+      {
+        "distance_bin_center": 30.0,
+        "distance_bin_min": 20.0,
+        "distance_bin_max": 40.0,
+        "count": 31,
+        "mean": 1.346232295036316,
+        "median": 1.418424129486084,
+        "std": 0.9491567611694336,
+        "std_error": 0.17047358676059157
+      },
+      {
+        "distance_bin_center": 50.0,
+        "distance_bin_min": 40.0,
+        "distance_bin_max": 60.0,
+        "count": 63,
+        "mean": 0.5537391304969788,
+        "median": 0.5677399635314941,
+        "std": 1.0989965200424194,
+        "std_error": 0.13846054684560255
+      },
+      {
+        "distance_bin_center": 70.0,
+        "distance_bin_min": 60.0,
+        "distance_bin_max": 80.0,
+        "count": 77,
+        "mean": 0.3935239911079407,
+        "median": 0.5327267646789551,
+        "std": 1.052947998046875,
+        "std_error": 0.1199945608394436
+      },
+      {
+        "distance_bin_center": 90.0,
+        "distance_bin_min": 80.0,
+        "distance_bin_max": 100.0,
+        "count": 77,
+        "mean": 0.3154108226299286,
+        "median": 0.5815534591674805,
+        "std": 1.7132282257080078,
+        "std_error": 0.19524047620860727
+      },
+      {
+        "distance_bin_center": 110.0,
+        "distance_bin_min": 100.0,
+        "distance_bin_max": 120.0,
+        "count": 89,
+        "mean": 0.3903820216655731,
+        "median": 0.35151147842407227,
+        "std": 1.0112816095352173,
+        "std_error": 0.107195636219675
+      },
+      {
+        "distance_bin_center": 130.0,
+        "distance_bin_min": 120.0,
+        "distance_bin_max": 140.0,
+        "count": 64,
+        "mean": 0.4771677255630493,
+        "median": 0.400409460067749,
+        "std": 1.0434867143630981,
+        "std_error": 0.13043583929538727
+      },
+      {
+        "distance_bin_center": 150.0,
+        "distance_bin_min": 140.0,
+        "distance_bin_max": 160.0,
+        "count": 62,
+        "mean": 0.5588352680206299,
+        "median": 0.5864498615264893,
+        "std": 0.9900925755500793,
+        "std_error": 0.1257418828368058
+      },
+      {
+        "distance_bin_center": 170.0,
+        "distance_bin_min": 160.0,
+        "distance_bin_max": 180.0,
+        "count": 63,
+        "mean": 0.5246084928512573,
+        "median": 0.45206165313720703,
+        "std": 1.1198209524154663,
+        "std_error": 0.14108417871480086
+      },
+      {
+        "distance_bin_center": 190.0,
+        "distance_bin_min": 180.0,
+        "distance_bin_max": 200.0,
+        "count": 62,
+        "mean": 0.3916064202785492,
+        "median": 0.4676097631454468,
+        "std": 1.1859285831451416,
+        "std_error": 0.15061308067258897
+      }
+    ],
+    "correlation_analysis": {
+      "pearson_correlation": -0.10108174946180314,
+      "pearson_p_value": 0.012496148324192746,
+      "spearman_correlation": -0.11816863121963972,
+      "spearman_p_value": 0.0034688779520200205
+    },
+    "linear_regression": {
+      "slope": -0.0023966830727543886,
+      "intercept": 0.7823270332916327,
+      "r_squared": 0.010217520074258753,
+      "p_value": 0.012496148324192491,
+      "standard_error": 0.0009566563314970537
+    },
+    "city_size_analysis": {
+      "large_cities": {
+        "count_cities": 20,
+        "correlation_coefficient": -0.05092078254428571,
+        "correlation_p_value": 0.36619501592396775,
+        "stations_analyzed": 317
+      },
+      "medium_cities": {
+        "count_cities": 38,
+        "correlation_coefficient": -0.11402294933216076,
+        "correlation_p_value": 0.007013319334302315,
+        "stations_analyzed": 558
+      }
+    },
+    "analysis_parameters": {
+      "max_distance_km": 200.0,
+      "distance_bins": 10,
+      "stations_analyzed": 610
+    }
+  },
+  "heat_island_summary": {
+    "heat_island_detected": true,
+    "intensity_celsius": 0.6621608734130859,
+    "statistical_significance": "significant",
+    "effect_size": "medium",
+    "confidence_interval": [
+      0.1824605589172359,
+      1.141861187908936
+    ]
+  },
+  "scientific_interpretation": {
+    "heat_island_conclusion": "Urban heat island effect detected with intensity of 0.66\u00b0C. The difference between urban and rural temperatures is significant with medium effect size.",
+    "intensity_assessment": "Weak heat island effect observed.",
+    "data_quality_assessment": "Analysis based on 25 urban stations and 924 rural stations. Sample sizes may be limited for statistical power.",
+    "spatial_pattern": "Moderate negative correlation suggests measurable heat island influence with distance from urban centers."
+  }
+}

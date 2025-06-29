@@ -1,0 +1,15 @@
+{
+  "checks_passed": 133,
+  "warnings_issued": 21,
+  "errors_encountered": 0,
+  "status": "COMPLETED_WITH_WARNINGS",
+  "duration_seconds": 1.891793,
+  "start_time": "2025-06-29T08:51:43.159479",
+  "end_time": "2025-06-29T08:51:45.051272",
+  "coverage_thresholds": {
+    "continental_minimum": 500,
+    "regional_minimum": 50,
+    "density_threshold": 0.1,
+    "data_completeness": 0.8
+  }
+}
