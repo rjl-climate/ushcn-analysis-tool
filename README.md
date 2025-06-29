@@ -103,7 +103,7 @@ If similar adjustment procedures enhance urban signals in these regions, **globa
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/ushcn-heatisland.git
+git clone https://github.com/rjl-climate/ushcn-heatisland.git
 cd ushcn-heatisland
 
 # Install the package and dependencies
