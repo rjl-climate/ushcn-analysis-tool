@@ -47,7 +47,7 @@ ushcn-heatisland analyze simple --temp-metric min
 ushcn-heatisland --help
 ```
 
-Full documentation: https://rjl-climate.github.io/ushcn-heatisland/
+Full documentation: https://rjl-climate.github.io/ushcn-analysis-tool/
 
 ## Testing
 
