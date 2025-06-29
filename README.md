@@ -653,9 +653,9 @@ Results should be interpreted within the broader context of climate science rese
 ## 🔗 Links & Resources
 
 - **NOAA USHCN**: https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network
-- **Technical Paper**: `analysis/technical_paper/main.pdf`
-- **Issue Tracker**: [GitHub Issues](https://github.com/your-username/ushcn-heatisland/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/ushcn-heatisland/discussions)
+- **Technical Paper**: [Urban Heat Island Contamination Persists in Homogenized USHCN Temperature Records: A 126-Year Analysis](analysis/technical_paper/main.pdf)
+- **Issue Tracker**: [GitHub Issues](https://github.com/rjl-climate/ushcn-heatisland/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/rjl-climate/ushcn-heatisland/discussions)
 
 ---
 
