@@ -129,13 +129,11 @@ mypy src/
 
 ### Data Requirements
 
-The analysis requires USHCN datasets (102MB total) available from NOAA:
+The analysis requires USHCN datasets (102MB total) available from NOAA. Due to file size (102MB total), data files are not included in the repository.
 
 #### **Download Required Data Files**
 
-**Due to file size (102MB total), data files are not included in the repository.**
-
-These are not easily accessible. To assist, we've written [a utility](https://github.com/rjl-climate/US-Historical-Climate-Network-downloader) to download them and create the necessary
+To our knowledge, these are not accessible in an easily processable format. To assist, we've written [a Rust utility](https://crates.io/crates/ushcn) to download them and create the necessary
 data files. To install the utility, follow the instructions. Running the utility will create 4 datafiles:
 
 1. **Monthly FLS52 (fully adjusted)**: `ushcn-monthly-fls52-{date}.parquet` (12MB)
