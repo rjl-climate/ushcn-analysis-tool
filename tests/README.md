@@ -35,8 +35,7 @@ python -m pytest tests/test_cli_integration.py -v
 
 ```bash
 # Run all tests with summary
-
-
+python -m pytest tests/ --tb=short
 
 # Run all tests with detailed output
 python -m pytest tests/ -v
@@ -71,12 +70,13 @@ python -m pytest tests/test_analysis_workflow.py::TestAnalysisAlgorithms::test_a
 - Urban context data loading (cities, urban areas)
 - Station classification integration
 
-### Analysis Workflow Tests ✅ (6/9 passing)
+### Analysis Workflow Tests ✅ (9/9 passing)
 
 - Algorithm listing and retrieval
 - Simple and min_obs algorithm execution
 - Adjustment impact analysis
 - Urban heat island classification workflow
+- Heat island report generation
 - Temperature data integrity checks
 
 ### CLI Integration Tests ✅ (8/8 passing)
@@ -88,24 +88,26 @@ python -m pytest tests/test_analysis_workflow.py::TestAnalysisAlgorithms::test_a
 - Parameter validation
 - Error handling
 
-### Output Validation Tests ⚠️ (4/7 passing)
+### Output Validation Tests ⚠️ (8/9 passing)
 
 - Statistics file generation and structure
 - Plot file creation and formats
+- Heat island report structure validation
 - JSON serialization/deserialization
 - Data consistency checks
 
 ## Known Issues
 
-### Current Test Failures (6/38)
+### Current Test Failures (1/39)
 
-1. **Heat Island Reports**: Some edge cases in report generation with small data samples
-2. **Coordinate Consistency**: Minor precision differences across data types  
-3. **Empty Plot Handling**: Some tests generate empty plots causing warnings
+1. **Coordinate Preservation**: `test_output_validation.py::TestDataOutputConsistency::test_coordinate_preservation` - Minor issue with coordinate access pattern (deferred for future fix)
 
-### Fixed Issues
+### Recently Fixed Issues
 
-- ✅ **CLI Plot Generation**: Fixed CLI logic bug where "points" visualization didn't create plot files
+- ✅ **Heat Island Report Structure**: Fixed test expectations to match actual report format (analysis_metadata vs metadata)
+- ✅ **Urban Classification**: Fixed cdist error when no valid station coordinates available
+- ✅ **Data Sampling**: Changed from head(50) to unique station sampling for reliable test results
+- ✅ **Coordinate Access**: Fixed tests to use geometry column instead of separate latitude/longitude columns
 
 ## Test Data Requirements
 

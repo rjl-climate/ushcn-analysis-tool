@@ -162,7 +162,9 @@ class TestUrbanHeatIslandAnalysis:
             temp_metric="min"
         )
         
-        sample_data = adjusted_data.head(50)
+        # Get sample of unique stations (not just first 50 records)
+        unique_stations = adjusted_data['station_id'].unique()[:10]  # Get 10 stations
+        sample_data = adjusted_data[adjusted_data['station_id'].isin(unique_stations)]
         
         # Run analysis
         algo_func = get_algorithm("simple")
@@ -172,10 +174,18 @@ class TestUrbanHeatIslandAnalysis:
             current_period=sample_current_period
         )
         
+        # Verify we have results with geometry
+        assert len(results) > 0, "No results from algorithm"
+        assert 'geometry' in results.columns, "Results missing geometry column"
+        print(f"Algorithm produced {len(results)} station results")
+        
         # Add urban classification
         manager = UrbanContextManager()
         cities_gdf = manager.load_cities_data(min_population=100000)
         urban_areas_gdf = manager.load_urban_areas()
+        
+        print(f"Loaded {len(cities_gdf)} cities for classification")
+        print(f"Loaded {len(urban_areas_gdf)} urban areas for classification")
         
         classified_results = manager.classify_stations_urban_rural(
             results,
@@ -183,6 +193,10 @@ class TestUrbanHeatIslandAnalysis:
             urban_areas_gdf=urban_areas_gdf,
             use_4_level_hierarchy=True
         )
+        
+        # Verify classification worked
+        assert len(classified_results) > 0, "No classified results"
+        print(f"Classified {len(classified_results)} stations")
         
         summary = manager.get_urban_context_summary(
             classified_results, cities_gdf, urban_areas_gdf
@@ -195,14 +209,25 @@ class TestUrbanHeatIslandAnalysis:
         
         assert isinstance(report, dict)
         
-        # Check report structure
+        # Check report structure (based on actual heat island report structure)
         expected_sections = [
-            "metadata",
-            "urban_context_summary", 
-            "station_analysis"
+            "analysis_metadata",
+            "urban_rural_analysis",
+            "distance_gradient_analysis",
+            "scientific_interpretation"
         ]
         for section in expected_sections:
             assert section in report, f"Missing report section: {section}"
+            
+        # Verify key metadata
+        assert "total_stations" in report["analysis_metadata"]
+        assert report["analysis_metadata"]["total_stations"] == len(classified_results)
+        
+        # Verify urban/rural analysis has expected structure
+        urban_rural = report["urban_rural_analysis"]
+        assert "total_stations_analyzed" in urban_rural
+        assert "statistics_by_classification" in urban_rural
+        print(f"Report generated successfully with {urban_rural['total_stations_analyzed']} stations")
 
 
 class TestDataIntegrity:
@@ -221,8 +246,11 @@ class TestDataIntegrity:
                 temp_metric="min"
             )
             
-            # Store coordinates for comparison
-            coords = data[["station_id", "latitude", "longitude"]].drop_duplicates()
+            # Store coordinates for comparison (extract from geometry column)
+            coords = data[["station_id"]].copy()
+            coords["latitude"] = data.geometry.y
+            coords["longitude"] = data.geometry.x
+            coords = coords.drop_duplicates()
             coordinates[data_type] = coords.set_index("station_id")
         
         # Check that coordinates match across data types for same stations

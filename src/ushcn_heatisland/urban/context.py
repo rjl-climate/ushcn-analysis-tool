@@ -179,6 +179,11 @@ class UrbanContextManager:
         station_coords = np.array([[pt.x, pt.y] for pt in stations_gdf.geometry])
         city_coords = np.array([[pt.x, pt.y] for pt in cities_gdf.geometry])
 
+        # Check if we have valid coordinates for both stations and cities
+        if len(station_coords) == 0 or len(city_coords) == 0:
+            warnings.warn("No valid stations or cities for classification", stacklevel=2)
+            return classified_stations
+
         if len(city_coords) > 0:
             # Calculate distance matrix (in degrees, then convert to km)
             distances_deg = cdist(station_coords, city_coords)
