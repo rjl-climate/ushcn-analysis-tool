@@ -1,9 +1,10 @@
 """Data loading utilities for USHCN datasets."""
 
 from pathlib import Path
-from typing import Optional, Literal
-import pandas as pd
+from typing import Literal
+
 import geopandas as gpd
+import pandas as pd
 from shapely.geometry import Point
 
 
@@ -31,7 +32,7 @@ def load_station_locations(daily_data_path: Path) -> gpd.GeoDataFrame:
 def load_all_ushcn_stations(data_dir: Path) -> gpd.GeoDataFrame:
     """
     Load all USHCN station locations from monthly data files.
-    
+
     The monthly data files contain all 1,218 USHCN stations, whereas the daily
     data files only contain a subset (typically around 318 stations).
 
@@ -43,29 +44,29 @@ def load_all_ushcn_stations(data_dir: Path) -> gpd.GeoDataFrame:
     """
     # Find any monthly data file (they all have the same station list)
     monthly_files = list(data_dir.glob("ushcn-monthly-*.parquet"))
-    
+
     if not monthly_files:
         raise FileNotFoundError("No monthly data files found in data directory")
-    
+
     # Use the first monthly file (any will work since they have the same stations)
     df_monthly = pd.read_parquet(monthly_files[0])
-    
+
     # Get unique stations with their locations
     stations = df_monthly[["id", "lat", "lon"]].drop_duplicates()
-    
+
     # Create GeoDataFrame
     geometry = [Point(xy) for xy in zip(stations["lon"], stations["lat"])]
     gdf_stations = gpd.GeoDataFrame(stations, geometry=geometry, crs="EPSG:4326")
-    
+
     # Set station ID as index
     result = gdf_stations.set_index("id")
     return gpd.GeoDataFrame(result, crs=gdf_stations.crs)
 
 
 def load_ushcn_monthly_data(
-    file_path: Path, 
+    file_path: Path,
     data_type: Literal["raw", "tob", "fls52"] = "fls52",
-    temp_metric: Literal["min", "max", "avg"] = "min"
+    temp_metric: Literal["min", "max", "avg"] = "min",
 ) -> gpd.GeoDataFrame:
     """
     Load USHCN monthly data from parquet file and convert to GeoDataFrame.
@@ -112,11 +113,9 @@ def load_ushcn_monthly_data(
 
     # Create geometry from lat/lon coordinates
     geometry = [Point(xy) for xy in zip(result_df["lon"], result_df["lat"])]
-    result_gdf = gpd.GeoDataFrame(
+    return gpd.GeoDataFrame(
         result_df.drop(["lat", "lon"], axis=1), geometry=geometry, crs="EPSG:4326"
     )
-
-    return result_gdf
 
 
 def load_ushcn_data(
@@ -125,7 +124,7 @@ def load_ushcn_data(
     raw_type: Literal["raw", "tob", "fls52"] = "raw",
     load_raw: bool = False,
     temp_metric: Literal["min", "max", "avg"] = "min",
-) -> tuple[gpd.GeoDataFrame, Optional[gpd.GeoDataFrame]]:
+) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame | None]:
     """
     Load USHCN data for analysis.
 
@@ -155,7 +154,9 @@ def load_ushcn_data(
     if adjusted_type not in monthly_files:
         raise FileNotFoundError(f"Monthly data file for {adjusted_type} not found")
 
-    adjusted_data = load_ushcn_monthly_data(monthly_files[adjusted_type], adjusted_type, temp_metric)
+    adjusted_data = load_ushcn_monthly_data(
+        monthly_files[adjusted_type], adjusted_type, temp_metric
+    )
 
     # Load raw data if requested
     raw_data = None
@@ -163,6 +164,8 @@ def load_ushcn_data(
         if raw_type not in monthly_files:
             raise FileNotFoundError(f"Monthly data file for {raw_type} not found")
 
-        raw_data = load_ushcn_monthly_data(monthly_files[raw_type], raw_type, temp_metric)
+        raw_data = load_ushcn_monthly_data(
+            monthly_files[raw_type], raw_type, temp_metric
+        )
 
     return adjusted_data, raw_data

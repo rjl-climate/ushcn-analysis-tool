@@ -1,12 +1,12 @@
 """Algorithm registry and interface definitions."""
 
-from typing import Dict, Any, Optional, Callable, Protocol
+from collections.abc import Callable
+from typing import Any, Protocol
+
 import geopandas as gpd
 
 # Import and register algorithms
-from . import simple_anomaly
-from . import min_obs_anomaly
-from . import adjustment_impact
+from . import adjustment_impact, min_obs_anomaly, simple_anomaly
 
 
 class AlgorithmProtocol(Protocol):
@@ -17,8 +17,8 @@ class AlgorithmProtocol(Protocol):
         gdf_adjusted: gpd.GeoDataFrame,
         baseline_period: tuple[int, int],
         current_period: tuple[int, int],
-        gdf_raw: Optional[gpd.GeoDataFrame] = None,
-        config: Optional[Dict[str, Any]] = None,
+        gdf_raw: gpd.GeoDataFrame | None = None,
+        config: dict[str, Any] | None = None,
     ) -> gpd.GeoDataFrame:
         """
         Calculate temperature anomalies.
@@ -37,7 +37,7 @@ class AlgorithmProtocol(Protocol):
 
 
 # Algorithm registry
-ALGORITHMS: Dict[str, Callable] = {}
+ALGORITHMS: dict[str, Callable] = {}
 
 
 def register_algorithm(name: str, algorithm_func: Callable) -> None:

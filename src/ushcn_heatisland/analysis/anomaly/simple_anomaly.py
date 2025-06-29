@@ -1,6 +1,7 @@
-"""Minimum observations anomaly calculation algorithm."""
+"""Simple anomaly calculation algorithm."""
 
-from typing import Dict, Any, Optional
+from typing import Any
+
 import geopandas as gpd
 
 
@@ -8,33 +9,27 @@ def calculate(
     gdf_adjusted: gpd.GeoDataFrame,
     baseline_period: tuple[int, int],
     current_period: tuple[int, int],
-    gdf_raw: Optional[gpd.GeoDataFrame] = None,
-    config: Optional[Dict[str, Any]] = None,
+    gdf_raw: gpd.GeoDataFrame | None = None,
+    config: dict[str, Any] | None = None,
 ) -> gpd.GeoDataFrame:
     """
-    Calculate temperature anomalies with minimum observation requirements.
+    Calculate simple temperature anomalies using adjusted data.
 
-    This algorithm is similar to simple_anomaly but requires a minimum number
-    of observations in both baseline and current periods to include a station.
-    The temperature metric (min/max/avg) is determined by the data loaded via 
-    the data_loader module.
+    This algorithm calculates the mean temperature difference between a current period
+    and a baseline period for each station. The temperature metric (min/max/avg) is
+    determined by the data loaded via the data_loader module.
 
     Args:
         gdf_adjusted: Adjusted USHCN temperature data (metric determined at load time)
         baseline_period: Tuple of (start_year, end_year) for baseline
         current_period: Tuple of (start_year, end_year) for current period
         gdf_raw: Optional raw USHCN temperature data (not used in this algorithm)
-        config: Optional configuration parameters with 'min_observations' key
+        config: Optional configuration parameters
 
     Returns:
         GeoDataFrame with columns: ['geometry', 'station_id', 'anomaly_celsius',
                                    'baseline_mean', 'current_mean', 'n_baseline', 'n_current']
     """
-    # Get minimum observations requirement from config
-    min_obs = 240  # Default: 20 years * 12 months
-    if config and "min_observations" in config:
-        min_obs = config["min_observations"]
-
     # Extract years from periods
     baseline_start, baseline_end = baseline_period
     current_start, current_end = current_period
@@ -72,31 +67,11 @@ def calculate(
     # Merge baseline and current data
     results = baseline_means.merge(current_means, on="station_id", how="inner")
 
-    # Apply minimum observation filter
-    results = results[
-        (results["n_baseline"] >= min_obs) & (results["n_current"] >= min_obs)
-    ]
-
-    if len(results) == 0:
-        # Return empty GeoDataFrame with correct structure
-        return gpd.GeoDataFrame(
-            columns=[
-                "station_id",
-                "anomaly_celsius",
-                "baseline_mean",
-                "current_mean",
-                "n_baseline",
-                "n_current",
-                "geometry",
-            ],
-            crs=gdf_adjusted.crs,
-        )
-
     # Calculate anomaly
     results["anomaly_celsius"] = results["current_mean"] - results["baseline_mean"]
 
     # Create GeoDataFrame
-    result_gdf = gpd.GeoDataFrame(
+    return gpd.GeoDataFrame(
         results[
             [
                 "station_id",
@@ -110,5 +85,3 @@ def calculate(
         ],
         crs=gdf_adjusted.crs,
     )
-
-    return result_gdf

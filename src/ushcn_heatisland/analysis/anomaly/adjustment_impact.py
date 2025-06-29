@@ -1,6 +1,7 @@
 """Adjustment impact analysis algorithm for skeptical verification."""
 
-from typing import Dict, Any, Optional
+from typing import Any
+
 import geopandas as gpd
 
 
@@ -8,15 +9,15 @@ def calculate(
     gdf_adjusted: gpd.GeoDataFrame,
     baseline_period: tuple[int, int],
     current_period: tuple[int, int],
-    gdf_raw: Optional[gpd.GeoDataFrame] = None,
-    config: Optional[Dict[str, Any]] = None,
+    gdf_raw: gpd.GeoDataFrame | None = None,
+    config: dict[str, Any] | None = None,
 ) -> gpd.GeoDataFrame:
     """
     Calculate the impact of NOAA adjustments on temperature anomalies.
 
     This algorithm computes anomalies using both raw and adjusted data,
     then calculates the difference to isolate the effect of adjustments.
-    The temperature metric (min/max/avg) is determined by the data loaded via 
+    The temperature metric (min/max/avg) is determined by the data loaded via
     the data_loader module and applies to both raw and adjusted datasets.
 
     Args:
@@ -63,7 +64,7 @@ def calculate(
     )
 
     # Create final GeoDataFrame
-    result_gdf = gpd.GeoDataFrame(
+    return gpd.GeoDataFrame(
         results[
             [
                 "station_id",
@@ -75,8 +76,6 @@ def calculate(
         ],
         crs=gdf_adjusted.crs,
     )
-
-    return result_gdf
 
 
 def _calculate_single_anomaly(

@@ -149,8 +149,8 @@ cython_debug/
 output/
 
 # Data files - exclude all content but keep folder
-data/*.parquet
-!data/.gitkeep
+#data/*.parquet
+#!data/.gitkeep
 
 # LaTeX compilation artifacts
 *.aux
