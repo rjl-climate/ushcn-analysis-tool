@@ -1,0 +1,42 @@
+{
+  "analysis_possible": true,
+  "temp_metric": "avg",
+  "urban": {
+    "n_stations": 668,
+    "mean_trend": 0.01904710324785777,
+    "median_trend": 0.017754341527752647,
+    "std_trend": 0.06449991979711364,
+    "sem_trend": 0.0024974468683679695,
+    "min_trend": -0.290925299568591,
+    "max_trend": 0.1905539318190927,
+    "n_significant": 519,
+    "n_sig_positive": 342,
+    "pct_sig_positive": 51.19760479041916,
+    "ttest_vs_zero_p": 8.329794453224137e-14,
+    "significantly_different_from_zero": true
+  },
+  "rural": {
+    "n_stations": 281,
+    "mean_trend": 0.01936132720498196,
+    "median_trend": 0.0138566401586206,
+    "std_trend": 0.07381869865734966,
+    "sem_trend": 0.004411511026954935,
+    "min_trend": -0.2454601786812258,
+    "max_trend": 0.2541858901020267,
+    "n_significant": 221,
+    "n_sig_positive": 135,
+    "pct_sig_positive": 48.04270462633452,
+    "ttest_vs_zero_p": 1.616387337551582e-05,
+    "significantly_different_from_zero": true
+  },
+  "comparison": {
+    "mean_difference": -0.0003142239571241913,
+    "ttest_statistic": -0.061984623320230345,
+    "ttest_p_value": 0.9506015368180796,
+    "mannwhitney_statistic": 96067.0,
+    "mannwhitney_p_value": 0.5660046341691088,
+    "cohens_d": -0.004657600971607195,
+    "groups_differ": false,
+    "interpretation": "No significant difference between urban and rural bias trends"
+  }
+}

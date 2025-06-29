@@ -1,0 +1,12 @@
+{
+  "temp_metric": "avg",
+  "station_level": {
+    "valid": true,
+    "temp_metric": "avg",
+    "n_stations": 1218,
+    "multiple_testing": {
+      "bonferroni": {
+        "method": "bonferroni",
+        "n_tests": 1218,
+        "alpha_corrected": 4.105090311986864e-05,
+        "significant_original": 

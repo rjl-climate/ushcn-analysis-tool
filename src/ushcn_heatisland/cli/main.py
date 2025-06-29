@@ -26,7 +26,7 @@ def analyze(
     algorithm: str = typer.Argument(
         ..., help="Algorithm to use: simple, min_obs, or adjustment_impact"
     ),
-    baseline_start_year: int = typer.Option(1951, help="Baseline period start year"),
+    baseline_start_year: int = typer.Option(1895, help="Baseline period start year"),
     current_start_year: int = typer.Option(1981, help="Current period start year"),
     period_length: int = typer.Option(
         30, help="Length of baseline and current periods in years"

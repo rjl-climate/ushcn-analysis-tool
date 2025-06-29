@@ -1,0 +1,17 @@
+{
+  "avg_vs_min": {
+    "correlation": 0.7388702229324157,
+    "n_stations": 1218,
+    "p_value": null
+  },
+  "avg_vs_max": {
+    "correlation": 0.6072811519400916,
+    "n_stations": 1218,
+    "p_value": null
+  },
+  "min_vs_max": {
+    "correlation": -0.08625454119970011,
+    "n_stations": 1218,
+    "p_value": null
+  }
+}

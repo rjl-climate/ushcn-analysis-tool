@@ -1,0 +1,13 @@
+{
+  "max": {
+    "temp_metric": "max",
+    "station_level": {
+      "valid": true,
+      "temp_metric": "max",
+      "n_stations": 954,
+      "multiple_testing": {
+        "bonferroni": {
+          "method": "bonferroni",
+          "n_tests": 954,
+          "alpha_corrected": 5.2410901467505245e-05,
+          "significant_original": 

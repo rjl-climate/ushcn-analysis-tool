@@ -1,0 +1,72 @@
+site_name: USHCN Temperature Data Analysis Tool
+site_url: https://rjl-climate.github.io/ushcn-heatisland/
+site_description: Python library for analyzing USHCN temperature data
+site_author: Richard Lyon
+
+repo_url: https://github.com/rjl-climate/ushcn-heatisland
+repo_name: rjl-climate/ushcn-heatisland
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: quickstart.md
+  - User Guide: user-guide.md
+  - API Reference: api.md
+  - Research Studies:
+      - Overview: studies/index.md
+      - UHII Contamination: studies/uhii-contamination.md
+      - Network Quality: studies/network-quality.md
+  - Contributing: contributing.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/rjl-climate/ushcn-heatisland

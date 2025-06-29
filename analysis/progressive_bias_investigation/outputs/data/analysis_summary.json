@@ -1,0 +1,44 @@
+{
+  "avg": {
+    "metric": "avg",
+    "total_stations": 1218,
+    "stations_analyzed": 1218,
+    "stations_with_valid_trends": 1218,
+    "mean_trend_per_decade": 0.018470697328402175,
+    "median_trend_per_decade": 0.0151387868756374,
+    "std_trend_per_decade": 0.07122650772573913,
+    "stations_significant_positive": 596,
+    "stations_significant_negative": 344,
+    "percent_significant_positive": 48.93267651888342,
+    "network_trend_significance": "TBD",
+    "analysis_date": "2025-06-29T16:40:51.686087"
+  },
+  "min": {
+    "metric": "min",
+    "total_stations": 1218,
+    "stations_analyzed": 1218,
+    "stations_with_valid_trends": 1218,
+    "mean_trend_per_decade": 0.0021422297778107865,
+    "median_trend_per_decade": 0.0025380835869486997,
+    "std_trend_per_decade": 0.11342631641012968,
+    "stations_significant_positive": 501,
+    "stations_significant_negative": 484,
+    "percent_significant_positive": 41.13300492610838,
+    "network_trend_significance": "TBD",
+    "analysis_date": "2025-06-29T16:40:51.686087"
+  },
+  "max": {
+    "metric": "max",
+    "total_stations": 1218,
+    "stations_analyzed": 1218,
+    "stations_with_valid_trends": 1218,
+    "mean_trend_per_decade": 0.0349825938776033,
+    "median_trend_per_decade": 0.032258535374044744,
+    "std_trend_per_decade": 0.096297064668239,
+    "stations_significant_positive": 665,
+    "stations_significant_negative": 316,
+    "percent_significant_positive": 54.59770114942529,
+    "network_trend_significance": "TBD",
+    "analysis_date": "2025-06-29T16:40:51.686087"
+  }
+}
