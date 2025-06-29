@@ -507,8 +507,7 @@ Register new algorithms in `src/ushcn_heatisland/analysis/anomaly/__init__.py`.
 **Software Citation:**
 
 ```
-Lyon, R. (2025). USHCN Heat Island Analysis: Urban Heat Island Contamination
-in USHCN Temperature Records. https://github.com/your-username/ushcn-heatisland
+Lyon, R. (2025). Urban Heat Island Contamination in USHCN Temperature Records. https://github.com/rjl-climate/ushcn-heatisland
 ```
 
 **Research Citation:**
@@ -520,7 +519,7 @@ USHCN Temperature Records: A 126-Year Analysis. [Journal/Preprint]
 
 ### Academic Paper
 
-The complete methodology, findings, and implications are documented in the accompanying technical paper: `analysis/technical_paper/main.pdf`
+The complete methodology, findings, and implications are documented in the accompanying technical paper: [Urban Heat Island Contamination Persists in Homogenized USHCN Temperature Records: A 126-Year Analysis](analysis/technical_paper/main.pdf)
 
 **Key Sections:**
 
