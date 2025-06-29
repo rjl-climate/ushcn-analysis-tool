@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/index.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/contributing.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/installation.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/quickstart.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/user-guide.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/studies/index.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/studies/uhii-contamination.html</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+</urlset>
