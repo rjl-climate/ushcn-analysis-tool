@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/index.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/contributing.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/contributing/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/installation.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/installation/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/quickstart.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/quickstart/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/user-guide.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/user-guide/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/studies/index.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/studies/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/studies/uhii-contamination.html</loc>
+         <loc>https://rjl-climate.github.io/ushcn-analysis-tool/studies/uhii-contamination/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
 </urlset>
