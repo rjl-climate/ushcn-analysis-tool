@@ -644,7 +644,6 @@ This research represents an independent investigation into temperature data proc
 
 Results should be interpreted within the broader context of climate science research. The identification of urban heat island contamination:
 
-- **Does not negate anthropogenic climate change**
 - **Suggests refinement of warming magnitude estimates**
 - **Supports improved measurement accuracy**
 - **Benefits all stakeholders in climate science and policy**
