@@ -1,5 +1,5 @@
 site_name: USHCN Temperature Data Analysis Tool
-site_url: https://rjl-climate.github.io/ushcn-heatisland/
+site_url: https://rjl-climate.github.io/ushcn-analysis-tool/
 site_description: Python library for analyzing USHCN temperature data
 site_author: Richard Lyon
 
