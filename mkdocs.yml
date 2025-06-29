@@ -2,6 +2,7 @@ site_name: USHCN Temperature Data Analysis Tool
 site_url: https://rjl-climate.github.io/ushcn-analysis-tool/
 site_description: Python library for analyzing USHCN temperature data
 site_author: Richard Lyon
+use_directory_urls: false
 
 repo_url: https://github.com/rjl-climate/ushcn-analysis-tool
 repo_name: rjl-climate/ushcn-analysis-tool
