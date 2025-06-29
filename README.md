@@ -125,14 +125,29 @@ mypy src/
 
 ### Data Requirements
 
-The analysis requires USHCN datasets available from NOAA:
+The analysis requires USHCN datasets (102MB total) available from NOAA:
 
-1. **Monthly FLS52 (fully adjusted)**: `ushcn-monthly-fls52-2025-06-27.parquet`
-2. **Monthly TOBs (time-of-observation adjusted)**: `ushcn-monthly-tob-2025-06-27.parquet`  
-3. **Monthly Raw**: `ushcn-monthly-raw-2025-06-27.parquet`
-4. **Daily data** (optional): `ushcn-daily-2025-06-27.parquet`
+#### **Download Required Data Files**
 
-Place these files in the `data/` directory. The included cities database (`data/cities/us_cities_static.csv`) contains 743 US cities ≥50k population for urban classification.
+**Due to file size (102MB total), data files are not included in the repository.** Download them from:
+
+1. **Monthly FLS52 (fully adjusted)**: `ushcn-monthly-fls52-2025-06-27.parquet` (12MB)
+2. **Monthly TOBs (time-of-observation adjusted)**: `ushcn-monthly-tob-2025-06-27.parquet` (11MB)  
+3. **Monthly Raw**: `ushcn-monthly-raw-2025-06-27.parquet` (11MB)
+4. **Daily data** (optional): `ushcn-daily-2025-06-27.parquet` (67MB)
+
+**Download Location**: [NOAA USHCN Data Portal](https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network)
+
+**Setup**:
+```bash
+# Create data directory
+mkdir -p data
+
+# Download files to data/ directory
+# (Files available from NOAA or research data repository)
+```
+
+The included cities database (`data/cities/us_cities_static.csv`) contains 743 US cities ≥50k population for urban classification.
 
 ---
 

@@ -148,9 +148,10 @@ cython_debug/
 # Project specific
 output/
 
-# Data files - exclude all content but keep folder
-#data/*.parquet
-#!data/.gitkeep
+# Data files - exclude large datasets (102MB total, too large for GitHub)
+data/*.parquet
+# Keep cities database (small, essential)
+!data/cities/us_cities_static.csv
 
 # LaTeX compilation artifacts
 *.aux
