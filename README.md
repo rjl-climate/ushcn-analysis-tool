@@ -100,5 +100,5 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Links
 
-- **Documentation**: https://rjl-climate.github.io/ushcn-heatisland/
-- **Issues**: https://github.com/rjl-climate/ushcn-heatisland/issues
+- **Documentation**: https://rjl-climate.github.io/ushcn-analysis-tool/
+- **Issues**: https://github.com/rjl-climate/ushcn-analysis-tool/issues
