@@ -3,8 +3,8 @@ site_url: https://rjl-climate.github.io/ushcn-analysis-tool/
 site_description: Python library for analyzing USHCN temperature data
 site_author: Richard Lyon
 
-repo_url: https://github.com/rjl-climate/ushcn-heatisland
-repo_name: rjl-climate/ushcn-heatisland
+repo_url: https://github.com/rjl-climate/ushcn-analysis-tool
+repo_name: rjl-climate/ushcn-analysis-tool
 
 theme:
   name: material
@@ -69,4 +69,4 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/rjl-climate/ushcn-heatisland
+      link: https://github.com/rjl-climate/ushcn-analysis-tool
