@@ -60,14 +60,6 @@ ushcn-heatisland analyze simple --temp-metric min
 ushcn-heatisland analyze simple --urban-analysis --heat-island-report
 ```
 
-## Research Applications
-
-This tool has been used in climate research:
-
-### [Urban Heat Island Contamination Study](studies/uhii-contamination.md)
-
-Discovered that NOAA adjustments enhance rather than remove urban heat island signals by 9.4%, affecting 22.7% of the USHCN network.
-
 ## Citation
 
 If you use this tool in your research, please cite:

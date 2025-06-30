@@ -64,7 +64,7 @@ pytest tests/test_data_loading.py -v
 
 ## Studies Using This Tool
 
-1. **[Urban Heat Island Contamination in USHCN Temperature Records (2025)](https://rjl-climate.github.io/ushcn-analysis-tool/studies/uhii-contamination/)**
+1. **[Urban Heat Island Contamination in USHCN Temperature Records (2025)](https://rjl-climate.github.io/ushcn-analysis-tool/studies/uhi-contamination/)**
    _Finding: NOAA adjustments enhance urban heat island signals by 9.4%_
 
 ## Citation
