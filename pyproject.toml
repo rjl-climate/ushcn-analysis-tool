@@ -23,6 +23,7 @@ dependencies = [
     "mkdocs-material>=9.6.14",
     "mkdocstrings>=0.29.1",
     "pymdown-extensions>=10.16",
+    "mkdocs-mermaid2-plugin>=1.2.1",
 ]
 
 [build-system]

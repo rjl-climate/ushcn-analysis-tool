@@ -15,9 +15,11 @@ nav:
   - Research Studies:
       - Overview: studies/index.md
       - UHI Contamination: studies/uhi-contamination.md
+      - Progressive Warming Bias: studies/progressive-warming-bias.md
 
 plugins:
   - search
+  - mermaid2
   - mkdocstrings:
       handlers:
         python:

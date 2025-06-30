@@ -8,3 +8,11 @@ In [this study](uhi-contamination), we examine the effectivess of NOAA's homogen
 
 **Technical Paper**:</br>
 [Urban Heat Island Contamination Persists in Homogenized USHCN Temperature Records: A 126-Year Analysis](../papers/uhi-contamination/lyon-2025-ushcn-uhi-contamination.pdf)
+
+
+## Progressive Warming Bias
+
+in [this study](progressive-warming-bias), we investigate evidence of systematic artificial warming in the US temperature record. We discovered that NOAA's F52 adjustments introduce progressive warming bias beyond legitimate time-of-observation corrections, with maximum temperatures showing **0.035°C/decade** artificial warming (~0.45°C since 1895) and identical bias patterns in urban and rural stations providing "smoking gun" evidence of systematic artifacts.
+
+**Technical Paper**:</br>
+[Progressive Warming Bias in NOAA's F52 Temperature Adjustments: Evidence from 128 Years of USHCN Data](../papers/progressive-warming-bias/lyon-2025-ushcn-progressive-warming-bias.pdf)

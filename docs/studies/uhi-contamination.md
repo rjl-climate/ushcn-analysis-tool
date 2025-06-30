@@ -3,7 +3,7 @@
 **A comprehensive analysis revealing that NOAA temperature adjustments enhance rather than remove urban heat island signals**
 
 !!! abstract "Key Finding"
-NOAA adjustments enhance urban heat island signals by **9.4%** rather than removing them, with **22.7%** of USHCN stations experiencing urban heat island contamination averaging **0.725°C**.
+    NOAA adjustments enhance urban heat island signals by **9.4%** rather than removing them, with **22.7%** of USHCN stations experiencing urban heat island contamination averaging **0.725°C**.
 
 ## Executive Summary
 
@@ -220,8 +220,8 @@ Lyon, R. (2025). Urban Heat Island Contamination Persists in Homogenized USHCN T
 
 - **Source Code**: [GitHub Repository](https://github.com/rjl-climate/ushcn-heatisland)
 - **Data**: [NOAA USHCN](https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network)
-- **Paper**: [Full PDF](paper.pdf)
-- **Reproduction**: [Scripts](https://github.com/rjl-climate/ushcn-heatisland/tree/main/analysis)
+- **Paper**: [Full PDF](../papers/uhi-contamination/lyon-2025-ushcn-uhi-contamination.pdf)
+- **Reproduction**: [Scripts](https://github.com/rjl-climate/ushcn-analysis-tool/tree/master/analysis)
 
 ### Scientific Disclaimer
 
@@ -245,8 +245,9 @@ Results should be interpreted within the broader context of climate science rese
 
 ## 🔗 Links & Resources
 
-- **NOAA USHCN**: https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network
-- **Technical Paper**: [Urban Heat Island Contamination Persists in Homogenized USHCN Temperature Records: A 126-Year Analysis](analysis/technical_paper/main.pdf)
+- **NOAA USHCN**: [NOAA US Historical Climatology Network](https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network)
+- **Technical Paper**: [Lyon (2025). Urban Heat Island Contamination Persists in Homogenized USHCN Temperature Records: A 126-Year Analysis](../papers/uhi-contamination/lyon-2025-ushcn-uhi-contamination.pdf)
+- **Methodology**: [Detailed Methods](support/uhi-contamination-investigation-protocol.md)
 - **Issue Tracker**: [GitHub Issues](https://github.com/rjl-climate/ushcn-heatisland/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/rjl-climate/ushcn-heatisland/discussions)
 

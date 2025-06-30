@@ -8,12 +8,10 @@
 
 ### Key Finding
 - [x] **Evidence of progressive warming bias detected across all temperature metrics**
-- [ ] No systematic bias found
-- [ ] Mixed results requiring further investigation
 
 ### Cross-Metric Magnitude of Effect
 - **Maximum temperature**: 0.035 °C/decade (~0.45 °C cumulative), 54.6% stations affected
-- **Average temperature**: 0.018 °C/decade (~0.23 °C cumulative), 48.9% stations affected  
+- **Average temperature**: 0.018 °C/decade (~0.23 °C cumulative), 48.9% stations affected
 - **Minimum temperature**: 0.002 °C/decade (~0.03 °C cumulative), 41.1% stations affected
 
 **Total warming bias ranges from negligible (minimum) to substantial (maximum), with average temperature showing moderate systematic bias.**
@@ -68,7 +66,7 @@ The bias analysis covers 1218 USHCN stations from 1895 onwards, eliminating earl
 
 #### Station Classification Results
 - **Urban stations identified**: 668 (54.8%) with valid bias trends
-- **Rural stations identified**: 281 (23.1%) with valid bias trends  
+- **Rural stations identified**: 281 (23.1%) with valid bias trends
 - **Classification method**: Distance-based using cities >50,000 population (≤50km urban, >50km rural)
 - **Both groups show significant positive bias** (p < 0.001)
 
@@ -296,6 +294,6 @@ The bias analysis covers 1218 USHCN stations from 1895 onwards, eliminating earl
 
 ---
 
-*Analysis completed: 2025-06-29*  
-*Framework: Progressive Bias Investigation v1.0*  
+*Analysis completed: 2025-06-29*
+*Framework: Progressive Bias Investigation v1.0*
 *Data period analyzed: 1895-2023*
