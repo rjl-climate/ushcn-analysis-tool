@@ -1,48 +1,20 @@
 site_name: USHCN Temperature Data Analysis Tool
 site_url: https://rjl-climate.github.io/ushcn-analysis-tool/
-site_description: Python library for analyzing USHCN temperature data
+site_description: Python library for analysing USHCN temperature data
 site_author: Richard Lyon
-# use_directory_urls: false
 
 repo_url: https://github.com/rjl-climate/ushcn-analysis-tool
 repo_name: ushcn-analysis-tool
 
 theme:
-  name: material
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+  name: readthedocs
+  locale: en
 
 nav:
   - Home: index.md
-  - Getting Started:
-      - Installation: installation.md
-      - Quick Start: quickstart.md
-  - User Guide: user-guide.md
-  - API Reference: api.md
   - Research Studies:
       - Overview: studies/index.md
-      - UHII Contamination: studies/uhii-contamination.md
-      - Network Quality: studies/network-quality.md
-  - Contributing: contributing.md
+      - UHI Contamination: studies/uhi-contamination.md
 
 plugins:
   - search

@@ -83,6 +83,17 @@ If you use this tool in your research, please cite:
 }
 ```
 
+## Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Run tests (`pytest tests/`)
+4. Commit changes (`git commit -m 'Add amazing feature'`)
+5. Push to branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
 ## Support
 
 - **Issues**: [GitHub Issues](https://github.com/rjl-climate/ushcn-heatisland/issues)

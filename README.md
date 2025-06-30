@@ -6,6 +6,8 @@
 
 A Python library for analyzing temperature data from the United States Historical Climatology Network (USHCN).
 
+**Full documentation**: https://rjl-climate.github.io/ushcn-analysis-tool/
+
 ## Description
 
 This tool provides a comprehensive framework for loading, processing, and analyzing USHCN temperature datasets. It supports multiple data formats (raw, TOBs-adjusted, and fully adjusted), various analysis algorithms, and publication-quality visualizations.
@@ -47,8 +49,6 @@ ushcn-heatisland analyze simple --temp-metric min
 ushcn-heatisland --help
 ```
 
-Full documentation: https://rjl-climate.github.io/ushcn-analysis-tool/
-
 ## Testing
 
 ```bash
@@ -64,11 +64,8 @@ pytest tests/test_data_loading.py -v
 
 ## Studies Using This Tool
 
-1. **[Urban Heat Island Contamination in USHCN Temperature Records (2025)](https://rjl-climate.github.io/ushcn-heatisland/studies/uhii-contamination/)**
+1. **[Urban Heat Island Contamination in USHCN Temperature Records (2025)](https://rjl-climate.github.io/ushcn-analysis-tool/studies/uhii-contamination/)**
    _Finding: NOAA adjustments enhance urban heat island signals by 9.4%_
-
-2. **[USHCN Network Quality Assessment (2025)](https://rjl-climate.github.io/ushcn-heatisland/studies/network-quality/)**
-   _Finding: Pre-1895 station coverage inadequate for continental analysis_
 
 ## Citation
 
