@@ -1,0 +1,2087 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global/global}
+    \entry{arnfield2003urban}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=23e887a717bb0dbf58ffd34504961a60}{%
+           family={Arnfield},
+           familyi={A\bibinitperiod},
+           given={A\bibnamedelima John},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{fullhash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{fullhashraw}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{bibnamehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authorbibnamehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authornamehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authorfullhash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authorfullhashraw}{23e887a717bb0dbf58ffd34504961a60}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Climatology}
+      \field{number}{1}
+      \field{title}{Two decades of urban climate research: a review of turbulence, exchanges of energy and water, and the urban heat island}
+      \field{volume}{23}
+      \field{year}{2003}
+      \field{pages}{1\bibrangedash 26}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1002/joc.859
+      \endverb
+    \endentry
+    \entry{connolly2021evaluation}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=1,uniquepart=given,hash=f6455e44f4e2b49bb9f60d2203b187ee}{%
+           family={Connolly},
+           familyi={C\bibinitperiod},
+           given={Ronan},
+           giveni={R\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=c69f1f9b48097d2d907ec6bebb81b391}{%
+           family={Soon},
+           familyi={S\bibinitperiod},
+           given={Willie},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=93f3c8af5cf5ef9d0289067ef2a8e9c4}{%
+           family={Connolly},
+           familyi={C\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=d3b5a9a130f005432d83c2a59d3993fa}{%
+           family={Baliunas},
+           familyi={B\bibinitperiod},
+           given={Sallie},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37adde81c979b042461d4213913aee7e}{%
+           family={Berglund},
+           familyi={B\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ad7ab71c0b8cb3d4f8c86090d2d5216}{%
+           family={Butler},
+           familyi={B\bibinitperiod},
+           given={C\bibnamedelima John},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=55b2496617d04c4b172b13f5ebd093dc}{%
+           family={Cionco},
+           familyi={C\bibinitperiod},
+           given={Rodolfo\bibnamedelima Gustavo},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dce696189e13ce6948c8982e940ff7cc}{%
+           family={Elias},
+           familyi={E\bibinitperiod},
+           given={Ana\bibnamedelima G},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e781863a2ed92e341d9dfbac42ae2e9}{%
+           family={Fedorov},
+           familyi={F\bibinitperiod},
+           given={Valery\bibnamedelima M},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d8e46a03a5fd33fff3708b4aa59e621}{%
+           family={Harde},
+           familyi={H\bibinitperiod},
+           given={Hermann},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{e72860dd2533b1cccc737913bb9a7852}
+      \strng{fullhash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{fullhashraw}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{bibnamehash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{authorbibnamehash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{authornamehash}{e72860dd2533b1cccc737913bb9a7852}
+      \strng{authorfullhash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{authorfullhashraw}{f2a3782409c74c2a34928792bebb7a14}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Research in Astronomy and Astrophysics}
+      \field{number}{6}
+      \field{title}{How much has the Sun influenced Northern Hemisphere temperature trends? An ongoing debate}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{pages}{131}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1674-4527/21/6/131
+      \endverb
+    \endentry
+    \entry{diamond2013uscrn}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=d922b0f397119e718d131a3cdcc23bcb}{%
+           family={Diamond},
+           familyi={D\bibinitperiod},
+           given={Howard\bibnamedelima J},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a5b3f6c870c95ddf9796d2d307d69f}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0eaf2da6b2555794793e4867b50ac9a9}{%
+           family={Palecki},
+           familyi={P\bibinitperiod},
+           given={Michael\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97611d12ed87f6f20b32984e8e4264aa}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={C\bibnamedelima Bruce},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a0311ad5c34ced4997aa2bc80f5a3c86}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={Jesse\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbd21ccba6bd40c40a75ea25632ae079}{%
+           family={Leeper},
+           familyi={L\bibinitperiod},
+           given={Ronald\bibnamedelima D},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a43c58acc236d7de8f80880032a1f53}{%
+           family={Easterling},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ffb463e036cd29e4bb5fd4880c66601}{%
+           family={Lawrimore},
+           familyi={L\bibinitperiod},
+           given={Jay\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f64856f065a9ba56cd76a9e92cf2c05e}{%
+           family={Meyers},
+           familyi={M\bibinitperiod},
+           given={Tilden\bibnamedelima P},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c9bfbf82e3c1e36e60da97fc73a87db}{%
+           family={Helfert},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima R},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{172469ca97dfe8517c3af0e308b69085}
+      \strng{fullhash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{fullhashraw}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{bibnamehash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{authorbibnamehash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{authornamehash}{172469ca97dfe8517c3af0e308b69085}
+      \strng{authorfullhash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{authorfullhashraw}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of the American Meteorological Society}
+      \field{number}{4}
+      \field{title}{{US Climate Reference Network} after one decade of operations: Status and assessment}
+      \field{volume}{94}
+      \field{year}{2013}
+      \field{pages}{485\bibrangedash 498}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1175/BAMS-D-12-00170.1
+      \endverb
+    \endentry
+    \entry{hausfather2013quantifying}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=39a65ad84cfc989ed672c6e99993603d}{%
+           family={Hausfather},
+           familyi={H\bibinitperiod},
+           given={Zeke},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7dd9e9be48ce631f5a772d455f15b878}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2fdd3ab556fdf12a4dd55d251ff2e6f7}{%
+           family={Masters},
+           familyi={M\bibinitperiod},
+           given={Troy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eac9e685684f9e57a630260968988e76}{%
+           family={Broberg},
+           familyi={B\bibinitperiod},
+           given={Ronald},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb0aecd83160d1f552629af8b8a74fba}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{fullhash}{b5493a091ad984b71046a689e32452ab}
+      \strng{fullhashraw}{b5493a091ad984b71046a689e32452ab}
+      \strng{bibnamehash}{b5493a091ad984b71046a689e32452ab}
+      \strng{authorbibnamehash}{b5493a091ad984b71046a689e32452ab}
+      \strng{authornamehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{authorfullhash}{b5493a091ad984b71046a689e32452ab}
+      \strng{authorfullhashraw}{b5493a091ad984b71046a689e32452ab}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{2}
+      \field{title}{Quantifying the effect of urbanization on {US} historical climatology network temperature records}
+      \field{volume}{118}
+      \field{year}{2013}
+      \field{pages}{481\bibrangedash 494}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1029/2012JD018509
+      \endverb
+    \endentry
+    \entry{hausfather2016evaluating}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=39a65ad84cfc989ed672c6e99993603d}{%
+           family={Hausfather},
+           familyi={H\bibinitperiod},
+           given={Zeke},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcf4a584f183c3e34a5caf6dfaa9034a}{%
+           family={Cowtan},
+           familyi={C\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{fullhash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{fullhashraw}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{bibnamehash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{authorbibnamehash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{authornamehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{authorfullhash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{authorfullhashraw}{0f59cf733c191c3be12e84ca5fccbc76}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Research Letters}
+      \field{number}{4}
+      \field{title}{Evaluating the impact of {US} historical climatology network homogenization using the {US} climate reference network}
+      \field{volume}{43}
+      \field{year}{2016}
+      \field{pages}{1695\bibrangedash 1701}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1002/2015GL067640
+      \endverb
+    \endentry
+    \entry{jones2012assessment}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=06ebdf732432a6bc0096f95dba816396}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Philip\bibnamedelima D},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d2b818d892125b4cf702b6550b6de6e}{%
+           family={Lister},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima H},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4dfad88d6a87abea76da8ed3b977ab29}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qingxiang},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{c4301765dca8064432364d1d1f81c231}
+      \strng{fullhash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{fullhashraw}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{bibnamehash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{authorbibnamehash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{authornamehash}{c4301765dca8064432364d1d1f81c231}
+      \strng{authorfullhash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{authorfullhashraw}{efade4c7bceb6d35dc68d40349ad6982}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{6289}
+      \field{title}{Assessment of urbanization effects in time series of surface air temperature over land}
+      \field{volume}{347}
+      \field{year}{2012}
+      \field{pages}{169\bibrangedash 172}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1038/347169a0
+      \endverb
+    \endentry
+    \entry{karl1986tobs}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=42a5b3f6c870c95ddf9796d2d307d69f}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b4190268c4dae35045e6266d837b9e80}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Pamela\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e17fd54b881c7f059e947703bbe4e762}{%
+           family={Wendland},
+           familyi={W\bibinitperiod},
+           given={Wayne\bibnamedelima M},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{514f93aeb87b0273f2fc7e36fd6d45b1}
+      \strng{fullhash}{464af109312b9edcd6229ad786f06a34}
+      \strng{fullhashraw}{464af109312b9edcd6229ad786f06a34}
+      \strng{bibnamehash}{464af109312b9edcd6229ad786f06a34}
+      \strng{authorbibnamehash}{464af109312b9edcd6229ad786f06a34}
+      \strng{authornamehash}{514f93aeb87b0273f2fc7e36fd6d45b1}
+      \strng{authorfullhash}{464af109312b9edcd6229ad786f06a34}
+      \strng{authorfullhashraw}{464af109312b9edcd6229ad786f06a34}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Climate and Applied Meteorology}
+      \field{number}{2}
+      \field{title}{A model to estimate the time of observation bias associated with monthly mean maximum, minimum and mean temperatures for the {United States}}
+      \field{volume}{25}
+      \field{year}{1986}
+      \field{pages}{145\bibrangedash 160}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1175/1520-0450(1986)025<0145:AMTETT>2.0.CO;2
+      \endverb
+    \endentry
+    \entry{lenssen2019improvements}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=61c9ad9017c90653d8f2a2c97215d551}{%
+           family={Lenssen},
+           familyi={L\bibinitperiod},
+           given={Nathan\bibnamedelima JL},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c5093d5384e953e2de40c14f172b11d}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Gavin\bibnamedelima A},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=606ecd6b3d656ba1ed20546dde5d5b0a}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d30b8323b81b3db5d31474f51cab639}{%
+           family={Persin},
+           familyi={P\bibinitperiod},
+           given={Avraham},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7aa67a999b0815213321e0cea958b7ef}{%
+           family={Ruedy},
+           familyi={R\bibinitperiod},
+           given={Reto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ba66037fdd32a15226730f133c15360}{%
+           family={Zyss},
+           familyi={Z\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{58d46635dcb437f3d5fdc9d7e95aaff3}
+      \strng{fullhash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{fullhashraw}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{bibnamehash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{authorbibnamehash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{authornamehash}{58d46635dcb437f3d5fdc9d7e95aaff3}
+      \strng{authorfullhash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{authorfullhashraw}{5caef3ff1fff045a76516b0357797f4a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{12}
+      \field{title}{Improvements in the {GISTEMP} uncertainty model}
+      \field{volume}{124}
+      \field{year}{2019}
+      \field{pages}{6307\bibrangedash 6326}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1029/2018JD029522
+      \endverb
+    \endentry
+    \entry{lyon2025uhi}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=767cfa3f017700b05531892c7257b81b}{%
+           family={Lyon},
+           familyi={L\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{fullhash}{767cfa3f017700b05531892c7257b81b}
+      \strng{fullhashraw}{767cfa3f017700b05531892c7257b81b}
+      \strng{bibnamehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authorbibnamehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authornamehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authorfullhash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authorfullhashraw}{767cfa3f017700b05531892c7257b81b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manuscript in preparation}
+      \field{title}{Urban Heat Island Contamination Persists in Homogenized {USHCN} Temperature Records: A 126-Year Analysis}
+      \field{year}{2025}
+    \endentry
+    \entry{mcintyre2007station}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bbf88e59289fcc00494cc8c50435d325}{%
+           family={McIntyre},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cbee27b2a3548faed4042ab9e4df0f52}{%
+           family={McKitrick},
+           familyi={M\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Working paper}%
+      }
+      \strng{namehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{fullhash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{fullhashraw}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{bibnamehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authorbibnamehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authornamehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authorfullhash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authorfullhashraw}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Contamination of temperature records by urban heat island effects}
+      \field{type}{techreport}
+      \field{year}{2007}
+    \endentry
+    \entry{menne2009homogenization}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{fullhash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{fullhashraw}{0173a465ccd67d69a75bb7f536429942}
+      \strng{bibnamehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authorbibnamehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authornamehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authorfullhash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authorfullhashraw}{0173a465ccd67d69a75bb7f536429942}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Climate}
+      \field{number}{7}
+      \field{title}{Homogenization of temperature series via pairwise comparisons}
+      \field{volume}{22}
+      \field{year}{2009}
+      \field{pages}{1700\bibrangedash 1717}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1175/2008JCLI2263.1
+      \endverb
+    \endentry
+    \entry{menne2009ushcn}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8c0b925edd9bf4f9b54df1d3571219b}{%
+           family={Vose},
+           familyi={V\bibinitperiod},
+           given={Russell\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{ba83abdbbd94478ff091c62c7862d8ef}
+      \strng{fullhash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{fullhashraw}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{bibnamehash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{authorbibnamehash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{authornamehash}{ba83abdbbd94478ff091c62c7862d8ef}
+      \strng{authorfullhash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{authorfullhashraw}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of the American Meteorological Society}
+      \field{number}{7}
+      \field{title}{The {US Historical Climatology Network} monthly temperature data, version 2}
+      \field{volume}{90}
+      \field{year}{2009}
+      \field{pages}{993\bibrangedash 1007}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1175/2008BAMS2613.1
+      \endverb
+    \endentry
+    \entry{morice2021updated}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=1c11118ce39191be93d7312b80b37a34}{%
+           family={Morice},
+           familyi={M\bibinitperiod},
+           given={Colin\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27cdc16d8cbb3492e691805fd6c6f14f}{%
+           family={Kennedy},
+           familyi={K\bibinitperiod},
+           given={John\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8c7e10b7358b00a724525f5c82734462}{%
+           family={Rayner},
+           familyi={R\bibinitperiod},
+           given={Nick\bibnamedelima A},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=805a4b0927d0f28a152033051ac0bd3c}{%
+           family={Winn},
+           familyi={W\bibinitperiod},
+           given={JP},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=78293f0eb7b59eb1671e48d9f5e495b8}{%
+           family={Hogan},
+           familyi={H\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03b67ae54d2364d73c019ae1941afc41}{%
+           family={Killick},
+           familyi={K\bibinitperiod},
+           given={RE},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa6c96e493332c9ebaa04da49723b057}{%
+           family={Dunn},
+           familyi={D\bibinitperiod},
+           given={RJH},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba8b164a29ab14f011c773d15717310a}{%
+           family={Osborn},
+           familyi={O\bibinitperiod},
+           given={TJ},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb444ed2a864f4aaf5b91e60f22985bb}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={PD},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c57ba80f3b4e325b609da9932a1db72a}{%
+           family={Simpson},
+           familyi={S\bibinitperiod},
+           given={IR},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{bffb37d97eae92705dba9fac6e39a19b}
+      \strng{fullhash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{fullhashraw}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{bibnamehash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{authorbibnamehash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{authornamehash}{bffb37d97eae92705dba9fac6e39a19b}
+      \strng{authorfullhash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{authorfullhashraw}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{3}
+      \field{title}{An updated assessment of near-surface temperature change from 1850: the {HadCRUT5} data set}
+      \field{volume}{126}
+      \field{year}{2021}
+      \field{pages}{e2019JD032361}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1029/2019JD032361
+      \endverb
+    \endentry
+    \entry{oke1987boundary}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b91b080b88ad99eae69ae9cb1bd2eb3a}{%
+           family={Oke},
+           familyi={O\bibinitperiod},
+           given={Tim\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{fullhash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{fullhashraw}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{bibnamehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authorbibnamehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authornamehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authorfullhash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authorfullhashraw}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{title}{Boundary layer climates}
+      \field{year}{1987}
+    \endentry
+    \entry{steirou2012investigation}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=cb5a9af4b3643a7147c1ba1525803067}{%
+           family={Steirou},
+           familyi={S\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f50145dfcb9a906a08eb46a340ff4367}{%
+           family={Koutsoyiannis},
+           familyi={K\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {European Geosciences Union General Assembly, Vienna}%
+      }
+      \strng{namehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{fullhash}{14f2129365564e0248cd539ca2c619df}
+      \strng{fullhashraw}{14f2129365564e0248cd539ca2c619df}
+      \strng{bibnamehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authorbibnamehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authornamehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authorfullhash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authorfullhashraw}{14f2129365564e0248cd539ca2c619df}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{EGU2012-956-1}
+      \field{title}{Investigation of methods for hydroclimatic data homogenization}
+      \field{type}{Geophysical Research Abstracts}
+      \field{volume}{14}
+      \field{year}{2012}
+    \endentry
+    \entry{trewin2010exposure}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0b9dd853959e0ca14a977cd6c384a82e}{%
+           family={Trewin},
+           familyi={T\bibinitperiod},
+           given={Blair},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{fullhash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{fullhashraw}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{bibnamehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authorbibnamehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authornamehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authorfullhash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authorfullhashraw}{0b9dd853959e0ca14a977cd6c384a82e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Wiley Interdisciplinary Reviews: Climate Change}
+      \field{number}{4}
+      \field{title}{Exposure, instrumentation, and observing practice effects on land temperature measurements}
+      \field{volume}{1}
+      \field{year}{2010}
+      \field{pages}{490\bibrangedash 506}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1002/wcc.46
+      \endverb
+    \endentry
+    \entry{vose2003tobs}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=c8c0b925edd9bf4f9b54df1d3571219b}{%
+           family={Vose},
+           familyi={V\bibinitperiod},
+           given={Russell\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6022ed6b333b07fb9ac74b51d3aa562}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Thomas\bibnamedelima C},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a5b3f6c870c95ddf9796d2d307d69f}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a43c58acc236d7de8f80880032a1f53}{%
+           family={Easterling},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{2632c1ee5ac9de355c0d8a5d34312e65}
+      \strng{fullhash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{fullhashraw}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{bibnamehash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{authorbibnamehash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{authornamehash}{2632c1ee5ac9de355c0d8a5d34312e65}
+      \strng{authorfullhash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{authorfullhashraw}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Research Letters}
+      \field{number}{20}
+      \field{title}{An evaluation of the time of observation bias adjustment in the {US Historical Climatology Network}}
+      \field{volume}{30}
+      \field{year}{2003}
+      \verb{doi}
+      \verb 10.1029/2003GL018111
+      \endverb
+    \endentry
+    \entry{watts2009surface}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4b3a706a136b1fd34409f1d3afaca6ec}{%
+           family={Watts},
+           familyi={W\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {The Heartland Institute}%
+      }
+      \list{location}{1}{%
+        {Chicago, IL}%
+      }
+      \strng{namehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{fullhash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{fullhashraw}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{bibnamehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authorbibnamehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authornamehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authorfullhash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authorfullhashraw}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Is the {US} surface temperature record reliable?}
+      \field{type}{techreport}
+      \field{year}{2009}
+    \endentry
+    \entry{williams2012benchmarking}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7dd9e9be48ce631f5a772d455f15b878}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=793f1d27b385b71e14373d21acb122c6}{%
+           family={Thorne},
+           familyi={T\bibinitperiod},
+           given={Peter\bibnamedelima W},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{1c986e7ec4273f3eb29198f5d487be1f}
+      \strng{fullhash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{fullhashraw}{fdb3a022058538c0c63deb6d96146490}
+      \strng{bibnamehash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{authorbibnamehash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{authornamehash}{1c986e7ec4273f3eb29198f5d487be1f}
+      \strng{authorfullhash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{authorfullhashraw}{fdb3a022058538c0c63deb6d96146490}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{D5}
+      \field{title}{Benchmarking the performance of pairwise homogenization of surface temperatures in the {United States}}
+      \field{volume}{117}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1029/2011JD016761
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{arnfield2003urban}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=23e887a717bb0dbf58ffd34504961a60}{%
+           family={Arnfield},
+           familyi={A\bibinitperiod},
+           given={A\bibnamedelima John},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{fullhash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{fullhashraw}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{bibnamehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authorbibnamehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authornamehash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authorfullhash}{23e887a717bb0dbf58ffd34504961a60}
+      \strng{authorfullhashraw}{23e887a717bb0dbf58ffd34504961a60}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Climatology}
+      \field{number}{1}
+      \field{title}{Two decades of urban climate research: a review of turbulence, exchanges of energy and water, and the urban heat island}
+      \field{volume}{23}
+      \field{year}{2003}
+      \field{pages}{1\bibrangedash 26}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1002/joc.859
+      \endverb
+    \endentry
+    \entry{connolly2021evaluation}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=1,uniquepart=given,hash=f6455e44f4e2b49bb9f60d2203b187ee}{%
+           family={Connolly},
+           familyi={C\bibinitperiod},
+           given={Ronan},
+           giveni={R\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=c69f1f9b48097d2d907ec6bebb81b391}{%
+           family={Soon},
+           familyi={S\bibinitperiod},
+           given={Willie},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=93f3c8af5cf5ef9d0289067ef2a8e9c4}{%
+           family={Connolly},
+           familyi={C\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=d3b5a9a130f005432d83c2a59d3993fa}{%
+           family={Baliunas},
+           familyi={B\bibinitperiod},
+           given={Sallie},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37adde81c979b042461d4213913aee7e}{%
+           family={Berglund},
+           familyi={B\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ad7ab71c0b8cb3d4f8c86090d2d5216}{%
+           family={Butler},
+           familyi={B\bibinitperiod},
+           given={C\bibnamedelima John},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=55b2496617d04c4b172b13f5ebd093dc}{%
+           family={Cionco},
+           familyi={C\bibinitperiod},
+           given={Rodolfo\bibnamedelima Gustavo},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dce696189e13ce6948c8982e940ff7cc}{%
+           family={Elias},
+           familyi={E\bibinitperiod},
+           given={Ana\bibnamedelima G},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e781863a2ed92e341d9dfbac42ae2e9}{%
+           family={Fedorov},
+           familyi={F\bibinitperiod},
+           given={Valery\bibnamedelima M},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d8e46a03a5fd33fff3708b4aa59e621}{%
+           family={Harde},
+           familyi={H\bibinitperiod},
+           given={Hermann},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{e72860dd2533b1cccc737913bb9a7852}
+      \strng{fullhash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{fullhashraw}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{bibnamehash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{authorbibnamehash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{authornamehash}{e72860dd2533b1cccc737913bb9a7852}
+      \strng{authorfullhash}{f2a3782409c74c2a34928792bebb7a14}
+      \strng{authorfullhashraw}{f2a3782409c74c2a34928792bebb7a14}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Research in Astronomy and Astrophysics}
+      \field{number}{6}
+      \field{title}{How much has the Sun influenced Northern Hemisphere temperature trends? An ongoing debate}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{pages}{131}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1674-4527/21/6/131
+      \endverb
+    \endentry
+    \entry{diamond2013uscrn}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=d922b0f397119e718d131a3cdcc23bcb}{%
+           family={Diamond},
+           familyi={D\bibinitperiod},
+           given={Howard\bibnamedelima J},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a5b3f6c870c95ddf9796d2d307d69f}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0eaf2da6b2555794793e4867b50ac9a9}{%
+           family={Palecki},
+           familyi={P\bibinitperiod},
+           given={Michael\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97611d12ed87f6f20b32984e8e4264aa}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={C\bibnamedelima Bruce},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a0311ad5c34ced4997aa2bc80f5a3c86}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={Jesse\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbd21ccba6bd40c40a75ea25632ae079}{%
+           family={Leeper},
+           familyi={L\bibinitperiod},
+           given={Ronald\bibnamedelima D},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a43c58acc236d7de8f80880032a1f53}{%
+           family={Easterling},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ffb463e036cd29e4bb5fd4880c66601}{%
+           family={Lawrimore},
+           familyi={L\bibinitperiod},
+           given={Jay\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f64856f065a9ba56cd76a9e92cf2c05e}{%
+           family={Meyers},
+           familyi={M\bibinitperiod},
+           given={Tilden\bibnamedelima P},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c9bfbf82e3c1e36e60da97fc73a87db}{%
+           family={Helfert},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima R},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{172469ca97dfe8517c3af0e308b69085}
+      \strng{fullhash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{fullhashraw}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{bibnamehash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{authorbibnamehash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{authornamehash}{172469ca97dfe8517c3af0e308b69085}
+      \strng{authorfullhash}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \strng{authorfullhashraw}{590f1f6ee7a3fd8ad68bfa0e7f02c418}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of the American Meteorological Society}
+      \field{number}{4}
+      \field{title}{{US Climate Reference Network} after one decade of operations: Status and assessment}
+      \field{volume}{94}
+      \field{year}{2013}
+      \field{pages}{485\bibrangedash 498}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1175/BAMS-D-12-00170.1
+      \endverb
+    \endentry
+    \entry{hausfather2016evaluating}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=39a65ad84cfc989ed672c6e99993603d}{%
+           family={Hausfather},
+           familyi={H\bibinitperiod},
+           given={Zeke},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcf4a584f183c3e34a5caf6dfaa9034a}{%
+           family={Cowtan},
+           familyi={C\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{fullhash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{fullhashraw}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{bibnamehash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{authorbibnamehash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{authornamehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{authorfullhash}{0f59cf733c191c3be12e84ca5fccbc76}
+      \strng{authorfullhashraw}{0f59cf733c191c3be12e84ca5fccbc76}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Research Letters}
+      \field{number}{4}
+      \field{title}{Evaluating the impact of {US} historical climatology network homogenization using the {US} climate reference network}
+      \field{volume}{43}
+      \field{year}{2016}
+      \field{pages}{1695\bibrangedash 1701}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1002/2015GL067640
+      \endverb
+    \endentry
+    \entry{hausfather2013quantifying}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=39a65ad84cfc989ed672c6e99993603d}{%
+           family={Hausfather},
+           familyi={H\bibinitperiod},
+           given={Zeke},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7dd9e9be48ce631f5a772d455f15b878}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2fdd3ab556fdf12a4dd55d251ff2e6f7}{%
+           family={Masters},
+           familyi={M\bibinitperiod},
+           given={Troy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eac9e685684f9e57a630260968988e76}{%
+           family={Broberg},
+           familyi={B\bibinitperiod},
+           given={Ronald},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb0aecd83160d1f552629af8b8a74fba}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{fullhash}{b5493a091ad984b71046a689e32452ab}
+      \strng{fullhashraw}{b5493a091ad984b71046a689e32452ab}
+      \strng{bibnamehash}{b5493a091ad984b71046a689e32452ab}
+      \strng{authorbibnamehash}{b5493a091ad984b71046a689e32452ab}
+      \strng{authornamehash}{738ee9f36fc23a18760c43ae88109fa2}
+      \strng{authorfullhash}{b5493a091ad984b71046a689e32452ab}
+      \strng{authorfullhashraw}{b5493a091ad984b71046a689e32452ab}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{2}
+      \field{title}{Quantifying the effect of urbanization on {US} historical climatology network temperature records}
+      \field{volume}{118}
+      \field{year}{2013}
+      \field{pages}{481\bibrangedash 494}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1029/2012JD018509
+      \endverb
+    \endentry
+    \entry{jones2012assessment}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=06ebdf732432a6bc0096f95dba816396}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Philip\bibnamedelima D},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d2b818d892125b4cf702b6550b6de6e}{%
+           family={Lister},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima H},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4dfad88d6a87abea76da8ed3b977ab29}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qingxiang},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{c4301765dca8064432364d1d1f81c231}
+      \strng{fullhash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{fullhashraw}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{bibnamehash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{authorbibnamehash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{authornamehash}{c4301765dca8064432364d1d1f81c231}
+      \strng{authorfullhash}{efade4c7bceb6d35dc68d40349ad6982}
+      \strng{authorfullhashraw}{efade4c7bceb6d35dc68d40349ad6982}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{6289}
+      \field{title}{Assessment of urbanization effects in time series of surface air temperature over land}
+      \field{volume}{347}
+      \field{year}{2012}
+      \field{pages}{169\bibrangedash 172}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1038/347169a0
+      \endverb
+    \endentry
+    \entry{karl1986tobs}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=42a5b3f6c870c95ddf9796d2d307d69f}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b4190268c4dae35045e6266d837b9e80}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Pamela\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e17fd54b881c7f059e947703bbe4e762}{%
+           family={Wendland},
+           familyi={W\bibinitperiod},
+           given={Wayne\bibnamedelima M},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{514f93aeb87b0273f2fc7e36fd6d45b1}
+      \strng{fullhash}{464af109312b9edcd6229ad786f06a34}
+      \strng{fullhashraw}{464af109312b9edcd6229ad786f06a34}
+      \strng{bibnamehash}{464af109312b9edcd6229ad786f06a34}
+      \strng{authorbibnamehash}{464af109312b9edcd6229ad786f06a34}
+      \strng{authornamehash}{514f93aeb87b0273f2fc7e36fd6d45b1}
+      \strng{authorfullhash}{464af109312b9edcd6229ad786f06a34}
+      \strng{authorfullhashraw}{464af109312b9edcd6229ad786f06a34}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Climate and Applied Meteorology}
+      \field{number}{2}
+      \field{title}{A model to estimate the time of observation bias associated with monthly mean maximum, minimum and mean temperatures for the {United States}}
+      \field{volume}{25}
+      \field{year}{1986}
+      \field{pages}{145\bibrangedash 160}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1175/1520-0450(1986)025<0145:AMTETT>2.0.CO;2
+      \endverb
+    \endentry
+    \entry{lenssen2019improvements}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=61c9ad9017c90653d8f2a2c97215d551}{%
+           family={Lenssen},
+           familyi={L\bibinitperiod},
+           given={Nathan\bibnamedelima JL},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c5093d5384e953e2de40c14f172b11d}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Gavin\bibnamedelima A},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=606ecd6b3d656ba1ed20546dde5d5b0a}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d30b8323b81b3db5d31474f51cab639}{%
+           family={Persin},
+           familyi={P\bibinitperiod},
+           given={Avraham},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7aa67a999b0815213321e0cea958b7ef}{%
+           family={Ruedy},
+           familyi={R\bibinitperiod},
+           given={Reto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ba66037fdd32a15226730f133c15360}{%
+           family={Zyss},
+           familyi={Z\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{58d46635dcb437f3d5fdc9d7e95aaff3}
+      \strng{fullhash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{fullhashraw}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{bibnamehash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{authorbibnamehash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{authornamehash}{58d46635dcb437f3d5fdc9d7e95aaff3}
+      \strng{authorfullhash}{5caef3ff1fff045a76516b0357797f4a}
+      \strng{authorfullhashraw}{5caef3ff1fff045a76516b0357797f4a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{12}
+      \field{title}{Improvements in the {GISTEMP} uncertainty model}
+      \field{volume}{124}
+      \field{year}{2019}
+      \field{pages}{6307\bibrangedash 6326}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1029/2018JD029522
+      \endverb
+    \endentry
+    \entry{lyon2025uhi}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=767cfa3f017700b05531892c7257b81b}{%
+           family={Lyon},
+           familyi={L\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{fullhash}{767cfa3f017700b05531892c7257b81b}
+      \strng{fullhashraw}{767cfa3f017700b05531892c7257b81b}
+      \strng{bibnamehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authorbibnamehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authornamehash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authorfullhash}{767cfa3f017700b05531892c7257b81b}
+      \strng{authorfullhashraw}{767cfa3f017700b05531892c7257b81b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manuscript in preparation}
+      \field{title}{Urban Heat Island Contamination Persists in Homogenized {USHCN} Temperature Records: A 126-Year Analysis}
+      \field{year}{2025}
+    \endentry
+    \entry{mcintyre2007station}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bbf88e59289fcc00494cc8c50435d325}{%
+           family={McIntyre},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cbee27b2a3548faed4042ab9e4df0f52}{%
+           family={McKitrick},
+           familyi={M\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Working paper}%
+      }
+      \strng{namehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{fullhash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{fullhashraw}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{bibnamehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authorbibnamehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authornamehash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authorfullhash}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \strng{authorfullhashraw}{bdb5ef84ccd5d68ed87435f458c3ab62}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Contamination of temperature records by urban heat island effects}
+      \field{type}{techreport}
+      \field{year}{2007}
+    \endentry
+    \entry{menne2009homogenization}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{fullhash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{fullhashraw}{0173a465ccd67d69a75bb7f536429942}
+      \strng{bibnamehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authorbibnamehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authornamehash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authorfullhash}{0173a465ccd67d69a75bb7f536429942}
+      \strng{authorfullhashraw}{0173a465ccd67d69a75bb7f536429942}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Climate}
+      \field{number}{7}
+      \field{title}{Homogenization of temperature series via pairwise comparisons}
+      \field{volume}{22}
+      \field{year}{2009}
+      \field{pages}{1700\bibrangedash 1717}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1175/2008JCLI2263.1
+      \endverb
+    \endentry
+    \entry{menne2009ushcn}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8c0b925edd9bf4f9b54df1d3571219b}{%
+           family={Vose},
+           familyi={V\bibinitperiod},
+           given={Russell\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{ba83abdbbd94478ff091c62c7862d8ef}
+      \strng{fullhash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{fullhashraw}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{bibnamehash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{authorbibnamehash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{authornamehash}{ba83abdbbd94478ff091c62c7862d8ef}
+      \strng{authorfullhash}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \strng{authorfullhashraw}{37c8d47d4517e1bc69ab5fd57f9cc2e5}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of the American Meteorological Society}
+      \field{number}{7}
+      \field{title}{The {US Historical Climatology Network} monthly temperature data, version 2}
+      \field{volume}{90}
+      \field{year}{2009}
+      \field{pages}{993\bibrangedash 1007}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1175/2008BAMS2613.1
+      \endverb
+    \endentry
+    \entry{morice2021updated}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=1c11118ce39191be93d7312b80b37a34}{%
+           family={Morice},
+           familyi={M\bibinitperiod},
+           given={Colin\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27cdc16d8cbb3492e691805fd6c6f14f}{%
+           family={Kennedy},
+           familyi={K\bibinitperiod},
+           given={John\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8c7e10b7358b00a724525f5c82734462}{%
+           family={Rayner},
+           familyi={R\bibinitperiod},
+           given={Nick\bibnamedelima A},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=805a4b0927d0f28a152033051ac0bd3c}{%
+           family={Winn},
+           familyi={W\bibinitperiod},
+           given={JP},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=78293f0eb7b59eb1671e48d9f5e495b8}{%
+           family={Hogan},
+           familyi={H\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03b67ae54d2364d73c019ae1941afc41}{%
+           family={Killick},
+           familyi={K\bibinitperiod},
+           given={RE},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa6c96e493332c9ebaa04da49723b057}{%
+           family={Dunn},
+           familyi={D\bibinitperiod},
+           given={RJH},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba8b164a29ab14f011c773d15717310a}{%
+           family={Osborn},
+           familyi={O\bibinitperiod},
+           given={TJ},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb444ed2a864f4aaf5b91e60f22985bb}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={PD},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c57ba80f3b4e325b609da9932a1db72a}{%
+           family={Simpson},
+           familyi={S\bibinitperiod},
+           given={IR},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{bffb37d97eae92705dba9fac6e39a19b}
+      \strng{fullhash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{fullhashraw}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{bibnamehash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{authorbibnamehash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{authornamehash}{bffb37d97eae92705dba9fac6e39a19b}
+      \strng{authorfullhash}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \strng{authorfullhashraw}{99988a072fdda9cfbe0d6e11336e3f8f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{3}
+      \field{title}{An updated assessment of near-surface temperature change from 1850: the {HadCRUT5} data set}
+      \field{volume}{126}
+      \field{year}{2021}
+      \field{pages}{e2019JD032361}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1029/2019JD032361
+      \endverb
+    \endentry
+    \entry{oke1987boundary}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b91b080b88ad99eae69ae9cb1bd2eb3a}{%
+           family={Oke},
+           familyi={O\bibinitperiod},
+           given={Tim\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{fullhash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{fullhashraw}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{bibnamehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authorbibnamehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authornamehash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authorfullhash}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \strng{authorfullhashraw}{b91b080b88ad99eae69ae9cb1bd2eb3a}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{title}{Boundary layer climates}
+      \field{year}{1987}
+    \endentry
+    \entry{steirou2012investigation}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=cb5a9af4b3643a7147c1ba1525803067}{%
+           family={Steirou},
+           familyi={S\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f50145dfcb9a906a08eb46a340ff4367}{%
+           family={Koutsoyiannis},
+           familyi={K\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {European Geosciences Union General Assembly, Vienna}%
+      }
+      \strng{namehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{fullhash}{14f2129365564e0248cd539ca2c619df}
+      \strng{fullhashraw}{14f2129365564e0248cd539ca2c619df}
+      \strng{bibnamehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authorbibnamehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authornamehash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authorfullhash}{14f2129365564e0248cd539ca2c619df}
+      \strng{authorfullhashraw}{14f2129365564e0248cd539ca2c619df}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{EGU2012-956-1}
+      \field{title}{Investigation of methods for hydroclimatic data homogenization}
+      \field{type}{Geophysical Research Abstracts}
+      \field{volume}{14}
+      \field{year}{2012}
+    \endentry
+    \entry{trewin2010exposure}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0b9dd853959e0ca14a977cd6c384a82e}{%
+           family={Trewin},
+           familyi={T\bibinitperiod},
+           given={Blair},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{fullhash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{fullhashraw}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{bibnamehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authorbibnamehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authornamehash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authorfullhash}{0b9dd853959e0ca14a977cd6c384a82e}
+      \strng{authorfullhashraw}{0b9dd853959e0ca14a977cd6c384a82e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Wiley Interdisciplinary Reviews: Climate Change}
+      \field{number}{4}
+      \field{title}{Exposure, instrumentation, and observing practice effects on land temperature measurements}
+      \field{volume}{1}
+      \field{year}{2010}
+      \field{pages}{490\bibrangedash 506}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1002/wcc.46
+      \endverb
+    \endentry
+    \entry{vose2003tobs}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=c8c0b925edd9bf4f9b54df1d3571219b}{%
+           family={Vose},
+           familyi={V\bibinitperiod},
+           given={Russell\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2842cd9b6c733f93dba7bbdc270c420d}{%
+           family={Williams\bibnamedelima Jr},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6022ed6b333b07fb9ac74b51d3aa562}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Thomas\bibnamedelima C},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a5b3f6c870c95ddf9796d2d307d69f}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima R},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a43c58acc236d7de8f80880032a1f53}{%
+           family={Easterling},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{2632c1ee5ac9de355c0d8a5d34312e65}
+      \strng{fullhash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{fullhashraw}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{bibnamehash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{authorbibnamehash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{authornamehash}{2632c1ee5ac9de355c0d8a5d34312e65}
+      \strng{authorfullhash}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \strng{authorfullhashraw}{95ebb08dafb5d8d6643cd3c44a585b9a}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Research Letters}
+      \field{number}{20}
+      \field{title}{An evaluation of the time of observation bias adjustment in the {US Historical Climatology Network}}
+      \field{volume}{30}
+      \field{year}{2003}
+      \verb{doi}
+      \verb 10.1029/2003GL018111
+      \endverb
+    \endentry
+    \entry{watts2009surface}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4b3a706a136b1fd34409f1d3afaca6ec}{%
+           family={Watts},
+           familyi={W\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {The Heartland Institute}%
+      }
+      \list{location}{1}{%
+        {Chicago, IL}%
+      }
+      \strng{namehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{fullhash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{fullhashraw}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{bibnamehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authorbibnamehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authornamehash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authorfullhash}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \strng{authorfullhashraw}{4b3a706a136b1fd34409f1d3afaca6ec}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Is the {US} surface temperature record reliable?}
+      \field{type}{techreport}
+      \field{year}{2009}
+    \endentry
+    \entry{williams2012benchmarking}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7dd9e9be48ce631f5a772d455f15b878}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Claude\bibnamedelima N},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4cbfa5c0ee4dd50b26d9b7ee0e28e0c}{%
+           family={Menne},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=793f1d27b385b71e14373d21acb122c6}{%
+           family={Thorne},
+           familyi={T\bibinitperiod},
+           given={Peter\bibnamedelima W},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{1c986e7ec4273f3eb29198f5d487be1f}
+      \strng{fullhash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{fullhashraw}{fdb3a022058538c0c63deb6d96146490}
+      \strng{bibnamehash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{authorbibnamehash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{authornamehash}{1c986e7ec4273f3eb29198f5d487be1f}
+      \strng{authorfullhash}{fdb3a022058538c0c63deb6d96146490}
+      \strng{authorfullhashraw}{fdb3a022058538c0c63deb6d96146490}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+      \field{number}{D5}
+      \field{title}{Benchmarking the performance of pairwise homogenization of surface temperatures in the {United States}}
+      \field{volume}{117}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1029/2011JD016761
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

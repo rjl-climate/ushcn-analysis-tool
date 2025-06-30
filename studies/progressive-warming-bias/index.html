@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Richard Lyon" name="author"/><link href="https://rjl-climate.github.io/ushcn-analysis-tool/studies/progressive-warming-bias/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Progressive Warming Bias - USHCN Temperature Data Analysis Tool</title>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Progressive Warming Bias";
+        var mkdocs_page_input_path = "studies/progressive-warming-bias.md";
+        var mkdocs_page_url = "/ushcn-analysis-tool/studies/progressive-warming-bias/";
+      </script>
+<!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="../.."> USHCN Temperature Data Analysis Tool
+        </a><div role="search">
+<form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Research Studies</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../uhi-contamination/">UHI Contamination</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Progressive Warming Bias</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#a-128-year-investigation-revealing-systematic-artificial-warming-in-the-us-temperature-record">A 128-year investigation revealing systematic artificial warming in the US temperature record</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#executive-summary">Executive Summary</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#primary-results">Primary Results</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#smoking-gun-evidence">"Smoking Gun" Evidence</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#research-context">Research Context</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-challenge">The Challenge</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#progressive-bias-hypothesis">Progressive Bias Hypothesis</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#methodology">Methodology</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathematical-framework">Mathematical Framework</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis-design">Analysis Design</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#urban-rural-classification">Urban-Rural Classification</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#statistical-framework">Statistical Framework</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#key-findings">Key Findings</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#cross-metric-bias-patterns">Cross-Metric Bias Patterns</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#regional-analysis">Regional Analysis</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#spatial-patterns">Spatial Patterns</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#statistical-robustness">Statistical Robustness</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#implications">Implications</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#for-us-temperature-records">For US Temperature Records</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#global-extrapolation">Global Extrapolation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#climate-science-impact">Climate Science Impact</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reproducing-results">Reproducing Results</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-bias-analysis">Basic Bias Analysis</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#urban-rural-comparison">Urban-Rural Comparison</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#complete-pipeline">Complete Pipeline</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizations">Visualizations</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#bias-evolution">Bias Evolution</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#spatial-distribution">Spatial Distribution</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-metric-comparison">Cross-Metric Comparison</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusions">Conclusions</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#future-research">Future Research</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#immediate-priorities">Immediate Priorities</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#long-term-goals">Long-term Goals</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data-code">Data &amp; Code</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scientific-disclaimer">Scientific Disclaimer</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#responsible-use">Responsible Use</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#links-resources">🔗 Links &amp; Resources</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../..">USHCN Temperature Data Analysis Tool</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
+<li class="breadcrumb-item">Research Studies</li>
+<li class="breadcrumb-item active">Progressive Warming Bias</li>
+<li class="wy-breadcrumbs-aside">
+<a href="https://github.com/rjl-climate/ushcn-analysis-tool/edit/master/docs/studies/progressive-warming-bias.md">Edit on ushcn-analysis-tool</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="progressive-warming-bias-in-noaa-temperature-adjustments">Progressive Warming Bias in NOAA Temperature Adjustments<a class="headerlink" href="#progressive-warming-bias-in-noaa-temperature-adjustments" title="Permanent link">¶</a></h1>
+<h2 id="a-128-year-investigation-revealing-systematic-artificial-warming-in-the-us-temperature-record">A 128-year investigation revealing systematic artificial warming in the US temperature record<a class="headerlink" href="#a-128-year-investigation-revealing-systematic-artificial-warming-in-the-us-temperature-record" title="Permanent link">¶</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Key Finding</p>
+<p>NOAA's F52 adjustments introduce progressive warming bias beyond legitimate time-of-observation corrections, with maximum temperatures showing 0.035°C/decade artificial warming (~0.45°C since 1895) and identical bias patterns in urban and rural stations providing "smoking gun" evidence of systematic artifacts.</p>
+</div>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">¶</a></h2>
+<p>This study investigates whether NOAA's F52 temperature adjustments introduce progressive warming bias by analyzing 1,218 USHCN stations over 128 years (1895-2023). By isolating non-TOB adjustments and comparing urban versus rural stations, we demonstrate that homogenization procedures systematically add warming to the temperature record rather than removing environmental biases.</p>
+<h3 id="primary-results">Primary Results<a class="headerlink" href="#primary-results" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Temperature Metric</th>
+<th>Bias Trend (°C/decade)</th>
+<th>Cumulative Since 1895</th>
+<th>Stations Affected</th>
+<th>Urban Trend</th>
+<th>Rural Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maximum</strong></td>
+<td>0.035</td>
+<td>~0.45°C</td>
+<td>54.6% (665/1218)</td>
+<td>0.028</td>
+<td><strong>0.040</strong></td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td>0.018</td>
+<td>~0.23°C</td>
+<td>48.9% (596/1218)</td>
+<td><strong>0.019</strong></td>
+<td><strong>0.019</strong></td>
+</tr>
+<tr>
+<td><strong>Minimum</strong></td>
+<td>0.002</td>
+<td>~0.03°C</td>
+<td>41.1% (501/1218)</td>
+<td>0.011</td>
+<td>-0.001</td>
+</tr>
+</tbody>
+</table>
+<h3 id="smoking-gun-evidence">"Smoking Gun" Evidence<a class="headerlink" href="#smoking-gun-evidence" title="Permanent link">¶</a></h3>
+<p>The urban-rural comparison reveals the critical finding:</p>
+<ul>
+<li><strong>Average temperature</strong>: Identical bias in urban (0.019) and rural (0.019) stations</li>
+<li><strong>Maximum temperature</strong>: Rural stations receive <em>larger</em> warming adjustments than urban</li>
+<li><strong>Significance</strong>: Rural stations have no urban heat island effects requiring correction</li>
+</ul>
+<p>This pattern cannot be reconciled with legitimate environmental adjustments.</p>
+<h2 id="research-context">Research Context<a class="headerlink" href="#research-context" title="Permanent link">¶</a></h2>
+<h3 id="the-challenge">The Challenge<a class="headerlink" href="#the-challenge" title="Permanent link">¶</a></h3>
+<p>The integrity of temperature records depends on adjustment procedures designed to remove non-climatic artifacts:</p>
+<ul>
+<li>Station relocations</li>
+<li>Equipment changes</li>
+<li>Time-of-observation shifts</li>
+<li>Environmental modifications</li>
+</ul>
+<p>NOAA applies multi-stage adjustments progressing from raw data through TOB corrections to fully adjusted (F52) datasets. The systematic impact of these adjustments on long-term trends has profound implications for climate assessments.</p>
+<h3 id="progressive-bias-hypothesis">Progressive Bias Hypothesis<a class="headerlink" href="#progressive-bias-hypothesis" title="Permanent link">¶</a></h3>
+<p>If adjustment procedures introduce systematic warming over time, this would:
+- Contaminate temperature trend calculations
+- Affect climate model validation
+- Compromise attribution studies
+- Impact policy decisions based on warming magnitude</p>
+<h2 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">¶</a></h2>
+<h3 id="mathematical-framework">Mathematical Framework<a class="headerlink" href="#mathematical-framework" title="Permanent link">¶</a></h3>
+<p>For each station <em>i</em> at time <em>t</em>, we calculated adjustment bias:</p>
+<pre><code>Bias(i,t) = F52_temp(i,t) - TOB_temp(i,t)
+</code></pre>
+<p>This isolates homogenization impacts from well-understood TOB corrections.</p>
+<h3 id="analysis-design">Analysis Design<a class="headerlink" href="#analysis-design" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Period</strong>: 1895-2023 (128 years)</li>
+<li><strong>Network</strong>: 1,218 USHCN stations</li>
+<li><strong>Metrics</strong>: Minimum, average, and maximum temperatures</li>
+<li><strong>Trend Analysis</strong>: Linear regression of bias over time</li>
+<li><strong>Quality Control</strong>: Minimum 10 years data, ≥6 months/year</li>
+</ul>
+<h3 id="urban-rural-classification">Urban-Rural Classification<a class="headerlink" href="#urban-rural-classification" title="Permanent link">¶</a></h3>
+<p>Critical for testing whether adjustments respond to real factors:</p>
+<ul>
+<li><strong>Urban</strong>: Within 100 km of cities &gt;50,000 population</li>
+<li><strong>Rural</strong>: &gt;100 km from any city &gt;50,000 population</li>
+<li><strong>Temporal Filter</strong>: Stations must have data from ≤1905</li>
+</ul>
+<h3 id="statistical-framework">Statistical Framework<a class="headerlink" href="#statistical-framework" title="Permanent link">¶</a></h3>
+<ul>
+<li>Individual station significance via t-tests</li>
+<li>Network-wide Mann-Kendall tests</li>
+<li>Spatial autocorrelation via Moran's I</li>
+<li>Bootstrap uncertainty quantification</li>
+</ul>
+<h2 id="key-findings">Key Findings<a class="headerlink" href="#key-findings" title="Permanent link">¶</a></h2>
+<h3 id="cross-metric-bias-patterns">Cross-Metric Bias Patterns<a class="headerlink" href="#cross-metric-bias-patterns" title="Permanent link">¶</a></h3>
+<div class="mermaid">graph LR
+    A[Minimum&lt;br/&gt;0.002°C/decade&lt;br/&gt;41.1% stations]
+    B[Average&lt;br/&gt;0.018°C/decade&lt;br/&gt;48.9% stations]
+    C[Maximum&lt;br/&gt;0.035°C/decade&lt;br/&gt;54.6% stations]
+
+    style A fill:#bbf,stroke:#333,stroke-width:2px
+    style B fill:#f9f,stroke:#333,stroke-width:3px
+    style C fill:#f96,stroke:#333,stroke-width:4px
+</div>
+<p>Maximum temperature adjustments show the most severe contamination, with over half of all stations affected.</p>
+<h3 id="regional-analysis">Regional Analysis<a class="headerlink" href="#regional-analysis" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Stations</th>
+<th>Mean Bias Trend</th>
+<th>Significance</th>
+<th>% Positive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Northeast</td>
+<td>106</td>
+<td>0.028°C/decade</td>
+<td>p&lt;0.001 ✓</td>
+<td>58.5%</td>
+</tr>
+<tr>
+<td>Southeast</td>
+<td>287</td>
+<td>0.024°C/decade</td>
+<td>p&lt;0.001 ✓</td>
+<td>51.9%</td>
+</tr>
+<tr>
+<td>Midwest</td>
+<td>275</td>
+<td>0.016°C/decade</td>
+<td>p&lt;0.001 ✓</td>
+<td>49.5%</td>
+</tr>
+<tr>
+<td>Northwest</td>
+<td>106</td>
+<td>0.022°C/decade</td>
+<td>p&lt;0.01 ✓</td>
+<td>50.0%</td>
+</tr>
+<tr>
+<td>South</td>
+<td>58</td>
+<td>0.007°C/decade</td>
+<td>p=0.48</td>
+<td>41.4%</td>
+</tr>
+<tr>
+<td>Southwest</td>
+<td>90</td>
+<td>0.012°C/decade</td>
+<td>p=0.18</td>
+<td>44.4%</td>
+</tr>
+<tr>
+<td>West</td>
+<td>26</td>
+<td>0.007°C/decade</td>
+<td>p=0.72</td>
+<td>46.2%</td>
+</tr>
+</tbody>
+</table>
+<p>Four of seven regions show statistically significant positive bias.</p>
+<h3 id="spatial-patterns">Spatial Patterns<a class="headerlink" href="#spatial-patterns" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Moran's I</strong>: 0.029 (p=0.303)</li>
+<li><strong>Interpretation</strong>: No spatial autocorrelation</li>
+<li><strong>Significance</strong>: Bias applied systematically, not regionally coordinated</li>
+</ul>
+<h3 id="statistical-robustness">Statistical Robustness<a class="headerlink" href="#statistical-robustness" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Network-wide significance</strong>: p &lt; 0.001 for average and maximum</li>
+<li><strong>Bonferroni corrections</strong>: Results remain significant</li>
+<li><strong>Bootstrap validation</strong>: 95% CIs exclude zero</li>
+<li><strong>Mann-Kendall test</strong>: τ = 0.687 (p &lt; 0.001)</li>
+</ul>
+<h2 id="implications">Implications<a class="headerlink" href="#implications" title="Permanent link">¶</a></h2>
+<h3 id="for-us-temperature-records">For US Temperature Records<a class="headerlink" href="#for-us-temperature-records" title="Permanent link">¶</a></h3>
+<p>With progressive bias ranging from 0.03°C to 0.45°C since 1895:</p>
+<ul>
+<li>Maximum temperature trends inflated by ~0.035°C/decade</li>
+<li>Average temperature trends inflated by ~0.018°C/decade</li>
+<li>Nearly half of all stations systematically biased upward</li>
+<li>Cumulative warming substantially overstated</li>
+</ul>
+<h3 id="global-extrapolation">Global Extrapolation<a class="headerlink" href="#global-extrapolation" title="Permanent link">¶</a></h3>
+<p>If similar procedures are applied internationally:</p>
+<ul>
+<li>Global temperature records likely contain comparable biases</li>
+<li>Densely populated regions may show larger effects</li>
+<li>Climate sensitivity estimates require reassessment</li>
+<li>Temperature targets need recalibration</li>
+</ul>
+<h3 id="climate-science-impact">Climate Science Impact<a class="headerlink" href="#climate-science-impact" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Model Validation</strong>: Calibrated against biased observations</li>
+<li><strong>Attribution Studies</strong>: Artificial warming conflated with forcing</li>
+<li><strong>Policy Decisions</strong>: Based on inflated warming estimates</li>
+<li><strong>Trend Analysis</strong>: Systematic overestimation of warming rates</li>
+</ul>
+<h2 id="reproducing-results">Reproducing Results<a class="headerlink" href="#reproducing-results" title="Permanent link">¶</a></h2>
+<h3 id="basic-bias-analysis">Basic Bias Analysis<a class="headerlink" href="#basic-bias-analysis" title="Permanent link">¶</a></h3>
+<pre><code class="language-bash"># Calculate bias trends for all temperature metrics
+python analysis/progressive_bias_investigation/scripts/01_calculate_bias_trends.py
+
+# Expected output for average temperature:
+# Network-wide bias trend: 0.018 ± 0.002°C/decade
+# Stations with positive bias: 596 (48.9%)
+</code></pre>
+<h3 id="urban-rural-comparison">Urban-Rural Comparison<a class="headerlink" href="#urban-rural-comparison" title="Permanent link">¶</a></h3>
+<pre><code class="language-bash"># The "smoking gun" analysis
+python analysis/progressive_bias_investigation/scripts/03_urban_rural_comparison.py
+
+# Expected output:
+# Urban bias trend: 0.019 ± 0.002°C/decade
+# Rural bias trend: 0.019 ± 0.004°C/decade
+# Difference: -0.000°C/decade (p = 0.95)
+</code></pre>
+<h3 id="complete-pipeline">Complete Pipeline<a class="headerlink" href="#complete-pipeline" title="Permanent link">¶</a></h3>
+<pre><code class="language-bash"># Run full analysis suite
+python analysis/progressive_bias_investigation/scripts/run_full_analysis.py
+
+# Generates:
+# - Station-level bias trends
+# - Regional statistics
+# - Cross-metric comparisons
+# - Statistical test results
+# - All visualizations
+</code></pre>
+<h2 id="visualizations">Visualizations<a class="headerlink" href="#visualizations" title="Permanent link">¶</a></h2>
+<h3 id="bias-evolution">Bias Evolution<a class="headerlink" href="#bias-evolution" title="Permanent link">¶</a></h3>
+<p><img alt="Network-wide bias timeseries" src="outputs/plots/bias_timeseries_avg.png"/></p>
+<h3 id="spatial-distribution">Spatial Distribution<a class="headerlink" href="#spatial-distribution" title="Permanent link">¶</a></h3>
+<p><img alt="Urban-rural spatial patterns" src="outputs/plots/urban_rural_spatial_avg.png"/></p>
+<h3 id="cross-metric-comparison">Cross-Metric Comparison<a class="headerlink" href="#cross-metric-comparison" title="Permanent link">¶</a></h3>
+<p><img alt="Temperature metric comparison" src="outputs/plots/cross_metric_comparison.png"/></p>
+<h2 id="conclusions">Conclusions<a class="headerlink" href="#conclusions" title="Permanent link">¶</a></h2>
+<ol>
+<li><strong>NOAA's F52 adjustments systematically add warming</strong> beyond TOB corrections</li>
+<li><strong>Maximum temperatures most affected</strong> (0.035°C/decade, ~0.45°C cumulative)</li>
+<li><strong>Identical urban-rural patterns</strong> provide compelling evidence of artifacts</li>
+<li><strong>48.9% of stations</strong> show significant positive bias for average temperature</li>
+<li><strong>Cumulative impact</strong> ranges from 0.03°C to 0.45°C since 1895</li>
+</ol>
+<h2 id="future-research">Future Research<a class="headerlink" href="#future-research" title="Permanent link">¶</a></h2>
+<h3 id="immediate-priorities">Immediate Priorities<a class="headerlink" href="#immediate-priorities" title="Permanent link">¶</a></h3>
+<ul>
+<li>International network analysis (Europe, Asia, Australia)</li>
+<li>Algorithm investigation (why homogenization adds warming)</li>
+<li>Station-level case studies</li>
+<li>Satellite era validation</li>
+</ul>
+<h3 id="long-term-goals">Long-term Goals<a class="headerlink" href="#long-term-goals" title="Permanent link">¶</a></h3>
+<ul>
+<li>Global bias assessment</li>
+<li>Alternative homogenization methods</li>
+<li>Machine learning approaches</li>
+<li>Policy recommendation framework</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<p>Lyon, R. (2025). Progressive Warming Bias in NOAA's F52 Temperature Adjustments: Evidence from 128 Years of USHCN Data.</p>
+<h2 id="data-code">Data &amp; Code<a class="headerlink" href="#data-code" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Source Code</strong>: <a href="https://github.com/rjl-climate/ushcn-heatisland">GitHub Repository</a></li>
+<li><strong>Analysis Framework</strong>: <a href="https://github.com/rjl-climate/ushcn-heatisland/tree/main/analysis/progressive_bias_investigation">Progressive Bias Investigation</a></li>
+<li><strong>Data</strong>: <a href="https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network">NOAA USHCN v2.5</a></li>
+<li><strong>Paper</strong>: <a href="../../papers/progressive-bias/lyon-2025-progressive-bias.pdf">Full PDF</a></li>
+</ul>
+<h2 id="scientific-disclaimer">Scientific Disclaimer<a class="headerlink" href="#scientific-disclaimer" title="Permanent link">¶</a></h2>
+<p>This research represents independent investigation of temperature adjustment procedures. The findings:</p>
+<ul>
+<li>Are based on publicly available data and rigorous statistical methods</li>
+<li>Do not imply deliberate manipulation or conspiracy</li>
+<li>Reveal unintended consequences of homogenization algorithms</li>
+<li>Support improved accuracy in temperature records</li>
+<li>Contribute to scientific understanding of observational uncertainties</li>
+</ul>
+<h2 id="responsible-use">Responsible Use<a class="headerlink" href="#responsible-use" title="Permanent link">¶</a></h2>
+<p>Results should be interpreted as:</p>
+<ul>
+<li>Evidence for methodological improvement needs</li>
+<li>Support for enhanced transparency in adjustments</li>
+<li>Basis for algorithm refinement</li>
+<li>Contribution to uncertainty quantification</li>
+</ul>
+<h2 id="links-resources">🔗 Links &amp; Resources<a class="headerlink" href="#links-resources" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>NOAA USHCN</strong>: <a href="https://www.ncei.noaa.gov/products/land-based-station/us-historical-climatology-network">US Historical Climatology Network</a></li>
+<li><strong>Technical Paper</strong>: <a href="../../papers/progressive-warming-bias/lyon-2025-ushcn-progressive-warming-bias.pdf">Lyon (2025). Progressive Warming Bias in NOAA's F52 Temperature Adjustments</a></li>
+<li><strong>Methodology</strong>: <a href="../support/progressive-warming-bias-methodology/">Detailed Methods</a></li>
+<li><strong>Issue Tracker</strong>: <a href="https://github.com/rjl-climate/ushcn-heatisland/issues">GitHub Issues</a></li>
+<li><strong>Discussions</strong>: <a href="https://github.com/rjl-climate/ushcn-heatisland/discussions">GitHub Discussions</a></li>
+</ul>
+<hr/>
+<p><em>This research advances climate science through rigorous identification of systematic biases in fundamental measurements. Scientific integrity demands continuous improvement of observational systems, transparent acknowledgment of uncertainties, and commitment to accuracy regardless of implications. By demonstrating that adjustment procedures introduce rather than remove systematic biases, we contribute to the essential process of refining climate data quality for the benefit of all stakeholders.</em></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../uhi-contamination/" title="UHI Contamination"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-code-fork" href="https://github.com/rjl-climate/ushcn-analysis-tool" style="color: #fcfcfc"> ushcn-analysis-tool</a>
+</span>
+<span><a href="../uhi-contamination/" style="color: #fcfcfc">« Previous</a></span>
+</span>
+</div>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "../..";</script>
+<script src="../../js/theme_extra.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

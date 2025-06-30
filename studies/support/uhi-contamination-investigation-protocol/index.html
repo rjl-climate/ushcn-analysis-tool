@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Richard Lyon" /><link rel="canonical" href="https://rjl-climate.github.io/ushcn-analysis-tool/studies/support/uhi-contamination-investigation-protocol/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>NOAA Adjustment Bias Investigation Protocol - USHCN Temperature Data Analysis Tool</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "NOAA Adjustment Bias Investigation Protocol";
+        var mkdocs_page_input_path = "studies/support/uhi-contamination-investigation-protocol.md";
+        var mkdocs_page_url = "/ushcn-analysis-tool/studies/support/uhi-contamination-investigation-protocol/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> USHCN Temperature Data Analysis Tool
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Research Studies</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../uhi-contamination/">UHI Contamination</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../progressive-warming-bias/">Progressive Warming Bias</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">USHCN Temperature Data Analysis Tool</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">NOAA Adjustment Bias Investigation Protocol</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rjl-climate/ushcn-analysis-tool/edit/master/docs/studies/support/uhi-contamination-investigation-protocol.md">Edit on ushcn-analysis-tool</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="noaa-adjustment-bias-investigation-protocol">NOAA Adjustment Bias Investigation Protocol<a class="headerlink" href="#noaa-adjustment-bias-investigation-protocol" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This investigation examines whether NOAA's temperature data adjustments systematically reduce legitimate urban heat island signals more than rural temperature trends. Using the USHCN dataset, we compare urban heat island intensity (UHII) across three data types: raw measurements, time-of-observation adjusted data, and fully adjusted data.</p>
+<h2 id="research-questions">Research Questions<a class="headerlink" href="#research-questions" title="Permanent link">&para;</a></h2>
+<h3 id="primary-research-question">Primary Research Question<a class="headerlink" href="#primary-research-question" title="Permanent link">&para;</a></h3>
+<p><strong>Do NOAA adjustments systematically reduce urban heat island intensity, potentially masking legitimate urban warming signals?</strong></p>
+<h3 id="secondary-research-questions">Secondary Research Questions<a class="headerlink" href="#secondary-research-questions" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Are urban stations adjusted more aggressively than rural stations?</li>
+<li>Which metropolitan areas show the largest UHII reductions after adjustment?</li>
+<li>Has urban adjustment bias increased over time periods?</li>
+<li>What is the magnitude of UHII reduction from raw to fully adjusted data?</li>
+</ol>
+<h2 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h2>
+<h3 id="data-sources">Data Sources<a class="headerlink" href="#data-sources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Raw USHCN Data</strong>: Unadjusted station measurements</li>
+<li><strong>Time-of-Observation Adjusted (TOBs)</strong>: Corrects for observation time changes only</li>
+<li><strong>Fully Adjusted (FLs52)</strong>: Includes TOBs + homogenization + other adjustments</li>
+</ul>
+<h3 id="analysis-framework">Analysis Framework<a class="headerlink" href="#analysis-framework" title="Permanent link">&para;</a></h3>
+<h4 id="temporal-parameters-optimized-for-maximum-uhii-detection">Temporal Parameters (Optimized for Maximum UHII Detection)<a class="headerlink" href="#temporal-parameters-optimized-for-maximum-uhii-detection" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Baseline Period</strong>: 1895-1924 (earliest reliable USHCN data)</li>
+<li><strong>Current Period</strong>: 1991-2020 (recent 30-year climatological period)</li>
+<li><strong>Period Length</strong>: 30 years (standard climatological period)</li>
+<li><strong>Temperature Metric</strong>: Minimum temperatures (strongest urban heat island signal)</li>
+</ul>
+<h4 id="urban-classification-system">Urban Classification System<a class="headerlink" href="#urban-classification-system" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Urban Core</strong>: &lt;25km from cities with 250,000+ population</li>
+<li><strong>Urban Fringe</strong>: 25-50km from cities with 100,000+ population  </li>
+<li><strong>Suburban</strong>: 50-100km from cities with 50,000+ population</li>
+<li><strong>Rural</strong>: &gt;100km from any city with 50,000+ population</li>
+</ul>
+<h4 id="quality-control">Quality Control<a class="headerlink" href="#quality-control" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Algorithm</strong>: Simple anomaly (most straightforward comparison)</li>
+<li><strong>Data Requirements</strong>: Standard completeness thresholds</li>
+<li><strong>Station Network</strong>: All available USHCN stations with sufficient data</li>
+</ul>
+<h3 id="statistical-analysis">Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Permanent link">&para;</a></h3>
+<h4 id="urban-heat-island-intensity-uhii-calculation">Urban Heat Island Intensity (UHII) Calculation<a class="headerlink" href="#urban-heat-island-intensity-uhii-calculation" title="Permanent link">&para;</a></h4>
+<pre><code>UHII = Mean(Urban_Core_Anomalies) - Mean(Rural_Anomalies)
+</code></pre>
+<h4 id="key-metrics-to-compare">Key Metrics to Compare<a class="headerlink" href="#key-metrics-to-compare" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Raw Data UHII</strong>: Heat island intensity in unadjusted data</li>
+<li><strong>TOBs Adjusted UHII</strong>: Heat island intensity after time-of-observation correction</li>
+<li><strong>Fully Adjusted UHII</strong>: Heat island intensity after all adjustments</li>
+<li><strong>UHII Reduction</strong>: <code>Raw_UHII - Adjusted_UHII</code></li>
+<li><strong>Adjustment Magnitude by Classification</strong>: Mean adjustment by urban/rural category</li>
+</ol>
+<h4 id="statistical-testing">Statistical Testing<a class="headerlink" href="#statistical-testing" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Significance Testing</strong>: T-tests and Mann-Whitney U tests for UHII comparisons</li>
+<li><strong>Effect Size</strong>: Cohen's d for practical significance</li>
+<li><strong>Confidence Intervals</strong>: 95% confidence intervals for all UHII estimates</li>
+</ul>
+<h2 id="scientific-considerations">Scientific Considerations<a class="headerlink" href="#scientific-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="legitimate-reasons-for-urban-station-adjustments">Legitimate Reasons for Urban Station Adjustments<a class="headerlink" href="#legitimate-reasons-for-urban-station-adjustments" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Station Relocations</strong>: Urban stations more likely to be moved due to development</li>
+<li><strong>Equipment Changes</strong>: Urban stations may have more frequent equipment updates</li>
+<li><strong>Site Changes</strong>: Urban development affecting measurement environment</li>
+<li><strong>Observer Changes</strong>: Urban stations may have more personnel transitions</li>
+<li><strong>Homogenization</strong>: Removing non-climatic influences from temperature records</li>
+</ol>
+<h3 id="potential-bias-indicators">Potential Bias Indicators<a class="headerlink" href="#potential-bias-indicators" title="Permanent link">&para;</a></h3>
+<h4 id="red-flags-that-would-suggest-systematic-bias">Red Flags That Would Suggest Systematic Bias<a class="headerlink" href="#red-flags-that-would-suggest-systematic-bias" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Disproportionate Urban Cooling</strong>: Urban stations consistently adjusted downward more than rural</li>
+<li><strong>Geographic Clustering</strong>: Major metropolitan areas all show similar UHII reductions</li>
+<li><strong>Temporal Correlation</strong>: Adjustments increasing with urban development over time</li>
+<li><strong>Magnitude Disparity</strong>: Urban adjustments significantly larger than explainable by legitimate factors</li>
+</ol>
+<h4 id="expected-neutral-patterns">Expected Neutral Patterns<a class="headerlink" href="#expected-neutral-patterns" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Random Distribution</strong>: Adjustments should show no systematic urban/rural bias if legitimate</li>
+<li><strong>Proportional Impact</strong>: Adjustment magnitude should correlate with data quality issues, not urbanization</li>
+<li><strong>Transparent Rationale</strong>: Clear documentation for large adjustments</li>
+</ol>
+<h3 id="investigative-approach">Investigative Approach<a class="headerlink" href="#investigative-approach" title="Permanent link">&para;</a></h3>
+<h4 id="steel-man-strategy">Steel-Man Strategy<a class="headerlink" href="#steel-man-strategy" title="Permanent link">&para;</a></h4>
+<p>We will use parameters that <strong>maximize</strong> urban heat island detection to provide the strongest possible test of whether adjustments are masking legitimate signals. This approach:
+- Uses the longest available high-quality data period
+- Focuses on minimum temperatures (strongest physical basis for urban effects)
+- Applies conservative urban/rural definitions
+- Employs standard climatological methods</p>
+<p>This ensures that any reduction in UHII from adjustments cannot be attributed to methodological bias in favor of finding adjustment problems.</p>
+<h2 id="investigation-stages">Investigation Stages<a class="headerlink" href="#investigation-stages" title="Permanent link">&para;</a></h2>
+<h3 id="stage-1-raw-data-analysis">Stage 1: Raw Data Analysis<a class="headerlink" href="#stage-1-raw-data-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Run complete urban heat island analysis on unadjusted USHCN data</li>
+<li>Establish baseline UHII without any adjustments</li>
+<li>Document station classification and data quality</li>
+</ul>
+<h3 id="stage-2-tobs-adjusted-analysis">Stage 2: TOBs Adjusted Analysis<a class="headerlink" href="#stage-2-tobs-adjusted-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Same analysis on time-of-observation corrected data</li>
+<li>Isolate impact of TOBs adjustments specifically</li>
+<li>Compare UHII reduction from raw baseline</li>
+</ul>
+<h3 id="stage-3-fully-adjusted-analysis">Stage 3: Fully Adjusted Analysis<a class="headerlink" href="#stage-3-fully-adjusted-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Same analysis on completely adjusted data (current standard)</li>
+<li>Document total UHII reduction from raw data</li>
+<li>Compare with current published results</li>
+</ul>
+<h3 id="stage-4-comparative-analysis">Stage 4: Comparative Analysis<a class="headerlink" href="#stage-4-comparative-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Calculate adjustment impact by urban classification</li>
+<li>Identify geographic patterns in UHII reduction</li>
+<li>Perform statistical testing of adjustment bias</li>
+<li>Create visualizations of adjustment patterns</li>
+</ul>
+<h3 id="stage-5-case-studies">Stage 5: Case Studies<a class="headerlink" href="#stage-5-case-studies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Deep dive into major metropolitan areas (NYC, LA, Chicago)</li>
+<li>Station-level adjustment analysis for high-impact stations</li>
+<li>Temporal trend analysis of adjustment bias</li>
+</ul>
+<h2 id="quality-assurance">Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permanent link">&para;</a></h2>
+<h3 id="reproducibility">Reproducibility<a class="headerlink" href="#reproducibility" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All analysis parameters documented</li>
+<li>Command-line arguments recorded for each stage</li>
+<li>Raw data and intermediate results preserved</li>
+</ul>
+<h3 id="transparency">Transparency<a class="headerlink" href="#transparency" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Document both concerning and neutral patterns</li>
+<li>Acknowledge legitimate reasons for adjustments</li>
+<li>Present confidence intervals and statistical uncertainty</li>
+</ul>
+<h3 id="scientific-rigor">Scientific Rigor<a class="headerlink" href="#scientific-rigor" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use established statistical methods</li>
+<li>Compare with published literature where available</li>
+<li>Acknowledge limitations and caveats</li>
+</ul>
+<h2 id="expected-outcomes">Expected Outcomes<a class="headerlink" href="#expected-outcomes" title="Permanent link">&para;</a></h2>
+<h3 id="possible-findings">Possible Findings<a class="headerlink" href="#possible-findings" title="Permanent link">&para;</a></h3>
+<h4 id="scenario-1-no-systematic-bias">Scenario 1: No Systematic Bias<a class="headerlink" href="#scenario-1-no-systematic-bias" title="Permanent link">&para;</a></h4>
+<ul>
+<li>UHII reduction is minimal and within statistical uncertainty</li>
+<li>Urban and rural adjustments are similar in magnitude</li>
+<li>Geographic patterns are random or explainable by data quality</li>
+</ul>
+<h4 id="scenario-2-moderate-bias">Scenario 2: Moderate Bias<a class="headerlink" href="#scenario-2-moderate-bias" title="Permanent link">&para;</a></h4>
+<ul>
+<li>UHII reduction is statistically significant but small (&lt;0.2°C)</li>
+<li>Urban stations show consistently larger adjustments</li>
+<li>Some geographic clustering but limited scope</li>
+</ul>
+<h4 id="scenario-3-systematic-bias">Scenario 3: Systematic Bias<a class="headerlink" href="#scenario-3-systematic-bias" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Large UHII reduction (&gt;0.3°C) from raw to adjusted data</li>
+<li>Urban stations adjusted significantly more than rural</li>
+<li>Widespread geographic pattern across major metropolitan areas</li>
+</ul>
+<h3 id="implications">Implications<a class="headerlink" href="#implications" title="Permanent link">&para;</a></h3>
+<p>Each scenario has different implications for climate research and policy:
+- <strong>No bias</strong>: Validates current adjustment procedures for urban heat island research
+- <strong>Moderate bias</strong>: Suggests need for refined adjustment methods that preserve urban signals
+- <strong>Systematic bias</strong>: Indicates potential fundamental problem with current temperature adjustment approach</p>
+<h2 id="documentation-standards">Documentation Standards<a class="headerlink" href="#documentation-standards" title="Permanent link">&para;</a></h2>
+<p>Each stage will produce:
+1. <strong>Analysis Results</strong>: Complete statistical output and heat island reports
+2. <strong>Stage Summary</strong>: Key findings, parameters used, and notable patterns
+3. <strong>Visualizations</strong>: Maps and charts showing UHII and adjustment patterns
+4. <strong>Quality Metrics</strong>: Data completeness, confidence intervals, and validation checks</p>
+<h2 id="timeline-and-deliverables">Timeline and Deliverables<a class="headerlink" href="#timeline-and-deliverables" title="Permanent link">&para;</a></h2>
+<h3 id="immediate-deliverables">Immediate Deliverables<a class="headerlink" href="#immediate-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Investigation folder structure and protocol (this document)</li>
+<li>Stage-by-stage analysis execution with documentation</li>
+<li>Comparative analysis and visualization</li>
+<li>Final comprehensive report</li>
+</ul>
+<h3 id="final-report-structure">Final Report Structure<a class="headerlink" href="#final-report-structure" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Executive Summary</li>
+<li>Methodology Summary  </li>
+<li>Key Findings by Stage</li>
+<li>Statistical Analysis Results</li>
+<li>Geographic and Temporal Patterns</li>
+<li>Discussion and Implications</li>
+<li>Limitations and Caveats</li>
+<li>Conclusions and Recommendations</li>
+</ol>
+<hr />
+<p><strong>Investigation Start Date</strong>: 2025-06-28<br />
+<strong>Protocol Version</strong>: 1.0<br />
+<strong>Analyst</strong>: USHCN Heat Island Analysis System<br />
+<strong>Data Version</strong>: USHCN v2.5 (Raw, TOBs, FLS52)</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rjl-climate/ushcn-analysis-tool" class="fa fa-code-fork" style="color: #fcfcfc"> ushcn-analysis-tool</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

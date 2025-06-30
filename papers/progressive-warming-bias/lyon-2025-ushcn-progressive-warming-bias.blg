@@ -1,0 +1,21 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'lyon-2025-ushcn-progressive-warming-bias.blg'
+[22] biber-darwin:340> INFO - === Mon Jun 30, 2025, 08:30:01
+[28] Biber.pm:420> INFO - Reading 'lyon-2025-ushcn-progressive-warming-bias.bcf'
+[58] Biber.pm:994> INFO - Found 19 citekeys in bib section 0
+[65] Biber.pm:4463> INFO - Processing section 0
+[68] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[69] bibtex.pm:1713> INFO - LaTeX decoding ...
+[81] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[149] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[149] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[149] Biber.pm:4283> INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[149] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[169] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[169] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[169] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[169] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[177] bbl.pm:676> INFO - Writing 'lyon-2025-ushcn-progressive-warming-bias.bbl' with encoding 'UTF-8'
+[187] bbl.pm:779> INFO - Output to lyon-2025-ushcn-progressive-warming-bias.bbl
+[187] Biber.pm:131> WARN - BibTeX subsystem: /var/folders/vq/gfkmsstj11j7_5gzf9cn1rw40000gn/T/biber_tmp_qPv1/33e59b5ca9ec342068223d604c3f8d55_66748.utf8, line 186, warning: 7469 characters of junk seen at toplevel
+[187] Biber.pm:133> INFO - WARNINGS: 1

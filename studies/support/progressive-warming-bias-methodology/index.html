@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Richard Lyon" /><link rel="canonical" href="https://rjl-climate.github.io/ushcn-analysis-tool/studies/support/progressive-warming-bias-methodology/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Detailed Methodology for Progressive Bias Investigation - USHCN Temperature Data Analysis Tool</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Detailed Methodology for Progressive Bias Investigation";
+        var mkdocs_page_input_path = "studies/support/progressive-warming-bias-methodology.md";
+        var mkdocs_page_url = "/ushcn-analysis-tool/studies/support/progressive-warming-bias-methodology/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> USHCN Temperature Data Analysis Tool
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Research Studies</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../uhi-contamination/">UHI Contamination</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../progressive-warming-bias/">Progressive Warming Bias</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">USHCN Temperature Data Analysis Tool</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Detailed Methodology for Progressive Bias Investigation</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rjl-climate/ushcn-analysis-tool/edit/master/docs/studies/support/progressive-warming-bias-methodology.md">Edit on ushcn-analysis-tool</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="detailed-methodology-for-progressive-bias-investigation">Detailed Methodology for Progressive Bias Investigation<a class="headerlink" href="#detailed-methodology-for-progressive-bias-investigation" title="Permanent link">&para;</a></h1>
+<h2 id="1-mathematical-framework">1. Mathematical Framework<a class="headerlink" href="#1-mathematical-framework" title="Permanent link">&para;</a></h2>
+<h3 id="11-bias-definition">1.1 Bias Definition<a class="headerlink" href="#11-bias-definition" title="Permanent link">&para;</a></h3>
+<p>For each station <em>i</em> at time <em>t</em>, we define the adjustment bias as:</p>
+<pre><code>B(i,t) = T_F52(i,t) - T_TOB(i,t)
+</code></pre>
+<p>Where:
+- <code>T_F52(i,t)</code> = Fully adjusted (F52) temperature for station <em>i</em> at time <em>t</em>
+- <code>T_TOB(i,t)</code> = Time-of-observation adjusted temperature for station <em>i</em> at time <em>t</em>
+- <code>B(i,t)</code> = Non-TOB adjustment applied by NOAA</p>
+<p>This isolates the adjustments beyond TOB corrections, including:
+- Homogenization adjustments
+- Station move corrections
+- Equipment change adjustments
+- Urban heat island "corrections"</p>
+<h3 id="12-trend-calculation">1.2 Trend Calculation<a class="headerlink" href="#12-trend-calculation" title="Permanent link">&para;</a></h3>
+<p>For each station, we calculate the temporal trend using ordinary least squares regression:</p>
+<pre><code>B(i,t) = β₀(i) + β₁(i) × t + ε(i,t)
+</code></pre>
+<p>Where:
+- <code>β₁(i)</code> = Bias trend for station <em>i</em> (°C/year)
+- <code>β₀(i)</code> = Intercept (baseline bias)
+- <code>ε(i,t)</code> = Residual error</p>
+<p>The key metric is <code>β₁(i) × 10</code> = trend per decade</p>
+<h3 id="13-network-wide-analysis">1.3 Network-Wide Analysis<a class="headerlink" href="#13-network-wide-analysis" title="Permanent link">&para;</a></h3>
+<p>The network-wide bias trend is calculated as:</p>
+<pre><code>β̄₁ = (1/N) × Σᵢ β₁(i)
+</code></pre>
+<p>With standard error:</p>
+<pre><code>SE(β̄₁) = σ(β₁) / √N
+</code></pre>
+<h2 id="2-data-processing-steps">2. Data Processing Steps<a class="headerlink" href="#2-data-processing-steps" title="Permanent link">&para;</a></h2>
+<h3 id="21-data-loading-and-matching">2.1 Data Loading and Matching<a class="headerlink" href="#21-data-loading-and-matching" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Load TOB adjusted data for all stations</li>
+<li>Load F52 adjusted data for all stations</li>
+<li>Match records by:</li>
+<li>Station ID</li>
+<li>Year</li>
+<li>Month</li>
+</ol>
+<h3 id="22-quality-control">2.2 Quality Control<a class="headerlink" href="#22-quality-control" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Temporal Coverage</strong>: Require minimum 10 years of data</li>
+<li><strong>Annual Completeness</strong>: Require ≥6 months per year</li>
+<li><strong>Trend Reliability</strong>: Require ≥30 data points for trend calculation</li>
+<li><strong>Start Year Filter</strong> (for urban/rural analysis): Require first year ≤1905 to ensure consistent long-term coverage from 1895 baseline</li>
+</ol>
+<h3 id="23-bias-calculation">2.3 Bias Calculation<a class="headerlink" href="#23-bias-calculation" title="Permanent link">&para;</a></h3>
+<p>For each matched record:
+1. Calculate monthly bias: <code>B = F52 - TOB</code>
+2. Aggregate to annual means (requiring ≥6 months)
+3. Apply linear regression to annual time series</p>
+<h2 id="3-statistical-tests">3. Statistical Tests<a class="headerlink" href="#3-statistical-tests" title="Permanent link">&para;</a></h2>
+<h3 id="31-individual-station-significance">3.1 Individual Station Significance<a class="headerlink" href="#31-individual-station-significance" title="Permanent link">&para;</a></h3>
+<p>For each station trend, we test:
+- <strong>H₀</strong>: β₁(i) = 0 (no temporal trend)
+- <strong>H₁</strong>: β₁(i) ≠ 0 (significant trend)</p>
+<p>Using t-test with significance level α = 0.05</p>
+<h3 id="32-network-wide-tests">3.2 Network-Wide Tests<a class="headerlink" href="#32-network-wide-tests" title="Permanent link">&para;</a></h3>
+<h4 id="mann-kendall-test">Mann-Kendall Test<a class="headerlink" href="#mann-kendall-test" title="Permanent link">&para;</a></h4>
+<p>Non-parametric test for monotonic trends in the network-wide mean bias:</p>
+<pre><code>S = Σᵢ₌₁ⁿ⁻¹ Σⱼ₌ᵢ₊₁ⁿ sgn(Bⱼ - Bᵢ)
+</code></pre>
+<p>Where sgn is the signum function.</p>
+<h4 id="breakpoint-detection">Breakpoint Detection<a class="headerlink" href="#breakpoint-detection" title="Permanent link">&para;</a></h4>
+<p>Using Pettitt's test to identify sudden changes in adjustment patterns:</p>
+<pre><code>Uₖ = Σᵢ₌₁ᵏ Σⱼ₌ₖ₊₁ⁿ sgn(Bⱼ - Bᵢ)
+</code></pre>
+<p>The most probable breakpoint occurs at k where |Uₖ| is maximum.</p>
+<h3 id="33-spatial-analysis">3.3 Spatial Analysis<a class="headerlink" href="#33-spatial-analysis" title="Permanent link">&para;</a></h3>
+<p>Test for spatial autocorrelation using Moran's I:</p>
+<pre><code>I = (N/W) × (Σᵢ Σⱼ wᵢⱼ(βᵢ - β̄)(βⱼ - β̄)) / (Σᵢ(βᵢ - β̄)²)
+</code></pre>
+<p>Where wᵢⱼ are spatial weights based on distance.</p>
+<h2 id="4-control-analyses">4. Control Analyses<a class="headerlink" href="#4-control-analyses" title="Permanent link">&para;</a></h2>
+<h3 id="41-urban-vs-rural-stratification">4.1 Urban vs Rural Stratification<a class="headerlink" href="#41-urban-vs-rural-stratification" title="Permanent link">&para;</a></h3>
+<h4 id="station-classification">Station Classification<a class="headerlink" href="#station-classification" title="Permanent link">&para;</a></h4>
+<p>Stations are classified based on distance to cities with population &gt;50,000:
+- <strong>Urban Core</strong>: ≤25 km from large city
+- <strong>Urban</strong>: 25-50 km from large city<br />
+- <strong>Suburban</strong>: 50-100 km from large city
+- <strong>Rural</strong>: &gt;100 km from any large city</p>
+<p>For analysis, these are simplified to binary classification:
+- <strong>Urban</strong>: Stations within 100 km of cities &gt;50k population (includes urban core, urban, and suburban)
+- <strong>Rural</strong>: Stations &gt;100 km from any city &gt;50k population</p>
+<h4 id="temporal-filtering-for-urbanrural-analysis">Temporal Filtering for Urban/Rural Analysis<a class="headerlink" href="#temporal-filtering-for-urbanrural-analysis" title="Permanent link">&para;</a></h4>
+<p>To ensure consistent time series comparison, stations are filtered by data availability:
+- <strong>Inclusion criterion</strong>: Station must have first year of data ≤ 1905 (within 10 years of 1895 start)
+- <strong>Rationale</strong>: Ensures all analyzed stations cover most of the study period (1895-2023)
+- <strong>Impact</strong>: Excludes 269 stations (22.1%) that began recording after 1905
+- <strong>Result</strong>: 949 stations analyzed (668 urban, 281 rural)</p>
+<p>This temporal filtering prevents bias from comparing stations with vastly different recording periods and ensures robust long-term trend analysis.</p>
+<p>We test if bias trends differ between groups using Welch's t-test and Mann-Whitney U test.</p>
+<h3 id="42-regional-stratification">4.2 Regional Stratification<a class="headerlink" href="#42-regional-stratification" title="Permanent link">&para;</a></h3>
+<p>Stations are grouped by climate regions to control for:
+- Regional climate variations
+- Policy implementation differences
+- Data density effects</p>
+<h3 id="43-temporal-stratification">4.3 Temporal Stratification<a class="headerlink" href="#43-temporal-stratification" title="Permanent link">&para;</a></h3>
+<p>Analysis is performed for multiple time periods:
+- Full period (1895-present)
+- Early period (1895-1950)
+- Middle period (1951-1980)
+- Recent period (1981-present)</p>
+<h2 id="5-interpretation-framework">5. Interpretation Framework<a class="headerlink" href="#5-interpretation-framework" title="Permanent link">&para;</a></h2>
+<h3 id="51-evidence-of-systematic-bias">5.1 Evidence of Systematic Bias<a class="headerlink" href="#51-evidence-of-systematic-bias" title="Permanent link">&para;</a></h3>
+<p>Strong evidence would include:
+1. <strong>Consistent Direction</strong>: &gt;70% of stations show positive trends
+2. <strong>Statistical Significance</strong>: Network-wide trend p &lt; 0.01
+3. <strong>Large Magnitude</strong>: Mean trend &gt;0.01°C/decade
+4. <strong>Acceleration</strong>: Trends stronger in recent decades
+5. <strong>Spatial Coherence</strong>: Similar trends across regions</p>
+<h3 id="52-evidence-against-systematic-bias">5.2 Evidence Against Systematic Bias<a class="headerlink" href="#52-evidence-against-systematic-bias" title="Permanent link">&para;</a></h3>
+<p>Would include:
+1. <strong>Random Distribution</strong>: ~50% positive, ~50% negative trends
+2. <strong>No Significance</strong>: Network-wide p &gt; 0.05
+3. <strong>Small Magnitude</strong>: |Mean trend| &lt;0.005°C/decade
+4. <strong>Temporal Stability</strong>: No acceleration over time
+5. <strong>Spatial Heterogeneity</strong>: Regional differences dominate</p>
+<h3 id="53-alternative-explanations">5.3 Alternative Explanations<a class="headerlink" href="#53-alternative-explanations" title="Permanent link">&para;</a></h3>
+<p>Consider whether patterns could result from:
+1. <strong>Legitimate adjustments</strong>: Documented station changes
+2. <strong>Urban growth</strong>: Increasing UHI requiring correction
+3. <strong>Network changes</strong>: Shifting station composition
+4. <strong>Methodology artifacts</strong>: Statistical or computational issues</p>
+<h2 id="6-uncertainty-quantification">6. Uncertainty Quantification<a class="headerlink" href="#6-uncertainty-quantification" title="Permanent link">&para;</a></h2>
+<h3 id="61-sources-of-uncertainty">6.1 Sources of Uncertainty<a class="headerlink" href="#61-sources-of-uncertainty" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Measurement uncertainty</strong>: ±0.1°C typical</li>
+<li><strong>Adjustment uncertainty</strong>: Undocumented changes</li>
+<li><strong>Sampling uncertainty</strong>: Incomplete station coverage</li>
+<li><strong>Trend uncertainty</strong>: Regression standard errors</li>
+</ol>
+<h3 id="62-propagation-methods">6.2 Propagation Methods<a class="headerlink" href="#62-propagation-methods" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Bootstrap resampling</strong>: 1000 iterations with replacement</li>
+<li><strong>Jackknife</strong>: Leave-one-out station analysis</li>
+<li><strong>Monte Carlo</strong>: Simulate measurement errors</li>
+</ol>
+<h3 id="63-reporting">6.3 Reporting<a class="headerlink" href="#63-reporting" title="Permanent link">&para;</a></h3>
+<p>All results reported with:
+- 95% confidence intervals
+- Standard errors
+- Sample sizes
+- Significance levels</p>
+<h2 id="7-limitations">7. Limitations<a class="headerlink" href="#7-limitations" title="Permanent link">&para;</a></h2>
+<h3 id="71-data-limitations">7.1 Data Limitations<a class="headerlink" href="#71-data-limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Station coverage varies over time</li>
+<li>Missing data may not be random</li>
+<li>Adjustment algorithms have changed over time</li>
+</ul>
+<h3 id="72-methodological-limitations">7.2 Methodological Limitations<a class="headerlink" href="#72-methodological-limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Linear trends may oversimplify</li>
+<li>Spatial correlation not fully modeled</li>
+<li>Cannot separate all adjustment types</li>
+</ul>
+<h3 id="73-interpretive-limitations">7.3 Interpretive Limitations<a class="headerlink" href="#73-interpretive-limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Correlation does not imply causation</li>
+<li>Multiple hypotheses increase false positive risk</li>
+<li>Results specific to USHCN network</li>
+</ul>
+<h2 id="8-validation-approaches">8. Validation Approaches<a class="headerlink" href="#8-validation-approaches" title="Permanent link">&para;</a></h2>
+<h3 id="81-sensitivity-analysis">8.1 Sensitivity Analysis<a class="headerlink" href="#81-sensitivity-analysis" title="Permanent link">&para;</a></h3>
+<p>Test robustness to:
+- Minimum data requirements
+- Trend calculation methods
+- Time period selection
+- Station selection criteria</p>
+<h3 id="82-cross-validation">8.2 Cross-Validation<a class="headerlink" href="#82-cross-validation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Compare with independent temperature datasets</li>
+<li>Check against satellite era (1979+)</li>
+<li>Validate with reanalysis products</li>
+</ul>
+<h3 id="83-reproducibility">8.3 Reproducibility<a class="headerlink" href="#83-reproducibility" title="Permanent link">&para;</a></h3>
+<p>All analysis code is:
+- Version controlled
+- Fully documented
+- Uses fixed random seeds
+- Includes data version information</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rjl-climate/ushcn-analysis-tool" class="fa fa-code-fork" style="color: #fcfcfc"> ushcn-analysis-tool</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
